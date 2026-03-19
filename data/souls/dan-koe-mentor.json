@@ -1,0 +1,105 @@
+{
+  "item": {
+    "id": "e7198c1a-bbcf-4b4b-a6f5-85a0f0dfb07e",
+    "slug": "dan-koe-mentor",
+    "name": "Dan Koe",
+    "subtitle": "A thinking partner built on Dan Koe's integration of philosophy and business.",
+    "description": "A thinking partner and psychological excavation tool built on Dan Koe's integrated philosophical frameworks. Sends 3 provocative messages daily that force identity-level transformation.\n\n**How it works:**\n- Morning reframe, afternoon challenge, evening provocation - automated via cron\n- Tracks patterns across sessions: contradictions, avoidance loops, identity traps\n- Assesses your developmental stage using a 5-level framework\n- Catches when you're avoiding hard truths and surfaces them directly\n- Maintains an anti-vision (what your life looks like if nothing changes)\n\n**Includes 4 specialized skills:**\n- **Dan Koe Frameworks** - 10 integrated philosophical and business principles\n- **Daily Excavation** - Personalized questioning that adapts to your patterns\n- **Pattern Tracker** - Identifies recurring avoidance, contradictions, and growth\n- **Compound Engineer** - Nightly review of your development trajectory\n\nThis is not a motivational coach. It's an excavation tool that gets sharper the longer you use it.",
+    "category": "personal",
+    "item_type": "soul",
+    "tags": [
+      "mentoring",
+      "philosophy",
+      "psychology",
+      "business",
+      "self-improvement",
+      "daily-prompts"
+    ],
+    "compatibility": [
+      "openclaw",
+      "claude",
+      "gpt"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 726,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/dan-koe-mentor",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.3.0",
+      "published_at": "2026-03-09T07:45:01.301677+00:00",
+      "changelog": "Soul Doctor Audit v1.2.1: Fixed SOUL.md size (was over 12KB), added trust-recovery framing, action reversibility classification, rate limit handling, security review policy, blocker context template with time bounds, emotional loop template in USER.md, hard limits in MEMORY.md, cross-file rule reinforcement in TOOLS.md"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/dan-koe-mentor-gfbk/avatar.png?v=1772232964139",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Dan Koe Mentor\n\nPersonal development mentor based on Dan Koe's frameworks. Sends daily excavation questions, tracks patterns in your thinking, catches avoidance and identity traps. Gets sharper the longer you use it.\n\n## Files\n\n```\nagent/\n├── SOUL.md          # Identity and decision principles\n├── BOOTSTRAP.md     # First-contact and onboarding flow\n├── IDENTITY.md      # Role summary and capabilities\n├── AGENTS.md        # Delegation rules and privacy wall\n├── USER.md          # Template for user excavation data\n├── TOOLS.md         # Operational protocols and cron config\n├── MEMORY.md        # Pattern tracking and session memory\n├── HEARTBEAT.md     # Health check protocol\n└── skills/\n    ├── dan-koe-frameworks/   # 10 core philosophical principles\n    ├── daily-excavation/     # 3x daily message protocol\n    ├── pattern-tracker/      # Contradiction and pattern tracking\n    └── nightly-compound/     # Nightly self-improvement loop\n```\n\n## Setup\n\n1. **Name the agent.** Ask the user what to call it. Use kebab-case for the ID.\n2. **Create workspace** at `~/.openclaw/workspace-{agent-id}/`. Copy `agent/` contents into it.\n3. **Check for conflicts.** Search `openclaw.json` for existing mentor/coach agents.\n4. **Choose mode.** Direct (own chat) or Delegated (behind another agent).\n5. **Configure** in `openclaw.json`:\n\n```json\n{\n  \"id\": \"{agent-id}\",\n  \"skills\": [\"dan-koe-frameworks\", \"daily-excavation\", \"pattern-tracker\", \"nightly-compound\"],\n  \"subagents\": {\"allowAgents\": [\"*\"]}\n}\n```\n\n6. **Set up crons** for 3x daily messages and nightly compound (see TOOLS.md).\n7. **Restart gateway** and verify with a test message.\n\nModel: Opus recommended. Sonnet works for daily cron messages.\n",
+    "file_manifest": [
+      "agent/AGENTS.md",
+      "agent/BOOTSTRAP.md",
+      "agent/HEARTBEAT.md",
+      "agent/IDENTITY.md",
+      "agent/MEMORY.md",
+      "agent/skills/daily-excavation/SKILL.md",
+      "agent/skills/dan-koe-frameworks/SKILL.md",
+      "agent/skills/nightly-compound/SKILL.md",
+      "agent/skills/pattern-tracker/SKILL.md",
+      "agent/SOUL.md",
+      "agent/TOOLS.md",
+      "agent/USER.md",
+      "pfp.png",
+      "README.md"
+    ],
+    "versions": [
+      {
+        "version": "1.3.0",
+        "changelog": "Soul Doctor Audit v1.2.1: Fixed SOUL.md size (was over 12KB), added trust-recovery framing, action reversibility classification, rate limit handling, security review policy, blocker context template with time bounds, emotional loop template in USER.md, hard limits in MEMORY.md, cross-file rule reinforcement in TOOLS.md",
+        "published_at": "2026-03-09T07:45:01.301677+00:00",
+        "file_size": 449679,
+        "download_count": 0
+      },
+      {
+        "version": "1.2.0",
+        "changelog": "Soul Doctor audit: automated quality sweep",
+        "published_at": "2026-03-09T05:32:20.429788+00:00",
+        "file_size": 33650,
+        "download_count": 0
+      },
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:37:58.714547+00:00",
+        "file_size": 448315,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:48:50.762543+00:00",
+        "file_size": 62763,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

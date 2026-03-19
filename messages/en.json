@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "browse": "Browse Souls",
+    "about": "About",
+    "setup": "Setup"
+  },
+  "home": {
+    "badge": "Free. No account required.",
+    "h1_1": "Give your agent",
+    "h1_2": "a soul.",
+    "subtitle": "The best OpenClaw agents aren't smarter. They're more themselves. Browse and download production-tested souls, skills, and prompts — free.",
+    "cta": "Browse Souls →",
+    "stats_souls": "souls",
+    "stats_downloads": "downloads",
+    "stats_license": "License",
+    "pain_title": "Your agent has tools. But does it have identity?",
+    "pain_subtitle": "Most agents fail the same way.",
+    "pain_items": [
+      "Forgets what it's doing mid-task",
+      "Generic output, every single time",
+      "Falls apart on edge cases",
+      "You've rewritten the same prompt 10 times",
+      "Raw Claude outperforms your whole setup",
+      "Zero consistency across sessions"
+    ],
+    "research_title": "The science is clear. Identity changes everything.",
+    "research_subtitle": "Generic role labels produce zero measurable improvement. What works is specific identity.",
+    "steps_title": "Three steps. That's it.",
+    "steps": [
+      { "num": "01", "title": "Browse", "desc": "Find the soul or skill that fits your workflow." },
+      { "num": "02", "title": "Download", "desc": "One click. A zip file lands in your downloads." },
+      { "num": "03", "title": "Drop it in", "desc": "Copy into your OpenClaw workspace. Your agent levels up immediately." }
+    ],
+    "testimonials_title": "Don't take our word for it.",
+    "testimonials": [
+      "The first pre-built soul I've actually kept in production. These aren't templates — they're battle-tested.",
+      "It opened my eyes that a well-designed soul matters more than picking the right model.",
+      "My agent stopped making the same mistakes. I didn't change the model. I changed the soul."
+    ],
+    "bottom_cta_title": "The best OpenClaw agents are already running on souls.design. Yours should too.",
+    "bottom_cta_sub": "Free to download. No account required."
+  },
+  "shop": {
+    "title": "Browse Souls",
+    "subtitle": "Production-tested. Free to download. No account required.",
+    "filters": ["All", "Soul", "Skill", "Prompt", "Team"],
+    "downloads": "downloads"
+  },
+  "about": {
+    "title": "Design matters. Even for agents."
+  },
+  "setup": {
+    "title": "How to install a soul",
+    "subtitle": "Four steps. Takes less than a minute."
+  },
+  "footer": {
+    "copyright": "© 2026 souls.design · MIT License",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  },
+  "soul_detail": {
+    "back": "← Back to shop",
+    "about": "About",
+    "tags": "Tags",
+    "readme": "README",
+    "files": "Files included",
+    "download": "↓ Download Free",
+    "license_prefix": "License:"
+  }
+}

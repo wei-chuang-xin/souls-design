@@ -1,0 +1,100 @@
+{
+  "item": {
+    "id": "9950a8c5-bfac-40f8-959e-e52368049925",
+    "slug": "dont-make-mistakes",
+    "name": "Don't Make Mistakes",
+    "subtitle": "A meta-skill that activates elevated quality mode on any agent.",
+    "description": "A meta-skill that activates elevated quality mode on any agent. When triggered, the agent shifts into a 6-phase protocol that catches errors before they happen.\n\n**The 6 phases:**\n1. **Understand** - Restate the task. Confirm scope. Ask clarifying questions.\n2. **Plan** - Break into steps. Identify dependencies. Flag risks.\n3. **Pre-mortem** - \"What would make this fail?\" Anticipate problems before they happen.\n4. **Execute** - One step at a time. Verify each step before moving to the next.\n5. **Verify** - Check the output against the original requirements. Test edge cases.\n6. **Deliver** - Confidence assessment. What was verified vs. what was assumed.\n\n**Trigger phrases:**\n\"Don't make mistakes,\" \"maximum effort,\" \"get this right,\" \"be thorough,\" or \"do this perfectly.\"\n\nWorks with any soul, any domain. The protocol is universal - the agent's soul determines what \"quality\" means for that specific role.",
+    "category": "other",
+    "item_type": "skill",
+    "tags": [
+      "quality",
+      "verification",
+      "meta-skill",
+      "error-prevention",
+      "checklists"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 765,
+      "stars": 6,
+      "avg_rating": 5,
+      "reviews": 1
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/dont-make-mistakes",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.2.0",
+      "published_at": "2026-03-12T15:33:27.051+00:00",
+      "changelog": "Removed CHANGELOG.md"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/dont-make-mistakes-nqe5/avatar.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Don't Make Mistakes\n\n> **Version:** 1.1.0 | [Changelog](../CHANGELOG.md)\n\nA meta-skill that activates elevated quality mode on any agent. When triggered, the agent follows a 6-phase protocol: understand, plan, pre-mortem, execute, verify, deliver. Works with any soul, any domain.\n\n**Price:** Free\n**Type:** Skill (universal)\n\n## What's Included\n\n- `SKILL.md` - The complete 6-phase maximum effort protocol\n\n## Trigger Phrases\n\nActivates when you say \"don't make mistakes,\" \"maximum effort,\" \"get this right,\" \"be thorough,\" or \"do this perfectly.\"\n\n## Install\n\n### 1. Copy into your agent's workspace\n\n```bash\ncp -r dont-make-mistakes/ ~/.openclaw/workspace-{agent-id}/skills/dont-make-mistakes/\n```\n\nSkills must live inside the agent's workspace. Do not copy to a global skills directory.\n\n### 2. Add to your agent config\n\nIn `openclaw.json`, add the skill to that agent's skills list:\n\n```json\n{\n  \"id\": \"{agent-id}\",\n  \"skills\": [\n    \"dont-make-mistakes\"\n  ]\n}\n```\n\n### 3. Use it\n\nSay \"don't make mistakes\" or \"maximum effort\" before any task. The agent shifts into elevated quality mode automatically.\n\n## Recommended Model\n\nWorks with any model. Opus benefits most from the protocol's depth.\n",
+    "file_manifest": [
+      "pfp.png",
+      "README.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.2.0",
+        "changelog": "Removed CHANGELOG.md",
+        "published_at": "2026-03-12T15:33:27.051+00:00",
+        "file_size": 1059503,
+        "download_count": 0
+      },
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:38:08.034912+00:00",
+        "file_size": 1059967,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:48:33.26906+00:00",
+        "file_size": 5967,
+        "download_count": 0
+      }
+    ],
+    "reviews": [
+      {
+        "id": "82acdbf2-28f5-438c-a478-c69a7b1f2996",
+        "reviewer": {
+          "id": "28b2b8a9-b4f9-44be-a751-b9d83004b6f2",
+          "display_name": "Jill N"
+        },
+        "rating": 5,
+        "comment": "This is the skill I reach for most often. The 6-phase protocol sounds heavy but the scaling rule ('for trivial tasks, compress phases 1-3 into one sentence') makes it practical for everything from one-line fixes to complex multi-file refactors. The pre-mortem phase is where the real value lives — forcing yourself to imagine failure before executing catches things that verification after the fact would miss. The execution rules are battle-tested: 'read every file you will modify in full' and 'minimal changes only' prevent the two most common agent failure modes (editing blind and scope creep). Clean, universal, and it actually works. Every agent should have this installed.",
+        "structured_ratings": null,
+        "agent_framework": "openclaw",
+        "usage_hours": null,
+        "version_id": "e276e222-eda9-4e1d-9512-783590988d71",
+        "version": null,
+        "created_at": "2026-03-15T21:05:29.1673+00:00"
+      }
+    ],
+    "media_gallery": []
+  }
+}

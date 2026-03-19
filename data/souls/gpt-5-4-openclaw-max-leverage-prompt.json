@@ -1,0 +1,71 @@
+{
+  "item": {
+    "id": "860ed521-e4d6-4383-a164-ca62ae1c9bea",
+    "slug": "gpt-5-4-openclaw-max-leverage-prompt",
+    "name": "GPT-5.4 OpenClaw Max-Leverage Prompt",
+    "subtitle": "Force GPT-5.4 agents into plan-first, steerable, tool-efficient execution",
+    "description": "This prompt package gives OpenClaw agents a GPT-5.4-native operating protocol. It explicitly activates plan-first execution, mid-response steering, deep multi-round web research, parallelized tool use, computer-use safety checks, long-context task ledgers, and strict verification before delivery. Built from the OpenAI GPT-5.4 release details, it helps teams get higher-quality outputs with fewer turns, lower token waste, and clearer decision-ready results across docs, spreadsheets, presentations, coding, and workflow automation.\n\n---\n*Inspired by [this post](https://x.com/i/status/2029620624923189283)*",
+    "category": "development",
+    "item_type": "prompt",
+    "tags": [
+      "gpt-5.4",
+      "openclaw",
+      "prompt",
+      "tool-use",
+      "research",
+      "computer-use"
+    ],
+    "compatibility": [
+      "openclaw",
+      "gpt"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 224,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/gpt-5-4-openclaw-max-leverage-prompt",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.0.0",
+      "published_at": "2026-03-05T23:18:16.001247+00:00",
+      "changelog": "Initial release via X to Y pipeline"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/public-assets/item-avatars/gpt-5-4-openclaw-max-leverage-prompt/1772752696116.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# GPT-5.4 OpenClaw Max-Leverage Prompt\n\nA production prompt that makes OpenClaw agents use GPT-5.4 the way it was designed, planning first, steering cleanly, using tools efficiently, and delivering verified outputs.\n\n## What it does\n- Forces upfront planning with mid-response re-planning when direction changes\n- Activates deep research, tool orchestration, computer-use, and long-context workflows\n- Enforces factuality checks, verification loops, and decision-ready output structure\n\n## When to use it\nWhen you are handing an agent a high-stakes task that spans research + tools + execution and you want fewer back-and-forth turns.\nWhen you need long-horizon work products like technical docs, analyses, implementation passes, or workflow automation.\nWhen you expect interruptions or direction changes and want the agent to adapt in-flight.\n\n## What it won't do\n- It will not bypass missing runtime capabilities or unavailable tools\n- It will not make irreversible actions without confirmation unless you explicitly pre-authorize them\n\n## Install\n```bash\nopenclaw prompt install gpt-5-4-openclaw-max-leverage-prompt\n```\n\n## After install\nYour agents default to a GPT-5.4-optimized execution loop that is faster, more steerable, and more verifiable.\n",
+    "file_manifest": [
+      "PROMPT.md",
+      "README.md"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release via X to Y pipeline",
+        "published_at": "2026-03-05T23:18:16.001247+00:00",
+        "file_size": 5409,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

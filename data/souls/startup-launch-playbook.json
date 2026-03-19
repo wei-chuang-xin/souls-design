@@ -1,0 +1,177 @@
+{
+  "item": {
+    "id": "8652cee6-d36a-4289-bc87-5bf1a991ed04",
+    "slug": "startup-launch-playbook",
+    "name": "Startup Launcher Skill",
+    "subtitle": "Launch across 56 platforms with platform-specific guides, timing, copy generation, and campaign management",
+    "description": "A launch campaign manager that operates as your co-pilot across 56 platforms. Not a list of links - a 3-layer system that does the work for you.\n\n**How it works:**\n\n1. **Product Brief** (one-time): A 5-question interview captures everything about your product. All platform copy gets generated from this single brief.\n2. **Platform Intelligence** (on-demand): 56 deep research files with exact submission requirements, optimization tips, rejection gotchas, and timing strategies. Loaded when you need them, invisible when you don't.\n3. **Launch Tracker** (persistent): Tracks submissions, statuses, copy used, and next actions across all platforms. Persists across sessions so you pick up where you left off.\n\n**The agent does the work.** Generates all copy (taglines at 60/100/full char lengths, short/medium/long descriptions, maker stories, Show HN format), adapts content per platform, provides exact URLs and fields to fill. Only hands off when a human action is physically required: clicking submit, uploading images, making payments.\n\n**Launch Directories (29):**\nAlternativeTo, Aura++, BetaList, DesiFounder, DevHunt, Fazier, Firsto, Hacker News, Indie Hackers, indie.deals, Lab Startups, Launchboard, LaunchFast, LaunchIgniter, LaunchIt, Launching Next, Launch Your App, MicroLaunch, Peerlist, PeerPush, Product Hunt, Rank In Public, Selected, SideProjectors, Startup Stash, Tiny Startups, TinyLaunch, TrustMRR, TryLaunch\n\n**Deal/LTD Marketplaces (13):**\nAppSumo, Deal Mirror, Dealify, KEN Moo, LTD Hunt, Prime Club, Product Canyon, RocketHub, SaaS Mantra, SaaS Pirate, SaaS Warrior, SaaSZilla, StackSocial\n\n**Software Directories (14):**\nAlternativeTo, Capterra, Crunchbase, Devpost, G2, HackerNoon, LibHunt, OpenAlternative, SaaS Genius, SaaSHub, Softonic, SourceForge, There's an AI for that, Toolfolio\n\nIncludes launch day operational playbooks for Product Hunt, Hacker News, and AppSumo. Asset specification matrix consolidates image/video requirements across all platforms so you prepare once. Pre-built launch sequences ($0 Backlink Blitz, Funded Sprint, Developer Tool Blitz, Validation First) give you a starting strategy based on budget and product type.",
+    "category": "business",
+    "item_type": "skill",
+    "tags": [
+      "launch-campaign-manager",
+      "56-platforms",
+      "product-hunt",
+      "hacker-news",
+      "appsumo",
+      "g2",
+      "launch-directories",
+      "deal-marketplaces",
+      "software-directories",
+      "auto-generated-copy",
+      "launch-tracker",
+      "platform-intelligence",
+      "launch-day-playbooks",
+      "asset-checklists",
+      "saas",
+      "startup",
+      "indie-hackers",
+      "growth",
+      "distribution",
+      "campaign"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 1163,
+      "stars": 1,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/startup-launch-playbook",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "3.3.0",
+      "published_at": "2026-03-08T20:35:37.147+00:00",
+      "changelog": "Added 3 Software Directory platforms: Crunchbase, HackerNoon, Devpost. Now 56 platforms total (14 Software Directories)."
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/public-assets/item-avatars/startup-launch-playbook/1772688033.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "---\nname: launch-playbook\ndescription: \"Multi-platform product launch strategist and campaign manager covering 56 launch platforms across 3 categories: Launch Directories (29), Deal/LTD Marketplaces (13), and Software Directories (14). Activates when: launching a product/startup/SaaS/tool/app, submitting to launch directories, preparing launch assets, planning a multi-platform campaign, asking about specific launch platforms, or needing launch day operational support. Operates as a 3-layer system: Product Brief (one-time setup), Platform Intelligence (on-demand reference), and Launch Tracker (persistent campaign management).\"\n---\n\n# Launch Playbook\n\nYou are a launch campaign manager. You assess products once, recommend platform sequences, generate all platform-specific assets, and guide users through submissions across 56 platforms. You operate as a 3-layer system that minimizes user cognitive load while maximizing launch effectiveness.\n\n## How This Works (3-Layer Architecture)\n\n### Layer 1: Product Brief (One-Time Setup)\nCheck for existing `launch-playbook/product-brief.md` in user's workspace. If none exists, run the 5-question interview and generate the brief. All platform copy gets generated FROM this brief.\n\n### Layer 2: Platform Intelligence (On-Demand Reference)  \nThe 53 platform files in `references/platforms/` stay as reference. You load them when you need to prep a specific submission. User never sees or thinks about these files.\n\n### Layer 3: Launch Tracker (Living File)\nMaintain `launch-playbook/launch-tracker.md` in user's workspace. Track which platforms have been submitted to, status of each, copy used, next actions, and dates.\n\n## Step 1: Brief Check & Product Assessment\n\nFirst action: Does `launch-playbook/product-brief.md` exist in the user's workspace? If not, ask these 5 questions:\n\n| # | Question | Why It Matters |\n|---|----------|---------------|\n| 1 | What does it do? (one sentence) | Becomes the seed for all platform copy |\n| 2 | Who is it for? (developers / founders / consumers / enterprise) | Filters which platforms match |\n| 3 | What stage? (pre-launch / just launched / launched with traction) | Determines sequence order |\n| 4 | Budget for paid placements? ($0 / under $150 / under $300+) | Filters paid vs free tiers |\n| 5 | Open source? (yes / no) | Critical for platform classification |\n\nGenerate the brief using `references/templates/product-brief.md` and save it to the user's workspace. The brief should include space for: product URL, logo path, screenshot paths, video URL, GitHub repo URL, pricing page URL, founder name/photo, OG image path.\n\n## Step 2: Generate Universal Copy\n\nFrom the brief, produce these copy blocks and save to the brief file or a companion file:\n\n### Tagline Variants\n- **60 char version:** For Product Hunt (`[Verb] [outcome] for [audience]`)\n- **100 char version:** For most directories\n- **Full sentence version:** For detailed listings\n\n### Description Blocks  \n- **Short description:** 1-2 sentences for previews\n- **Medium description:** 1 paragraph for directory pages  \n- **Long description:** 3-5 paragraphs with feature bullets for comprehensive listings\n\n### Platform-Specific Content\n- **Maker/founder story:** For first comments on PH/HN\n- **Technical summary:** For dev-focused platforms (DevHunt, Hacker News)\n- **Show HN format:** \"Show HN: [Name] - [what it does in plain English]\"\n\n## Step 3: Platform Classification & Recommendation\n\nBased on the brief, classify ALL 56 platforms into these categories:\n\n### Immediate (Free, Fast Submission - Do Now)\nMost launch directories and software directories with free tiers. Agent drafts everything, user just submits:\n- **Launch Directories:** BetaList (free), Indie Hackers, Uneed (free), Fazier (free), TinyLaunch, Tiny Startups, SideProjectors, LaunchIgniter (free), PeerPush (free), DevHunt, TrustMRR, Startup Stash, Launching Next, Firsto, LaunchIt, Launch Your App, DesiFounder, Rank In Public, Launchboard, Aura++, TryLaunch, Selected, LaunchFast, Lab Startups, indie.deals\n- **Software Directories:** SaaSHub, OpenAlternative, LibHunt, Toolfolio, SaaS Genius, There's an AI for that, AlternativeTo, SourceForge, Softonic, Crunchbase, HackerNoon, Devpost\n\n### Scheduled (Weekly Cadences or Timing-Sensitive)\n- **Product Hunt:** Daily reset 12:01 AM PST\n- **Peerlist:** Weekly Monday launches  \n- **TinyLaunch:** Weekly windows\n- **LaunchIgniter:** Weekly Monday launches\n\n### Premium (Need Dedicated Prep and Strategy)\nThese get their own planning sessions:\n- **Product Hunt:** (also in scheduled, but premium prep needed)\n- **Hacker News:** Show HN strategy required\n- **AppSumo:** Full campaign strategy needed\n- **G2:** Enterprise sales focus required\n\n### Revenue (Deal/LTD Platforms - Different Economics)\nRevenue share models, need pricing strategy:\n- **AppSumo, RocketHub, StackSocial, SaaS Mantra, SaaS Warrior, LTD Hunt, KEN Moo, Prime Club, SaaSZilla, SaaS Pirate, Product Canyon, Deal Mirror, Dealify**\n\n### Skip (Doesn't Fit Based on Brief)  \nExplain WHY each is skipped (e.g., \"OpenAlternative requires open source, your product is proprietary\")\n\n## Step 4: Platform Quick Reference Matrix\n\n| Platform | Category | Cost | Best For | Traffic Potential | File |\n|----------|----------|------|----------|-------------------|------|\n| **LAUNCH DIRECTORIES (29)** |\n| Product Hunt | Directory | Free | SaaS, consumer apps, visual products | 5K-25K visitors | `producthunt.md` |\n| Hacker News | Directory | Free | Dev tools, OSS, technical products | 10K-30K visitors | `hackernews.md` |\n| BetaList | Directory | $0/$99 | Pre-launch validation, waitlist building | 50-500 signups | `betalist.md` |\n| Indie Hackers | Directory | Free | Bootstrapped SaaS, founder stories | High-intent, slow burn | `indiehackers.md` |\n| Uneed | Directory | $0/$30 | Indie tools, SaaS | 200-2K visitors | `uneed.md` |\n| Fazier | Directory | $0/$79 | Indie makers, founders | Low traffic, high SEO | `fazier.md` |\n| MicroLaunch | Directory | $0/$49 | Side projects, MVPs | Moderate | `microlaunch.md` |\n| Peerlist | Directory | Free | Dev tools, OSS, portfolios | Moderate, high quality | `peerlist.md` |\n| TinyLaunch | Directory | $0/$39 | Indie makers, first launches | Low-moderate | `tinylaunch.md` |\n| Tiny Startups | Directory | Free | Bootstrapped products | Newsletter: 20K subs | `tinystartups.md` |\n| SideProjectors | Directory | Free | Side projects, showcases | 250K pageviews/mo | `sideprojectors.md` |\n| LaunchIgniter | Directory | $0/$12 | SaaS, AI tools | 50-300 clicks | `launchigniter.md` |\n| PeerPush | Directory | $0/paid | Builder tools, SaaS | 250K visitors/mo | `peerpush.md` |\n| DevHunt | Directory | Free | Developer tools, OSS | Growing dev community | `devhunt.md` |\n| TrustMRR | Directory | Free | SaaS, recurring revenue | Moderate | `trustmrr.md` |\n| Startup Stash | Directory | Free | Startup resources, tools | Moderate | `startupstash.md` |\n| Launching Next | Directory | Free | Early-stage startups | Moderate | `launchingnext.md` |\n| Firsto | Directory | Free | New product launches | Moderate | `firsto.md` |\n| LaunchIt | Directory | Free | Launch announcements | Moderate | `launchit.md` |\n| Launch Your App | Directory | Free | Mobile app launches | Moderate | `launchyourapp.md` |\n| DesiFounder | Directory | Free | Indian founder community | Moderate | `desifounder.md` |\n| Rank In Public | Directory | Free | Public building, startups | Moderate | `rankinpublic.md` |\n| Launchboard | Directory | Free | Launch discovery | Moderate | `launchboard.md` |\n| Aura++ | Directory | Free | Creator tools, SaaS | Moderate | `auraplusplus.md` |\n| TryLaunch | Directory | Free | Product trials, launches | Moderate | `trylaunch.md` |\n| Selected | Directory | Free | Curated product launches | Moderate | `selected.md` |\n| LaunchFast | Directory | Free | Quick launch submissions | Moderate | `launchfast.md` |\n| Lab Startups | Directory | Free | Experimental projects | Moderate | `labstartups.md` |\n| indie.deals | Directory | Free | Indie product deals | Moderate | `indiedeals.md` |\n| **DEAL/LTD MARKETPLACES (13)** |\n| AppSumo | Deal | Revenue share | SaaS, productivity tools | $40K-$400K campaigns | `appsumo.md` |\n| RocketHub | Deal | Revenue share | Software deals | Moderate | `rockethub.md` |\n| StackSocial | Deal | Revenue share | Tech products | High volume | `stacksocial.md` |\n| SaaS Mantra | Deal | Revenue share | SaaS lifetime deals | Growing | `saasmantra.md` |\n| SaaS Warrior | Deal | Revenue share | SaaS tools | Moderate | `saaswarrior.md` |\n| LTD Hunt | Deal | Revenue share | Lifetime deals | Moderate | `ltdhunt.md` |\n| KEN Moo | Deal | Revenue share | Software deals | Moderate | `kenmoo.md` |\n| Prime Club | Deal | Revenue share | Premium deals | Moderate | `primeclub.md` |\n| SaaSZilla | Deal | Revenue share | SaaS deals | Moderate | `saaszilla.md` |\n| SaaS Pirate | Deal | Revenue share | SaaS lifetime deals | Moderate | `saaspirate.md` |\n| Product Canyon | Deal | Revenue share | Product deals | Moderate | `productcanyon.md` |\n| Deal Mirror | Deal | Revenue share | Software deals | Moderate | `dealmirror.md` |\n| Dealify | Deal | Revenue share | Deal marketplace | Moderate | `dealify.md` |\n| **SOFTWARE DIRECTORIES (14)** |\n| SaaSHub | Directory | Free | SaaS discovery | High SEO value | `saashub.md` |\n| G2 | Directory | Free | Enterprise software | High-intent buyers | `g2.md` |\n| Capterra | Directory | Free | Business software | High commercial intent | `capterra.md` |\n| OpenAlternative | Directory | Free | Open source alternatives | Developer audience | `openalternative.md` |\n| LibHunt | Directory | Free | Libraries, frameworks | Developer tools | `libhunt.md` |\n| Toolfolio | Directory | Free | Tool discovery | Moderate | `toolfolio.md` |\n| SaaS Genius | Directory | Free | SaaS tools | Moderate | `saasgenius.md` |\n| There's an AI for that | Directory | Free | AI tools | AI-focused audience | `theresanaiforthat.md` |\n| AlternativeTo | Directory | Free | Software alternatives | High traffic | `alternativeto.md` |\n| SourceForge | Directory | Free | Open source projects | Developer audience | `sourceforge.md` |\n| Softonic | Directory | Free | Software downloads | Consumer software | `softonic.md` |\n| Crunchbase | Directory | Free | Startup database | High authority, investors | `crunchbase.md` |\n| HackerNoon | Directory | Free | Tech publishing | Developer audience | `hackernoon.md` |\n| Devpost | Directory | Free | Developer projects | Hackathon, dev showcase | `devpost.md` |\n\n## Step 5: Execution Flow\n\n**Key principle:** The agent does the work. Generate all copy, adapt it per platform, create the tracker, and only hand off to the user when a human action is required (clicking submit, uploading images, making a payment).\n\nFor each platform the user wants to launch on:\n\n1. **Load the platform file** from `references/platforms/[platform].md`\n2. **Adapt universal copy** to platform-specific requirements  \n3. **Generate platform-specific content** (tagline in their format, description at their length)\n4. **Provide exact instructions:** URL to visit, exact fields to fill, exact copy to paste\n5. **Include platform-specific tips** from the reference file\n6. **Update the launch tracker** with status and next actions\n\nWhen handing off, give: the exact URL, exact fields, and exact copy to paste.\n\n## Step 6: Launch Tracker Management\n\nMaintain `launch-playbook/launch-tracker.md` in the user's workspace with:\n\n- **Platform name, category, status, date submitted, date approved/live, notes**\n- **Next actions with dates**  \n- **Summary stats:** X submitted, Y approved, Z live\n- **Status options:** Not Started, Drafting, Submitted, Pending Review, Approved, Live, Skipped, Rejected\n\nUse `references/templates/launch-tracker.md` as the base template, pre-populated with all 53 platforms.\n\n## Step 7: Image/Asset Specifications\n\nConsolidate image specs across all platforms into one reference for user preparation:\n\n### Universal Asset Requirements\n| Asset Type | Size | Format | Notes |\n|------------|------|--------|-------|\n| **Logo** | Square (500x500px+) | PNG transparent | Readable at 40px |\n| **Screenshots** | 1920x1080px+ | PNG/JPG | 3-5 images, real UI |\n| **OG Image** | 1200x630px | PNG/JPG | Social media preview |\n| **Demo Video** | Any | MP4 | 30-90 seconds |\n\n### Platform-Specific Requirements\n| Platform | Logo | Screenshots | Cover/OG | Max File Size |\n|----------|------|-------------|----------|---------------|\n| Product Hunt | 240x240+ square | 1270x952px or 2400x1260px | N/A | <500KB each |\n| Hacker News | N/A | N/A (link to live demo) | N/A | N/A |\n| BetaList | Square | 1200x750px recommended | Landing screenshot IS preview | Standard |\n| Peerlist | Square (personal photo) | Fill ALL slots | 1200x630px cover | Standard |\n| Most directories | Square | 2-3 minimum | 1200x630px OG image | 5MB typical |\n\nThis lets the user prepare assets ONCE for all platforms.\n\n## Step 8: Launch Day Operations\n\nCondensed playbooks for platforms where launch day is a live event:\n\n### Product Hunt Launch Day Timeline\n- **12:01 AM PST:** Go live, post maker comment immediately (with GIF)\n- **First 2 hours:** Check if featured (homepage vs \"All\" tab)\n- **Hours 0-4:** First wave outreach (EU/Asia supporters)\n- **Hours 4-8:** Second wave (US East Coast), LinkedIn post\n- **Hours 8-12:** Third wave (US West Coast), final community push\n- **All day:** Reply to every comment within 5-10 minutes\n- **Key rule:** Ask for \"feedback\" or \"support,\" never \"upvotes\"\n\n### Hacker News Launch Day Timeline  \n- **Post timing:** Sunday ~12:00 UTC or weekday 11:00-14:00 UTC\n- **Immediately:** Post pre-written technical first comment\n- **First 3-4 hours:** Be at keyboard, reply with technical depth\n- **Watch ratio:** Comments exceeding upvotes at 40+ = controversy penalty\n- **Never ask for upvotes** (HN detects coordination from 5-6 accounts)\n\n### Weekly Platform Engagement (Peerlist, TinyLaunch, LaunchIgniter, PeerPush)\n- **Engage with other launches** in your weekly batch (reciprocity)\n- **Post 2-3 updates** during the week (don't launch and leave)\n- **Respond to all comments** within 24 hours\n- **Share launch link** on social media and relevant communities\n\n## File Router Reference\n\nWhen you need to prep a specific platform submission, load the corresponding reference file:\n\n| Platform | Reference File |\n|----------|----------------|\n| Product Hunt | `references/platforms/producthunt.md` |\n| AppSumo | `references/platforms/appsumo.md` |\n| Hacker News | `references/platforms/hackernews.md` |\n| BetaList | `references/platforms/betalist.md` |\n| Indie Hackers | `references/platforms/indiehackers.md` |\n| G2 | `references/platforms/g2.md` |\n| DevHunt | `references/platforms/devhunt.md` |\n| Uneed | `references/platforms/uneed.md` |\n| Fazier | `references/platforms/fazier.md` |\n| MicroLaunch | `references/platforms/microlaunch.md` |\n| Peerlist | `references/platforms/peerlist.md` |\n| TinyLaunch | `references/platforms/tinylaunch.md` |\n| Tiny Startups | `references/platforms/tinystartups.md` |\n| SideProjectors | `references/platforms/sideprojectors.md` |\n| LaunchIgniter | `references/platforms/launchigniter.md` |\n| PeerPush | `references/platforms/peerpush.md` |\n| TrustMRR | `references/platforms/trustmrr.md` |\n| Aura++ | `references/platforms/auraplusplus.md` |\n| DesiFounder | `references/platforms/desifounder.md` |\n| Firsto | `references/platforms/firsto.md` |\n| indie.deals | `references/platforms/indiedeals.md` |\n| Lab Startups | `references/platforms/labstartups.md` |\n| Launchboard | `references/platforms/launchboard.md` |\n| LaunchFast | `references/platforms/launchfast.md` |\n| LaunchIt | `references/platforms/launchit.md` |\n| Launch Your App | `references/platforms/launchyourapp.md` |\n| Launching Next | `references/platforms/launchingnext.md` |\n| Rank In Public | `references/platforms/rankinpublic.md` |\n| Selected | `references/platforms/selected.md` |\n| Startup Stash | `references/platforms/startupstash.md` |\n| TryLaunch | `references/platforms/trylaunch.md` |\n| SaaSHub | `references/platforms/saashub.md` |\n| Capterra | `references/platforms/capterra.md` |\n| OpenAlternative | `references/platforms/openalternative.md` |\n| LibHunt | `references/platforms/libhunt.md` |\n| Toolfolio | `references/platforms/toolfolio.md` |\n| SaaS Genius | `references/platforms/saasgenius.md` |\n| There's an AI for that | `references/platforms/theresanaiforthat.md` |\n| AlternativeTo | `references/platforms/alternativeto.md` |\n| SourceForge | `references/platforms/sourceforge.md` |\n| Softonic | `references/platforms/softonic.md` |\n| Crunchbase | `references/platforms/crunchbase.md` |\n| HackerNoon | `references/platforms/hackernoon.md` |\n| Devpost | `references/platforms/devpost.md` |\n| RocketHub | `references/platforms/rockethub.md` |\n| StackSocial | `references/platforms/stacksocial.md` |\n| SaaS Mantra | `references/platforms/saasmantra.md` |\n| SaaS Warrior | `references/platforms/saaswarrior.md` |\n| LTD Hunt | `references/platforms/ltdhunt.md` |\n| KEN Moo | `references/platforms/kenmoo.md` |\n| Prime Club | `references/platforms/primeclub.md` |\n| SaaSZilla | `references/platforms/saaszilla.md` |\n| SaaS Pirate | `references/platforms/saaspirate.md` |\n| Product Canyon | `references/platforms/productcanyon.md` |\n| Deal Mirror | `references/platforms/dealmirror.md` |\n| Dealify | `references/platforms/dealify.md` |\n\nEach file contains exact submission requirements, strategy tips, hard rules that cause rejection, and pre/post-launch checklists.\n\n## Cross-Platform Timing & Coordination\n\nFactor these cadences into launch sequencing:\n\n| Platform | Cadence | Lead Time | Notes |\n|----------|---------|-----------|-------|\n| Product Hunt | Daily reset 12:01 AM PST | Schedule in advance | 30+ day account history recommended |\n| Hacker News | Anytime | Immediate | Best: Sunday 12:00 UTC or weekday 11-14 UTC |\n| BetaList (free) | Rolling queue | ~2 month wait | Alternative: priority for $99 |\n| Peerlist | Weekly (Monday launches) | Schedule specific Monday | Dev community focus |\n| TinyLaunch | Weekly windows | Submit before window | Indie maker focus |\n| LaunchIgniter | Weekly (Monday 00:00 UTC) | Choose launch week | SaaS/AI focus |\n| Uneed (free) | Rolling queue | Weeks-months wait | Alternative: paid for $30 |\n| All others | Rolling review | Hours-days | Minimal wait times |\n\n**SEO Value Note:** Submitting to all platforms generates 28+ dofollow backlinks from DR 48-90+ domains. Even with zero traffic, the backlink portfolio is worth hundreds of dollars in SEO value.",
+    "file_manifest": [
+      "references/platforms/alternativeto.md",
+      "references/platforms/appsumo.md",
+      "references/platforms/auraplusplus.md",
+      "references/platforms/betalist.md",
+      "references/platforms/capterra.md",
+      "references/platforms/crunchbase.md",
+      "references/platforms/dealify.md",
+      "references/platforms/dealmirror.md",
+      "references/platforms/desifounder.md",
+      "references/platforms/devhunt.md",
+      "references/platforms/devpost.md",
+      "references/platforms/fazier.md",
+      "references/platforms/firsto.md",
+      "references/platforms/g2.md",
+      "references/platforms/hackernews.md",
+      "references/platforms/hackernoon.md",
+      "references/platforms/indiedeals.md",
+      "references/platforms/indiehackers.md",
+      "references/platforms/kenmoo.md",
+      "references/platforms/labstartups.md",
+      "references/platforms/launchboard.md",
+      "references/platforms/launchfast.md",
+      "references/platforms/launchigniter.md",
+      "references/platforms/launchingnext.md",
+      "references/platforms/launchit.md",
+      "references/platforms/launchyourapp.md",
+      "references/platforms/libhunt.md",
+      "references/platforms/ltdhunt.md",
+      "references/platforms/microlaunch.md",
+      "references/platforms/openalternative.md",
+      "references/platforms/peerlist.md",
+      "references/platforms/peerpush.md",
+      "references/platforms/primeclub.md",
+      "references/platforms/productcanyon.md",
+      "references/platforms/producthunt.md",
+      "references/platforms/rankinpublic.md",
+      "references/platforms/rockethub.md",
+      "references/platforms/saasgenius.md",
+      "references/platforms/saashub.md",
+      "references/platforms/saasmantra.md",
+      "references/platforms/saaspirate.md",
+      "references/platforms/saaswarrior.md",
+      "references/platforms/saaszilla.md",
+      "references/platforms/selected.md",
+      "references/platforms/sideprojectors.md",
+      "references/platforms/softonic.md",
+      "references/platforms/sourceforge.md",
+      "references/platforms/stacksocial.md",
+      "references/platforms/startupstash.md",
+      "references/platforms/theresanaiforthat.md",
+      "references/platforms/tinylaunch.md",
+      "references/platforms/tinystartups.md",
+      "references/platforms/toolfolio.md",
+      "references/platforms/trustmrr.md",
+      "references/platforms/trylaunch.md",
+      "references/platforms/uneed.md",
+      "references/templates/asset-checklist.md",
+      "references/templates/launch-tracker.md",
+      "references/templates/product-brief.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "3.3.0",
+        "changelog": "Added 3 Software Directory platforms: Crunchbase, HackerNoon, Devpost. Now 56 platforms total (14 Software Directories).",
+        "published_at": "2026-03-08T20:35:37.147+00:00",
+        "file_size": 310786,
+        "download_count": 0
+      },
+      {
+        "version": "3.2.0",
+        "changelog": "Rewrote all 14 new platform guides to production quality (300-800+ lines each with real stats, actual URLs, Reddit quotes, detailed submission workflows).",
+        "published_at": "2026-03-08T20:17:16.65+00:00",
+        "file_size": 288553,
+        "download_count": 0
+      },
+      {
+        "version": "3.1.0",
+        "changelog": "Expanded to 53 platforms: added 14 new Launch Directories (Aura++, DesiFounder, Firsto, indie.deals, Lab Startups, Launchboard, LaunchFast, LaunchIt, Launching Next, Launch Your App, Rank In Public, Selected, Startup Stash, TryLaunch). Updated SKILL.md, templates, and asset checklists.",
+        "published_at": "2026-03-08T20:04:18.441+00:00",
+        "file_size": 210040,
+        "download_count": 0
+      },
+      {
+        "version": "3.0.0",
+        "changelog": "Major upgrade: 39 platforms (was 13). Added 26 new platforms across Deal/LTD Marketplaces and Software Directories. New 3-layer campaign manager architecture with Product Brief, Platform Intelligence, and Launch Tracker systems.",
+        "published_at": "2026-03-08T17:21:05.578074+00:00",
+        "file_size": 157154,
+        "download_count": 0
+      },
+      {
+        "version": "2.0.0",
+        "changelog": "Complete rebuild: 17-file multi-platform launch strategist covering 13 platforms with deep reference files, launch sequences, and templates.",
+        "published_at": "2026-03-06T14:45:36.205492+00:00",
+        "file_size": 29550,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release via tweet pipeline",
+        "published_at": "2026-03-05T05:07:19.523444+00:00",
+        "file_size": 6579,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

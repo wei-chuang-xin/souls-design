@@ -1,0 +1,80 @@
+{
+  "item": {
+    "id": "ecdd78f4-2346-4e5d-b6f9-f2d256207bfe",
+    "slug": "cloudflare-mcp",
+    "name": "Cloudflare MCP Skill",
+    "subtitle": "Full Cloudflare API. 2,500 endpoints. ~1K token footprint.",
+    "description": "Connect your agent to Cloudflare's official MCP server and control the full API surface—Workers, DNS, R2, KV, D1, Pages, Stream, AI Gateway, Vectorize, Access, and 2,500+ endpoints—without bloating context. Code Mode keeps the entire OpenAPI spec server-side: 2 tools, ~1K tokens, vs 244K+ for traditional MCP. Supports OAuth for quick setup or API tokens for CI/CD.\n\nGithub based on this skill: https://github.com/cloudflare/mcp",
+    "category": "development",
+    "item_type": "skill",
+    "tags": [
+      "cloudflare",
+      "mcp",
+      "workers",
+      "dns",
+      "api",
+      "infrastructure",
+      "r2",
+      "d1",
+      "kv"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 309,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/cloudflare-mcp",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.1.0",
+      "published_at": "2026-03-05T03:18:37.204944+00:00",
+      "changelog": null
+    },
+    "avatar_url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-avatars/cloudflare-mcp/1772680282340.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Cloudflare MCP\n\nManage the entire Cloudflare API through a token-efficient MCP server with just two tools.\n\n## Files\n- `SKILL.md` - The skill definition\n\n## Installation\nCopy `SKILL.md` into your agent's skills directory.\n",
+    "file_manifest": [
+      "README.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.1.0",
+        "changelog": null,
+        "published_at": "2026-03-05T03:18:37.204944+00:00",
+        "file_size": 2446,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release via tweet pipeline",
+        "published_at": "2026-03-05T03:10:16.81006+00:00",
+        "file_size": 4827,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

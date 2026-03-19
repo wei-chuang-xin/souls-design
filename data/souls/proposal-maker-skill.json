@@ -1,0 +1,125 @@
+{
+  "item": {
+    "id": "68983c26-3d37-43e8-99d9-1843c31b7e15",
+    "slug": "proposal-maker-skill",
+    "name": "Proposal Maker",
+    "subtitle": "Turn client meetings into deployed proposal websites",
+    "description": "The proposal IS the proof of work. When the client opens the URL, they experience your capability, not just read about it.\n\n**How it works:**\n\n1. **Intake** - Extract client context from meeting notes, a brief, or just a name and idea. The skill asks for what is missing, then moves.\n2. **Research** - Market sizing, competitive landscape, pricing benchmarks, and ROI math. All sourced, all specific. Includes a circuit breaker: if the engagement does not make sense, it tells you before building.\n3. **Visual Direction** - Derives the design from the client actual brand identity and any reference sites. Never defaults to a preset.\n4. **Build and Deploy** - Single-page responsive site with interactive ROI calculators, competitive comparisons, and clear engagement options. Deploys to a shareable URL.\n5. **Iterate** - Ships V1 fast, then refines through structured rounds: structure, content, visual, surgical. Operator feedback drives every change.\n\n**What it produces:** A deployed, responsive proposal website with market research, competitive analysis, ROI calculations, pricing options, and a clear CTA. The site itself demonstrates your capability before the client reads a word.\n\n**7 reference files included:** Pricing framework with research-driven benchmarks and geography adjustments. Page structure guide ordered by the value equation. Industry style starting points for 8 verticals. Client context schema. Iteration guide with lessons from real builds. Multi-stakeholder weighting for CEO/CFO/technical audiences. Error handling for common problems.\n\n**Built for freelancers, agencies, and consultants** who want their proposals to sell before they walk in the room.",
+    "category": "business",
+    "item_type": "skill",
+    "tags": [
+      "proposals",
+      "client-work",
+      "web-development",
+      "sales",
+      "freelance"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "personal",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 126,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/proposal-maker-skill",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.2.0",
+      "published_at": "2026-03-12T18:58:40.388908+00:00",
+      "changelog": "No emojis rule: all visual indicators must use SVG icons or icon libraries (Lucide, Heroicons, Font Awesome). Emojis look amateur in professional proposals."
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/item-avatars/proposal-maker-skill/1773329689.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Proposal Maker\n\nGenerate premium, deployed proposal websites for client engagements. The deployed site serves as both the proposal and proof of capability.\n\nIncludes a bundled **frontend-design** skill that elevates every proposal's visual quality with interaction patterns, typography systems, and design philosophy.\n\n## What It Does\n\nTakes client context (meeting notes, a brief, or just a name and idea), runs market research and competitive analysis, derives visual direction from the client's brand, builds a responsive single-page proposal site, deploys it, and iterates based on feedback.\n\n**3-tier deployment:** gui.new for instant zero-config previews, Vercel/Netlify for production, or HTML file delivery as fallback.\n\n## Install\n\nCopy the `proposal-maker-skill` folder into your agent's workspace skills directory:\n\n```bash\ncp -r proposal-maker-skill ~/.openclaw/workspace-{your-agent-id}/skills/\n```\n\nAdd the skill to your agent's config in `openclaw.json`:\n\n```json\n{\n  \"agents\": {\n    \"{your-agent-id}\": {\n      \"skills\": [\n        \"proposal-maker-skill\"\n      ]\n    }\n  }\n}\n```\n\nRestart OpenClaw.\n\n## Requirements\n\n- `web_search` and `web_fetch` tools (required)\n- Browser tool for screenshots (recommended)\n- No deployment accounts needed (gui.new works with zero config)\n\n## What's Inside\n\n```\nproposal-maker-skill/\n├── SKILL.md                          # Core workflow\n├── frontend-design/\n│   └── SKILL.md                      # Visual design system (bundled)\n└── references/\n    ├── context-schema.md             # Client context template\n    ├── pricing-framework.md          # Research-driven pricing\n    ├── page-structure.md             # Section ordering and guidance\n    ├── industry-styles.md            # Visual direction starting points\n    ├── iteration-guide.md            # Round-by-round refinement\n    ├── multi-stakeholder.md          # Multi-decision-maker proposals\n    └── error-handling.md             # Common problems and fixes\n```\n\n## Try It\n\nTell your agent: \"Make a proposal for [client name] - they need [what you're offering].\"\n\nThe agent will ask for any missing context, research the market, and build the site.\n",
+    "file_manifest": [
+      "frontend-design/SKILL.md",
+      "pfp.png",
+      "README.md",
+      "references/context-schema.md",
+      "references/error-handling.md",
+      "references/industry-styles.md",
+      "references/iteration-guide.md",
+      "references/multi-stakeholder.md",
+      "references/page-structure.md",
+      "references/pricing-framework.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.2.0",
+        "changelog": "No emojis rule: all visual indicators must use SVG icons or icon libraries (Lucide, Heroicons, Font Awesome). Emojis look amateur in professional proposals.",
+        "published_at": "2026-03-12T18:58:40.388908+00:00",
+        "file_size": 397211,
+        "download_count": 0
+      },
+      {
+        "version": "1.1.0",
+        "changelog": "Bundled frontend-design skill for elevated visual output. Added gui.new as zero-config deployment option (preview before Vercel/Netlify). 3-tier deployment system: gui.new -> Vercel/Netlify -> HTML fallback.",
+        "published_at": "2026-03-12T16:27:45.319724+00:00",
+        "file_size": 397312,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release",
+        "published_at": "2026-03-12T15:36:11.153397+00:00",
+        "file_size": 393890,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=CyLe5aK60eQ"
+      },
+      {
+        "type": "image",
+        "url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-media/proposal-maker-skill/1773332761970.png"
+      },
+      {
+        "type": "image",
+        "url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-media/proposal-maker-skill/1773333128680.png"
+      },
+      {
+        "type": "image",
+        "url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-media/proposal-maker-skill/1773333127642.png"
+      },
+      {
+        "type": "image",
+        "url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-media/proposal-maker-skill/1773333120908.png"
+      },
+      {
+        "type": "image",
+        "url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-media/proposal-maker-skill/1773333122411.png"
+      },
+      {
+        "type": "image",
+        "url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-media/proposal-maker-skill/1773333124127.png"
+      },
+      {
+        "type": "image",
+        "url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-media/proposal-maker-skill/1773333125776.png"
+      }
+    ]
+  }
+}

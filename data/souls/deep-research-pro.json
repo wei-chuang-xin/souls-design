@@ -1,0 +1,77 @@
+{
+  "item": {
+    "id": "6a93210e-125b-41c5-879c-a8b957790f1b",
+    "slug": "deep-research-pro",
+    "name": "Deep Research Pro",
+    "subtitle": "Multi-source deep research agent with web search and cited reports.",
+    "description": "Multi-source deep research that searches the web, synthesizes findings, and delivers cited reports. Uses OpenClaw's built-in search tools. No API keys required.\n\n**The research workflow:**\n1. **Understand** - Clarify the research question and scope\n2. **Plan** - Break into 3-5 targeted sub-questions\n3. **Search** - Run multiple searches per question across different angles\n4. **Deep-read** - Extract key findings from the best sources\n5. **Synthesize** - Cross-reference claims, identify consensus and contradictions\n6. **Deliver** - Structured report with inline citations and full source list\n\n**Quality rules:**\n- Every claim has a source. No unsourced assertions.\n- Single-source claims flagged as unverified\n- Recent sources preferred (last 12 months)\n- Gaps acknowledged honestly\n- \"Insufficient data found\" when appropriate - zero hallucination\n\nWorks with any agent. Best on Opus for deepest synthesis, solid on Sonnet for most topics.",
+    "category": "research",
+    "item_type": "skill",
+    "tags": [
+      "research",
+      "web-search",
+      "reports",
+      "citations",
+      "synthesis"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 3,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/deep-research-pro",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.1.0",
+      "published_at": "2026-03-04T19:38:06.562522+00:00",
+      "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges."
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/deep-research-pro-sh7w/avatar.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Deep Research Pro\n\n> **Version:** 1.1.0 | [Changelog](../CHANGELOG.md)\n\nA multi-source deep research skill that searches the web, synthesizes findings, and delivers cited reports. Uses OpenClaw's built-in `web_search` and `web_fetch` tools. No API keys required.\n\n**Price:** Free\n**Type:** Skill (universal)\n\n## What's Included\n\n- `SKILL.md` - The complete research workflow (6 steps: understand, plan, search, deep-read, synthesize, deliver)\n\n## How It Works\n\nGive your agent a research topic. It breaks it into 3-5 sub-questions, runs multiple searches per question, deep-reads the best sources, cross-references claims, and delivers a structured report with inline citations and a full source list.\n\n### Quality Rules\n\n- Every claim has a source. No unsourced assertions.\n- Single-source claims flagged as unverified.\n- Recent sources preferred (last 12 months).\n- Gaps acknowledged honestly.\n- Zero hallucination: \"insufficient data found\" when appropriate.\n\n## Install\n\n### 1. Copy into your agent's workspace\n\n```bash\ncp -r deep-research-pro/ ~/.openclaw/workspace-{agent-id}/skills/deep-research-pro/\n```\n\nSkills must live inside the agent's workspace. Do not copy to a global skills directory.\n\n### 2. Add to your agent config\n\nIn `openclaw.json`, add the skill to that agent's skills list:\n\n```json\n{\n  \"id\": \"{agent-id}\",\n  \"skills\": [\n    \"deep-research-pro\"\n  ]\n}\n```\n\n### 3. Use it\n\nAsk your agent to research any topic:\n- \"Research the current state of nuclear fusion energy\"\n- \"Deep dive into Rust vs Go for backend services\"\n\n## Requirements\n\n- OpenClaw with `web_search` and `web_fetch` tools enabled\n- No external API keys needed\n\n## Recommended Model\n\n- **Best:** Opus (deepest synthesis and cross-referencing)\n- **Good:** Sonnet (solid for most research tasks)\n",
+    "file_manifest": [
+      "pfp.png",
+      "README.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:38:06.562522+00:00",
+        "file_size": 903012,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:48:36.46547+00:00",
+        "file_size": 6061,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "item": {
+    "id": "e7c7401d-69ab-4e8b-855d-8719f3b95b7c",
+    "slug": "human-slop-tweets",
+    "name": "Human Slop Tweets",
+    "subtitle": "Pathetic-posting elevated to an art form",
+    "description": "Pathetic-posting elevated to an art form. Generates confessional, unhinged, lowercase shitposts that turn existential despair into comedy gold. The voice is someone who has internalized every internet subculture and metabolized them into a persona that is simultaneously all of these things and none of them. The comedy comes from radical honesty delivered with no emotional protection, from the gap between the gravity of what's being said and the casualness of how it's said.\n\nExamples:\n\n• if youve ever had fun without me fuck you\n• might kill myself idk yet\n• life starts at 24\n• going to the club feel like lgbtq hangout on roblox\n• does anyone\n• i still hate people from middle school\n• dont mistake my genius for what is probably schizophrenia\n\nInspiration: https://x.com/a8065287968522/status/2032287715048181963 — \"Im i am infertile from eating scented candles. The\" (68K likes, 1.2M views)",
+    "category": "social-media",
+    "item_type": "skill",
+    "tags": [
+      "tweets",
+      "shitposting",
+      "social-media",
+      "copywriting",
+      "comedy",
+      "voice"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "personal",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 56,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/human-slop-tweets",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.0.1",
+      "published_at": "2026-03-13T22:58:28.824432+00:00",
+      "changelog": "Removed metadata.yaml from package"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/item-avatars/human-slop-tweets/1773442385.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": null,
+    "file_manifest": [
+      "pfp.png",
+      "SKILL.md",
+      "README.md",
+      "references/example-bank.md"
+    ],
+    "versions": [
+      {
+        "version": "1.0.1",
+        "changelog": "Removed metadata.yaml from package",
+        "published_at": "2026-03-13T22:58:28.824432+00:00",
+        "file_size": 364173,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release",
+        "published_at": "2026-03-13T22:53:18.766675+00:00",
+        "file_size": 364780,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

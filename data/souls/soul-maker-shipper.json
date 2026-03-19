@@ -1,0 +1,89 @@
+{
+  "item": {
+    "id": "de8e2b48-35eb-416b-80c3-a9429e7a9f91",
+    "slug": "soul-maker-shipper",
+    "name": "Soul Maker + Shipper",
+    "subtitle": "Create agent souls that produce judgment, not compliance. Then ship them.",
+    "description": "Create agent souls that produce judgment, not compliance. Then package them for distribution.\n\n**Soul Maker** extracts the decision-making fingerprint of any role:\n- What does this role check first?\n- What shortcuts does an expert take that a junior wouldn't dare?\n- What trade-offs get made automatically?\n- What does \"good enough\" mean vs. \"not shipping until it's right\"?\n\nThe answers become beliefs encoded as lived experience - not rules to follow. The difference shows up in ambiguous situations: a template agent asks for clarification, a soul-built agent makes the call.\n\n**Soul Shipper** takes a working agent and packages it:\n- Inventories workspace files\n- Sanitizes personal data, org references, credentials\n- Bundles skills with the agent\n- Generates README with install config\n- Runs a 7-point quality gate\n\n**Includes reference files:**\n- 6-section soul architecture template\n- 12 texture techniques that make souls feel lived-in\n- Domain-specific question banks for extraction interviews\n- Universal compound loop insert for preventing quality drift\n- Install guide, onboarding, and delegation templates",
+    "category": "research",
+    "item_type": "skill",
+    "tags": [
+      "soul-creation",
+      "packaging",
+      "distribution",
+      "agent-architecture"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 2,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/soul-maker-shipper",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.1.0",
+      "published_at": "2026-03-04T19:38:09.642293+00:00",
+      "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges."
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/soul-maker-shipper-6qp0/avatar.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Soul Maker + Soul Shipper Bundle\n\n> **Version:** 1.1.0 | [Changelog](../CHANGELOG.md)\n\nCreate agent souls that produce judgment, not compliance. Then package them for distribution.\n\n**Price:** $19\n\n## What's Inside\n\n### Soul Maker\n\nThe complete soul creation framework. Not a template generator. An extraction methodology that produces agents with real decision-making fingerprints.\n\n**The process:**\n1. Gather responsibilities (the skeleton)\n2. Extraction interview (the decision-making fingerprint)\n3. Define beliefs as lived experience (not rules to follow)\n4. Build the 6-section soul (Core Identity, Decision Principles, Quality Signature, Anti-Patterns, Operating Awareness, Hard Rules)\n5. Add anti-patterns specific enough to block generic output\n6. Wire the metacognitive insert (the compound loop that prevents quality drift)\n7. Wire up teams (8 delegation patterns, team AGENTS.md, spawn templates, model tiering)\n\n**Includes reference files:**\n- `soul-template.md` - The 6-section architecture with field-by-field guidance\n- `texture-patterns.md` - 12 texture techniques that make souls feel lived-in\n- `extraction-questions.md` - Question bank organized by domain\n- `metacognitive-insert.md` - The universal compound loop insert\n\n**Key insight:** A mediocre skill with a great soul outperforms a great skill with no soul. The soul resolves ambiguity the same way the skill's author would have.\n\n### Soul Shipper\n\nTakes a working agent and packages it for distribution. Sanitizes personal data, bundles skills, generates install instructions, produces a ready-to-ship zip.\n\n**The process:**\n1. Inventory source workspace\n2. Copy and sanitize (scrub personal data, org references, credentials)\n3. Bundle skills with the agent\n4. Generate README with install config\n5. Quality gate (7-point checklist)\n6. Zip and deliver\n\n**Includes reference files:**\n- `readme-template.md` - Install guide template with config snippet structure\n- `bootstrap-template.md` - Onboarding template for new users\n- `agents-template.md` - Team delegation template\n\n## Install\n\n### 1. Copy into your agent's workspace\n\n```bash\ncp -r soul-maker/ ~/.openclaw/workspace-{agent-id}/skills/soul-maker/\ncp -r soul-shipper/ ~/.openclaw/workspace-{agent-id}/skills/soul-shipper/\n```\n\nSkills must live inside the agent's workspace. Do not copy to a global skills directory.\n\n### 2. Add to your agent config\n\nIn `openclaw.json`, add both skills to that agent's skills list:\n\n```json\n{\n  \"id\": \"{agent-id}\",\n  \"skills\": [\n    \"soul-maker\",\n    \"soul-shipper\"\n  ]\n}\n```\n\n### 3. Restart Your Agent\n\nRestart your agent's session so it picks up the newly installed skills. If running OpenClaw as a gateway service:\n\n```bash\nopenclaw gateway restart\n```\n\nOr close and reopen the agent's chat session.\n\n### 4. Verify\n\nAsk your agent: \"I want to create a new agent for [role]. Walk me through it.\"\n\nThe agent should:\n- Start with the extraction interview (not jump to writing a soul)\n- Ask about decision-making patterns, not just responsibilities\n- Produce a soul with beliefs encoded as experience\n- Include delegation boundaries and anti-patterns\n\nThen ask: \"Package this agent for distribution.\"\n\nThe agent should:\n- Inventory the workspace files\n- Sanitize personal data\n- Generate a README with install config\n- Produce a zip\n\n## What Makes This Different\n\nMost \"agent creator\" tools generate templates. Fill in name, role, done. That produces compliance, not judgment.\n\nThis skill extracts the decision-making fingerprint: what does this role check first? What shortcuts does an expert take that a junior wouldn't dare? What trade-offs get made automatically?\n\nThe answers become beliefs encoded as lived experience. Not rules to follow.\n\nThe difference shows up in ambiguous situations. A template agent asks for clarification. A soul-built agent makes the call the same way the role's expert would, then explains why.\n\n## File Inventory\n\n```\nsoul-maker-bundle/\n├── README.md                                  # This file\n├── soul-maker/\n│   ├── SKILL.md                              # Creation methodology\n│   └── references/\n│       ├── soul-template.md                  # 6-section architecture\n│       ├── texture-patterns.md               # 12 texture techniques\n│       ├── extraction-questions.md           # Domain question bank\n│       └── metacognitive-insert.md           # Compound loop insert\n└── soul-shipper/\n    ├── SKILL.md                              # Packaging pipeline\n    └── references/\n        ├── readme-template.md                # Install guide template\n        ├── bootstrap-template.md             # Onboarding template\n        ├── agents-template.md                # Delegation template\n        ├── image-generation.md               # PFP generation system (400 lines)\n        └── images/\n            ├── reference-base-bear.jpg       # Base bear reference\n            ├── reference-single-agents.jpg   # Single agent style reference\n            ├── reference-team-duo.jpg        # Team duo layout reference\n            └── reference-team-group.jpg      # Team group layout reference\n```\n\n15 files total. Everything you need to create souls and ship them.\n",
+    "file_manifest": [
+      "pfp.png",
+      "README.md",
+      "soul-maker/references/extraction-questions.md",
+      "soul-maker/references/metacognitive-insert.md",
+      "soul-maker/references/soul-template.md",
+      "soul-maker/references/texture-patterns.md",
+      "soul-maker/SKILL.md",
+      "soul-shipper/references/agents-template.md",
+      "soul-shipper/references/bootstrap-template.md",
+      "soul-shipper/references/image-generation.md",
+      "soul-shipper/references/images/reference-base-bear.jpg",
+      "soul-shipper/references/images/reference-single-agents.jpg",
+      "soul-shipper/references/images/reference-team-duo.jpg",
+      "soul-shipper/references/images/reference-team-group.jpg",
+      "soul-shipper/references/readme-template.md",
+      "soul-shipper/SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:38:09.642293+00:00",
+        "file_size": 1695155,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:48:41.03095+00:00",
+        "file_size": 584834,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

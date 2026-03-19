@@ -1,0 +1,70 @@
+{
+  "item": {
+    "id": "ed86c737-df0a-42e4-b233-70ce795ca43e",
+    "slug": "20-proven-openclaw-workflows",
+    "name": "20 Proven OpenClaw Workflows",
+    "subtitle": "Copy-paste prompts for 20 real-world AI workflows, battle-tested over 50+ days of daily use",
+    "description": "A curated collection of 20 production-tested prompts for everyday AI assistant workflows — straight from @moritzkremb's 50-day OpenClaw review. Covers morning briefings, server monitoring, email triage (draft-only), YouTube analytics, deep multi-agent research, Obsidian vault search, smart home control, bookmark automation, Discord architecture, and more.\n\nEvery prompt is copy-paste ready. Adjust paths, API credentials, and personal details to match your setup. Most will work as-is, or your agent will ask clarifying questions.\n\nIncludes security rules for safe production use: draft-only email, prompt injection defense, Tailscale networking, least-privilege integrations, and approval gates for destructive actions.\n\nOriginal Article: https://x.com/moritzkremb/status/2029304864719667335",
+    "category": "operations",
+    "item_type": "prompt",
+    "tags": [
+      "workflows",
+      "automation",
+      "productivity",
+      "content-creation",
+      "discord",
+      "obsidian"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 511,
+      "stars": 1,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/20-proven-openclaw-workflows",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.0.0",
+      "published_at": "2026-03-05T04:10:27.91125+00:00",
+      "changelog": "Initial release via tweet pipeline"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/public-assets/item-avatars/20-proven-openclaw-workflows/1772683828024.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# 20 Proven OpenClaw Workflows\n\nA production-ready prompt for your AI workflow.\n\n## Files\n- `PROMPT.md` - The prompt content\n",
+    "file_manifest": [
+      "PROMPT.md",
+      "README.md"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release via tweet pipeline",
+        "published_at": "2026-03-05T04:10:27.91125+00:00",
+        "file_size": 21360,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

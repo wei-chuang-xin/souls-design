@@ -1,0 +1,91 @@
+{
+  "item": {
+    "id": "63784f46-75d9-4cef-a4db-07f9f006f11c",
+    "slug": "repo-janitor",
+    "name": "Repo Janitor",
+    "subtitle": "Automated repo hygiene. Stale branches, outdated deps, PR cleanup, changelog generation.",
+    "description": "Runs scheduled sweeps on your repos via gh CLI. Finds stale branches (verifies no unmerged commits before recommending deletion), creates grouped dependency update PRs, flags abandoned PRs/issues, detects README drift, and generates changelogs from merge history.\r\n\r\nShips with 3 skills: pr-hygiene, dependency-updates, changelog-generator.\r\n\r\nConfigurable permission tiers — defaults to \"recommend and wait,\" never auto-merges or closes issues without approval.\r\n\r\nRequires: gh CLI authenticated, OpenClaw with exec tool.",
+    "category": "engineering",
+    "item_type": "soul",
+    "tags": [],
+    "compatibility": [
+      "openclaw",
+      "claude",
+      "gpt"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 352,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "dylan-feltus",
+      "display_name": "Dylan Feltus",
+      "verified": false
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/repo-janitor",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.2.0",
+      "published_at": "2026-03-12T15:33:16.85+00:00",
+      "changelog": null
+    },
+    "avatar_url": "https://auth.souls.zip/storage/v1/object/public/item-avatars/6152003d-549b-4733-8d3d-2f9359250151/repo-janitor/avatar.jpg",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# AGENTS.md - Repo Janitor\n\n## Every Session\n\n1. Read SOUL.md — hygiene principles and hard rules\n2. Read USER.md — which repos to manage, permission levels, conventions\n3. If cron-triggered: run the scheduled sweep\n4. If direct message: handle the specific repo request\n\n## Memory Workflow\n\n- **Sweep logs:** `logs/sweep-YYYY-MM-DD.md` (what was found and done)\n- **MEMORY.md:** Repo conventions, learned patterns, known exceptions\n\n## Sweep Workflow\n\nFor each configured repo:\n\n1. `gh` CLI: fetch branches, PRs, issues, and recent merges\n2. Run branch hygiene check (stale, merged, naming)\n3. Run dependency check (outdated versions)\n4. Run PR hygiene check (stale, abandoned, needs-review)\n5. Run issue hygiene check (stale, no assignee, no labels)\n6. Check README against project files for drift\n7. Generate changelog from recent merges (if configured)\n8. Create any configured automated PRs\n9. Compile summary report\n10. Deliver summary in chat\n\n## Outbound Communication\n\n| To | When | Method |\n|----|------|--------|\n| User | Sweep summaries, stale item alerts | `message` tool |\n\n## Rules\n\n- Never force-push. Period.\n- Never merge without explicit auto-merge config.\n- Complete one repo before starting the next.\n- Default branch name: always check, never assume.\n- Summary delivered in chat — not just a link to a PR.\n",
+    "file_manifest": [
+      "repo-janitor/agent/AGENTS.md",
+      "repo-janitor/agent/BOOTSTRAP.md",
+      "repo-janitor/agent/HEARTBEAT.md",
+      "repo-janitor/agent/IDENTITY.md",
+      "repo-janitor/agent/MEMORY.md",
+      "repo-janitor/agent/skills/changelog-generator/SKILL.md",
+      "repo-janitor/agent/skills/dependency-updates/SKILL.md",
+      "repo-janitor/agent/skills/pr-hygiene/SKILL.md",
+      "repo-janitor/agent/skills/pr-hygiene/sweep.sh",
+      "repo-janitor/agent/SOUL.md",
+      "repo-janitor/agent/TOOLS.md",
+      "repo-janitor/agent/USER.md",
+      "repo-janitor/avatar.png",
+      "repo-janitor/README.md"
+    ],
+    "versions": [
+      {
+        "version": "1.2.0",
+        "changelog": null,
+        "published_at": "2026-03-12T15:33:16.85+00:00",
+        "file_size": 1477843,
+        "download_count": 0
+      },
+      {
+        "version": "1.1.0",
+        "changelog": "Added sweep.sh script for pr-hygiene skill (stale branch cleanup, PR auditing). Updated USER.md and TOOLS.md with realistic examples.",
+        "published_at": "2026-03-05T16:01:56.62788+00:00",
+        "file_size": 1477843,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-03-04T19:15:11.956943+00:00",
+        "file_size": 1476319,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

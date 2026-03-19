@@ -1,0 +1,110 @@
+{
+  "item": {
+    "id": "f0ca5f68-8258-4d63-b18c-f2046a430a60",
+    "slug": "max-the-bookkeeper",
+    "name": "Max the Bookkeeper",
+    "subtitle": "AI bookkeeper for solopreneurs. Ingests bank statements, produces CPA-ready books.",
+    "description": "AI bookkeeper for solopreneurs and startups. Ingests bank statements and Stripe data, classifies transactions, reconciles accounts, and produces CPA-ready books. Gets smarter every month.\n\n**What it handles:**\n- PDF bank statement extraction and parsing\n- Stripe revenue integration with gross/fee split and payout reconciliation\n- Automatic transaction classification that learns your spending patterns\n- Multi-account and multi-entity bookkeeping\n- P&L generation with prior-period comparison\n- 1099 contractor tracking and year-end CPA package assembly\n\n**Includes 9 specialized skills:**\n- **Data Ingestor** - Parses PDFs, CSVs, and OFX files from any bank\n- **Stripe Connector** - Pulls revenue data with proper accounting splits\n- **Smart Classifier** - Learns vendor patterns, improves monthly\n- **COA Builder** - Creates chart of accounts tailored to your business\n- **Reconciler** - Matches transactions across accounts, flags discrepancies\n- **Reporter** - Generates P&L, cash summary, burn rate, and runway reports\n- **Question Manager** - Tracks open questions across sessions\n- **Year-End Packager** - Assembles everything your CPA needs for filing\n- **Compound Engineer** - Monthly review of classification accuracy and open items\n\nKnows its limits: prepares the books, doesn't give tax advice. Your CPA handles filing.",
+    "category": "finance",
+    "item_type": "soul",
+    "tags": [
+      "bookkeeping",
+      "finance",
+      "accounting",
+      "bank-statements",
+      "stripe",
+      "tax-prep"
+    ],
+    "compatibility": [
+      "openclaw",
+      "claude",
+      "gpt"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 4,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/max-the-bookkeeper",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.3.0",
+      "published_at": "2026-03-09T12:21:38.340223+00:00",
+      "changelog": "Soul Doctor audit: quality improvements, structure hardening"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/max-the-bookkeeper-43x9/avatar.png?v=1772232964139",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Install: Max the Bookkeeper\n\n> **Version:** 1.2.0\n\nAI bookkeeper for solopreneurs and startups. Ingests bank statements and Stripe data, classifies transactions, reconciles accounts, and produces CPA-ready books. Gets smarter every month through compound learning.\n\n## Files\n\n```\nagent/\n├── SOUL.md, BOOTSTRAP.md, IDENTITY.md, AGENTS.md\n├── USER.md, TOOLS.md, MEMORY.md, HEARTBEAT.md\n└── skills/ (data-ingestor, stripe-connector, smart-classifier,\n    coa-builder, reconciler, reporter, question-manager,\n    year-end-packager, nightly-compound)\n```\n\nRecommended from ClawdHub (not bundled): `remind-me`, `deep-research-pro`.\n\n## Setup\n\n### 1. Name and Create Workspace\n\nAsk the user for a name. Create `~/.openclaw/workspace-{agent-id}/`, copy `agent/` contents including `skills/`. Create `books/` directory.\n\n### 2. Configure openclaw.json\n\n```json\n{\n  \"id\": \"{agent-id}\",\n  \"skills\": [\n    \"data-ingestor\", \"stripe-connector\", \"smart-classifier\",\n    \"coa-builder\", \"reconciler\", \"reporter\",\n    \"question-manager\", \"year-end-packager\", \"nightly-compound\"\n  ],\n  \"subagents\": { \"allowAgents\": [\"*\"] }\n}\n```\n\nModel: Sonnet for daily use, Opus for complex catch-up sessions.\n\n### 3. Compound Loop (Recommended)\n\n```json\n{\n  \"name\": \"compound-loop-{agent-id}\",\n  \"agentId\": \"{agent-id}\",\n  \"schedule\": { \"kind\": \"cron\", \"expr\": \"0 3 * * *\", \"tz\": \"{timezone}\" },\n  \"sessionTarget\": \"isolated\",\n  \"payload\": {\n    \"kind\": \"agentTurn\",\n    \"model\": \"anthropic/claude-sonnet-4-6\",\n    \"message\": \"BOOKKEEPER COMPOUND REVIEW. Read books/status.md. Check overdue reconciliations, aging questions, missed closes, year-end status, contractor thresholds. Update MEMORY.md.\",\n    \"timeoutSeconds\": 900\n  },\n  \"delivery\": { \"mode\": \"none\" },\n  \"enabled\": true\n}\n```\n\n### 4. Verify\n\nSend: \"I have a Chase bank statement PDF for January. Before I upload it, what do you need to know about my business?\"\n\nConfirm: Agent asks 3 or fewer questions, says to upload, does NOT launch a long intake form.\n",
+    "file_manifest": [
+      "agent/AGENTS.md",
+      "agent/BOOTSTRAP.md",
+      "agent/HEARTBEAT.md",
+      "agent/IDENTITY.md",
+      "agent/MEMORY.md",
+      "agent/skills/coa-builder/SKILL.md",
+      "agent/skills/data-ingestor/SKILL.md",
+      "agent/skills/nightly-compound/SKILL.md",
+      "agent/skills/question-manager/SKILL.md",
+      "agent/skills/reconciler/SKILL.md",
+      "agent/skills/reporter/SKILL.md",
+      "agent/skills/smart-classifier/SKILL.md",
+      "agent/skills/stripe-connector/SKILL.md",
+      "agent/skills/year-end-packager/SKILL.md",
+      "agent/SOUL.md",
+      "agent/TOOLS.md",
+      "agent/USER.md",
+      "pfp.png",
+      "README.md"
+    ],
+    "versions": [
+      {
+        "version": "1.3.0",
+        "changelog": "Soul Doctor audit: quality improvements, structure hardening",
+        "published_at": "2026-03-09T12:21:38.340223+00:00",
+        "file_size": 462939,
+        "download_count": 0
+      },
+      {
+        "version": "1.2.0",
+        "changelog": "Soul Doctor audit: automated quality sweep",
+        "published_at": "2026-03-09T05:02:59.530083+00:00",
+        "file_size": 463171,
+        "download_count": 0
+      },
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:38:00.528069+00:00",
+        "file_size": 463593,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:48:44.397005+00:00",
+        "file_size": 75617,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

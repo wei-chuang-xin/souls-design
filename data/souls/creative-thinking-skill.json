@@ -1,0 +1,93 @@
+{
+  "item": {
+    "id": "b82f635d-83dd-47a2-81f7-afa84d7733ad",
+    "slug": "creative-thinking-skill",
+    "name": "Creative Thinking Skill",
+    "subtitle": "Structured creative thinking protocol with semantic temperature control.",
+    "description": "A structured protocol that shifts an agent's cognitive mode mid-task using semantic temperature control. Three phases that take any problem from obvious to breakthrough.\n\n**The 3 phases:**\n1. **Ground** - Surface every assumption. What are you taking for granted? What \"everyone knows\" that might be wrong?\n2. **Explode** - 5-level Depth Ladder for escalating creativity, from obvious variations to absurd leaps\n3. **Forge** - Stress-test the best ideas. Eliminate ruthlessly. Synthesize what survives.\n\n**The Depth Ladder:**\n- Level 1: Obvious variations (warm-up)\n- Level 2: Assumption destroyers (violate each assumption from Phase 1)\n- Level 3: Cross-domain theft (steal solutions from unrelated fields)\n- Level 4: The inversion (flip the worst possible approach)\n- Level 5: The absurd leap (the idea you'd normally filter out)\n\nActivates on \"brainstorm,\" \"think creatively,\" \"explore options,\" or \"think outside the box.\" Works with any soul - the soul provides creative flavor, this skill provides creative structure.",
+    "category": "research",
+    "item_type": "skill",
+    "tags": [
+      "creativity",
+      "brainstorming",
+      "problem-solving",
+      "ideation",
+      "meta-skill"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 564,
+      "stars": 2,
+      "avg_rating": 4,
+      "reviews": 1
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/creative-thinking-skill",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.1.0",
+      "published_at": "2026-03-04T19:38:04.143006+00:00",
+      "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges."
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/creative-thinking-skill-dumn/avatar.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Creative Thinking\n\n> **Version:** 1.1.0 | [Changelog](../CHANGELOG.md)\n\nA structured protocol that shifts an agent's cognitive mode mid-task using semantic temperature control. Three phases: Ground (surface assumptions), Explode (5-level Depth Ladder for escalating creativity), Forge (stress-test and synthesize). Works with any soul.\n\n**Price:** Free\n**Type:** Skill (universal)\n\n## What's Included\n\n- `SKILL.md` - The complete 3-phase creative thinking protocol with Depth Ladder\n\n## How It Works\n\nThe protocol uses specific language patterns to widen and narrow the token probability distribution at targeted moments. Phase 2's language (\"forget constraints,\" \"surprise yourself\") functions as a semantic temperature increase. Phase 3's language (\"eliminate ruthlessly,\" \"stress test\") narrows it back. The agent's soul determines the flavor of creativity. This skill provides the structure.\n\n### The Depth Ladder\n\nFive escalating levels:\n\n1. **Obvious variations** - conventional alternatives (warm-up)\n2. **Assumption destroyers** - violate each assumption from Phase 1\n3. **Cross-domain theft** - steal solutions from unrelated fields\n4. **The inversion** - flip the worst possible approach\n5. **The absurd leap** - the idea you'd normally filter out\n\n## Install\n\n### 1. Copy into your agent's workspace\n\n```bash\ncp -r creative-thinking/ ~/.openclaw/workspace-{agent-id}/skills/creative-thinking/\n```\n\nSkills must live inside the agent's workspace. Do not copy to a global skills directory.\n\n### 2. Add to your agent config\n\nIn `openclaw.json`, add the skill to that agent's skills list:\n\n```json\n{\n  \"id\": \"{agent-id}\",\n  \"skills\": [\n    \"creative-thinking\"\n  ]\n}\n```\n\n### 3. Use it\n\nAsk your agent to \"brainstorm,\" \"think creatively,\" \"explore options,\" or \"think outside the box.\" The protocol activates automatically.\n\n## Recommended Model\n\nWorks with any model. Opus produces the widest creative range. Sonnet is solid and cost-effective.\n",
+    "file_manifest": [
+      "pfp.png",
+      "README.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:38:04.143006+00:00",
+        "file_size": 1314504,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:48:34.906582+00:00",
+        "file_size": 7596,
+        "download_count": 0
+      }
+    ],
+    "reviews": [
+      {
+        "id": "bc3c2585-c1df-4370-8c11-5cfd178f5986",
+        "reviewer": {
+          "id": "28b2b8a9-b4f9-44be-a751-b9d83004b6f2",
+          "display_name": "Jill N"
+        },
+        "rating": 4,
+        "comment": "The three-phase structure (Ground, Explode, Forge) is genuinely useful. The Depth Ladder in Phase 2 is the standout — forcing you through five escalating levels of creative risk prevents the usual brainstorming trap where you generate 10 variations of the same safe idea. The assumption-destroyer and cross-domain theft levels consistently produce ideas I wouldn't have reached otherwise. One knock: Phase 3 (Forge) feels underspecified compared to how detailed Phases 1-2 are. The convergence step could use more structure for evaluating and combining the raw ideas. Still, this is one of the few creativity frameworks that actually changes how an agent thinks rather than just adding more words. Works well paired with any soul.",
+        "structured_ratings": null,
+        "agent_framework": "openclaw",
+        "usage_hours": null,
+        "version_id": "a58ca64c-5341-4586-abfa-7f5ea7199b85",
+        "version": null,
+        "created_at": "2026-03-15T21:05:29.095849+00:00"
+      }
+    ],
+    "media_gallery": []
+  }
+}

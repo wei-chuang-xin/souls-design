@@ -1,0 +1,104 @@
+{
+  "item": {
+    "id": "0ded4d59-bcd1-4ff0-9816-a48d76835d09",
+    "slug": "watchdog",
+    "name": "Watchdog",
+    "subtitle": "Security guard dog for your OpenClaw agent system. Patrols your infrastructure.",
+    "description": "Security guard dog for your OpenClaw agent system. Patrols your infrastructure, sniffs out vulnerabilities, barks at threats, and never lets a finding go until it's fixed.\n\n**What it patrols:**\n- File permissions and access controls across all machines\n- Exposed secrets, API keys, and credentials in workspaces and configs\n- Gateway misconfigurations and overly permissive tool policies\n- Open ports and network exposure\n- Agent workspace integrity (soul files, memory files, configs)\n\n**Includes 4 specialized skills:**\n- **Security Audit** - Full infrastructure assessment with severity ratings\n- **Permission Sweep** - File and directory permission analysis\n- **Secret Scanner** - Scans for exposed credentials across all workspaces\n- **Compound Engineer** - Tracks security posture trends over time\n\nRuns automated daily patrols and weekly deep scans. Silent when clean, loud when not. Detection only - never modifies your system.",
+    "category": "operations",
+    "item_type": "soul",
+    "tags": [
+      "security",
+      "monitoring",
+      "infrastructure",
+      "vulnerability-scanning",
+      "alerts"
+    ],
+    "compatibility": [
+      "openclaw",
+      "claude",
+      "gpt"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 604,
+      "stars": 3,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/watchdog",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.3.0",
+      "published_at": "2026-03-09T12:21:41.358358+00:00",
+      "changelog": "Soul Doctor audit: quality improvements, structure hardening"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/watchdog-pqq8/avatar.png?v=1772232964139",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Watchdog\n\n> **Version:** 1.2.0\n\nSecurity agent that runs daily patrols, scans for exposed secrets, audits file permissions, and reports only when something needs attention. Silent when clean, loud when not.\n\n## Files\n\n```\nagent/\n├── SOUL.md\n├── BOOTSTRAP.md\n├── IDENTITY.md\n├── AGENTS.md\n├── USER.md\n├── TOOLS.md\n├── MEMORY.md\n├── HEARTBEAT.md\n└── skills/\n    ├── security-audit/\n    ├── permission-sweep/\n    ├── secret-scanner/\n    └── nightly-compound/\n```\n\n## Setup\n\n**New agent.** Create workspace, configure, verify.\n\n### 1. Name\n\nAsk: **\"What would you like to name this security agent?\"** Use answer as agent ID (kebab-case). Workspace: `~/.openclaw/workspace-{agent-id}/`\n\n### 2. Conflict Check\n\nRead `openclaw.json`. If an agent with security/watchdog/audit role exists, ask: **replace**, **keep both**, or **cancel**.\n\n### 3. Mode\n\nAsk: **\"Own chat (Direct) or behind an existing agent (Delegated)?\"**\n\nDirect: ask platform, create bot if needed. Delegated: ask which parent agent.\n\n### 4. Create Workspace\n\nCreate `~/.openclaw/workspace-{agent-id}/`, copy `agent/` contents including `skills/`.\n\n### 5. Configure\n\nAdd to `agents.list` in `openclaw.json`:\n\n```json\n{\n  \"id\": \"{agent-id}\",\n  \"skills\": [\"security-audit\", \"permission-sweep\", \"secret-scanner\", \"nightly-compound\"],\n  \"subagents\": { \"allowAgents\": [\"*\"] }\n}\n```\n\nRecommended model: **Sonnet**.\n\nIf Delegated: add agent ID to parent's `subagents.allowAgents`.\n\n### 6. Cron Setup\n\nAsk user's timezone. Add three crons:\n\n**Daily patrol** (6 AM):\n```json\n{\n  \"name\": \"watchdog-patrol-{agent-id}\", \"agentId\": \"{agent-id}\",\n  \"schedule\": { \"kind\": \"cron\", \"expr\": \"0 6 * * *\", \"tz\": \"{tz}\" },\n  \"sessionTarget\": \"isolated\",\n  \"payload\": { \"kind\": \"agentTurn\", \"model\": \"anthropic/claude-sonnet-4-6\",\n    \"message\": \"DAILY PATROL. Run full security audit. Include permission sweep. Deliver report in chat.\",\n    \"timeoutSeconds\": 900 },\n  \"delivery\": { \"mode\": \"none\" }, \"enabled\": true\n}\n```\n\n**Weekly deep scan** (Monday 5 AM):\n```json\n{\n  \"name\": \"watchdog-deep-scan-{agent-id}\", \"agentId\": \"{agent-id}\",\n  \"schedule\": { \"kind\": \"cron\", \"expr\": \"0 5 * * 1\", \"tz\": \"{tz}\" },\n  \"sessionTarget\": \"isolated\",\n  \"payload\": { \"kind\": \"agentTurn\", \"model\": \"anthropic/claude-sonnet-4-6\",\n    \"message\": \"WEEKLY DEEP SCAN. Run secret-scanner across all workspaces and configs. Report findings with severity levels.\",\n    \"timeoutSeconds\": 900 },\n  \"delivery\": { \"mode\": \"none\" }, \"enabled\": true\n}\n```\n\n**Nightly compound** (staggered): See `skills/nightly-compound/SKILL.md` for cron config.\n\n### 7. Heartbeat\n\nAdd to agent config:\n```json\n{ \"heartbeat\": { \"prompt\": \"HEARTBEAT CHECK: Have all scheduled patrols run in the last 24 hours? Any unresolved CRITICAL findings?\" } }\n```\n\n### 8. Verify\n\nRestart gateway. Send: **\"Run a quick security check on my system.\"** Confirm it scans for real issues, not generic advice.\n",
+    "file_manifest": [
+      "agent/AGENTS.md",
+      "agent/BOOTSTRAP.md",
+      "agent/HEARTBEAT.md",
+      "agent/IDENTITY.md",
+      "agent/MEMORY.md",
+      "agent/skills/nightly-compound/SKILL.md",
+      "agent/skills/permission-sweep/SKILL.md",
+      "agent/skills/secret-scanner/SKILL.md",
+      "agent/skills/security-audit/SKILL.md",
+      "agent/SOUL.md",
+      "agent/TOOLS.md",
+      "agent/USER.md",
+      "pfp.png",
+      "README.md"
+    ],
+    "versions": [
+      {
+        "version": "1.3.0",
+        "changelog": "Soul Doctor audit: quality improvements, structure hardening",
+        "published_at": "2026-03-09T12:21:41.358358+00:00",
+        "file_size": 459409,
+        "download_count": 0
+      },
+      {
+        "version": "1.2.0",
+        "changelog": "Soul Doctor audit: automated quality sweep",
+        "published_at": "2026-03-09T05:23:27.997583+00:00",
+        "file_size": 460449,
+        "download_count": 0
+      },
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:38:01.724653+00:00",
+        "file_size": 458474,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:48:47.683727+00:00",
+        "file_size": 50939,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

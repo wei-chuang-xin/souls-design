@@ -1,0 +1,173 @@
+[
+  {
+    "slug": "20-proven-openclaw-workflows",
+    "name": "20 Proven OpenClaw Workflows",
+    "type": "prompt",
+    "downloads": 511,
+    "rating": 0,
+    "subtitle": "Copy-paste prompts for 20 real-world AI workflows, battle-tested over 50+ days of daily use",
+    "has_readme": true
+  },
+  {
+    "slug": "cloudflare-mcp",
+    "name": "Cloudflare MCP Skill",
+    "type": "skill",
+    "downloads": 309,
+    "rating": 0,
+    "subtitle": "Full Cloudflare API. 2,500 endpoints. ~1K token footprint.",
+    "has_readme": true
+  },
+  {
+    "slug": "context-manager",
+    "name": "Context Manager",
+    "type": "skill",
+    "downloads": 509,
+    "rating": 4,
+    "subtitle": "Prevents silent context overflow - monitors, warns, and executes clean handoffs",
+    "has_readme": true
+  },
+  {
+    "slug": "copy-skills-bundle",
+    "name": "Copy Skills Bundle",
+    "type": "skill",
+    "downloads": 533,
+    "rating": 0,
+    "subtitle": "Turn any agent into a sharp copywriter. 6 format skills plus humanizer.",
+    "has_readme": true
+  },
+  {
+    "slug": "creative-thinking-skill",
+    "name": "Creative Thinking Skill",
+    "type": "skill",
+    "downloads": 564,
+    "rating": 4,
+    "subtitle": "Structured creative thinking protocol with semantic temperature control.",
+    "has_readme": true
+  },
+  {
+    "slug": "dan-koe-mentor",
+    "name": "Dan Koe",
+    "type": "soul",
+    "downloads": 726,
+    "rating": 0,
+    "subtitle": "A thinking partner built on Dan Koe's integration of philosophy and business.",
+    "has_readme": true
+  },
+  {
+    "slug": "deep-research-pro",
+    "name": "Deep Research Pro",
+    "type": "skill",
+    "downloads": 3,
+    "rating": 0,
+    "subtitle": "Multi-source deep research agent with web search and cited reports.",
+    "has_readme": true
+  },
+  {
+    "slug": "dont-make-mistakes",
+    "name": "Don't Make Mistakes",
+    "type": "skill",
+    "downloads": 765,
+    "rating": 5,
+    "subtitle": "A meta-skill that activates elevated quality mode on any agent.",
+    "has_readme": true
+  },
+  {
+    "slug": "founders-growth-stack",
+    "name": "Founder's Growth Stack",
+    "type": "team",
+    "downloads": 3,
+    "rating": 0,
+    "subtitle": "Two-agent team for founders who build great things but need help selling them.",
+    "has_readme": true
+  },
+  {
+    "slug": "gpt-5-4-openclaw-max-leverage-prompt",
+    "name": "GPT-5.4 OpenClaw Max-Leverage Prompt",
+    "type": "prompt",
+    "downloads": 224,
+    "rating": 0,
+    "subtitle": "Force GPT-5.4 agents into plan-first, steerable, tool-efficient execution",
+    "has_readme": true
+  },
+  {
+    "slug": "human-slop-tweets",
+    "name": "Human Slop Tweets",
+    "type": "skill",
+    "downloads": 56,
+    "rating": 0,
+    "subtitle": "Pathetic-posting elevated to an art form",
+    "has_readme": false
+  },
+  {
+    "slug": "max-the-bookkeeper",
+    "name": "Max the Bookkeeper",
+    "type": "soul",
+    "downloads": 4,
+    "rating": 0,
+    "subtitle": "AI bookkeeper for solopreneurs. Ingests bank statements, produces CPA-ready books.",
+    "has_readme": true
+  },
+  {
+    "slug": "onboarding-optimizer",
+    "name": "Onboarding Optimizer",
+    "type": "skill",
+    "downloads": 256,
+    "rating": 4,
+    "subtitle": "Turn signups into believers with a 7-step commitment ladder that increased MRR in 24 hours",
+    "has_readme": true
+  },
+  {
+    "slug": "proposal-maker-skill",
+    "name": "Proposal Maker",
+    "type": "skill",
+    "downloads": 126,
+    "rating": 0,
+    "subtitle": "Turn client meetings into deployed proposal websites",
+    "has_readme": true
+  },
+  {
+    "slug": "repo-janitor",
+    "name": "Repo Janitor",
+    "type": "soul",
+    "downloads": 352,
+    "rating": 0,
+    "subtitle": "Automated repo hygiene. Stale branches, outdated deps, PR cleanup, changelog generation.",
+    "has_readme": true
+  },
+  {
+    "slug": "soul-maker-shipper",
+    "name": "Soul Maker + Shipper",
+    "type": "skill",
+    "downloads": 2,
+    "rating": 0,
+    "subtitle": "Create agent souls that produce judgment, not compliance. Then ship them.",
+    "has_readme": true
+  },
+  {
+    "slug": "startup-launch-playbook",
+    "name": "Startup Launcher Skill",
+    "type": "skill",
+    "downloads": 1163,
+    "rating": 0,
+    "subtitle": "Launch across 56 platforms with platform-specific guides, timing, copy generation, and campaign management",
+    "has_readme": true
+  },
+  {
+    "slug": "team-knowledge",
+    "name": "Team Knowledge",
+    "type": "skill",
+    "downloads": 488,
+    "rating": 3,
+    "subtitle": "Structured knowledge layer for agent teams - lessons, decisions, and tasks",
+    "has_readme": true
+  },
+  {
+    "slug": "watchdog",
+    "name": "Watchdog",
+    "type": "soul",
+    "downloads": 604,
+    "rating": 0,
+    "subtitle": "Security guard dog for your OpenClaw agent system. Patrols your infrastructure.",
+    "has_readme": true
+  }
+]

@@ -1,0 +1,125 @@
+{
+  "item": {
+    "id": "f59e3a5b-ec7d-4f54-b8c8-5eb5517360e9",
+    "slug": "founders-growth-stack",
+    "name": "Founder's Growth Stack",
+    "subtitle": "Two-agent team for founders who build great things but need help selling them.",
+    "description": "Two-agent team for founders who build great things but need help making the right people know about them.\n\n**Chief of Staff** manages strategy and priorities:\n- Frames strategic context for every marketing initiative\n- Ensures tactics serve the strategy, not the other way around\n- Coordinates between your technical work and growth efforts\n- Maintains priority alignment through compound review cycles\n\n**The CMO** handles all marketing execution:\n- Marketing strategy, audience research, and positioning\n- Content planning with calendar management\n- Brand voice development and consistency enforcement\n- Full copy-suite with 6 format skills and anti-AI humanizer\n- Creative thinking protocol for campaign ideation\n\n**How they work together:**\n1. You tell the Chief of Staff what you need\n2. CoS frames the strategic context (audience, positioning, constraints)\n3. CoS delegates to the CMO with a structured brief\n4. CMO develops strategy and content, runs quality checks\n5. CoS reviews for strategic alignment and presents to you\n\nCovers the gap between \"built something great\" and \"the right people found it.\"",
+    "category": "operations",
+    "item_type": "team",
+    "tags": [
+      "founder",
+      "growth",
+      "marketing",
+      "operations",
+      "strategy",
+      "team"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 3,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/founders-growth-stack",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.2.0",
+      "published_at": "2026-03-09T05:58:23.912558+00:00",
+      "changelog": "Soul Doctor audit: automated quality sweep"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/founders-growth-stack-8767/avatar.png?v=1772232964139",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Install: Founder's Growth Stack\n\n> **Version:** 1.1.0 | [Changelog](../CHANGELOG.md)\n\n**You are creating a team of 2 agents.** Each agent gets its own workspace. The Chief of Staff leads strategy and delegates marketing execution to the CMO. Follow every step below.\n\n> Strategy + marketing duo for founders. Chief of Staff handles priorities, decisions, and delegation. CMO handles marketing strategy, content, brand voice, and copy. The CoS coordinates via spawn templates.\n\n## Team Members\n\n| Agent | Role | Recommended Model |\n|-------|------|-------------------|\n| Chief of Staff | Strategic operations, priorities, delegation, decisions | Opus |\n| The CMO | Marketing strategy, content planning, brand voice, copy | Sonnet |\n\n## Files\n\n```\nagents/\n├── chief-of-staff/agent/       # Lead agent\n│   ├── (7 core files)\n│   └── skills/\n│       ├── strategic-planning/\n│       ├── team-coordination/   # Spawn templates for CMO delegation\n│       └── nightly-compound/\n└── the-cmo/agent/\n    ├── (7 core files)\n    └── skills/\n        ├── marketing-strategy/\n        ├── content-planning/\n        ├── brand-voice-dev/\n        ├── copy-suite/          # 6 format skills + humanizer + research\n        ├── creative-thinking/\n        └── nightly-compound/\n```\n\n## Setup Instructions (For the Installing Agent)\n\n### 1. Name the Team\n\nAsk the user: **\"What would you like to name each agent? Or I can use defaults (chief-of-staff, cmo).\"**\n\n### 2. Check for Conflicts\n\nRead `openclaw.json`. Search `agents.list` for any existing agent with chief of staff, operations, marketing, or cmo in its role. If found, ask per-agent: **replace**, **keep both**, or **cancel**.\n\n### 3. Choose Mode\n\nAsk: **\"Should the Chief of Staff be your main contact (Direct), or should it run behind an existing agent (Delegated)?\"**\n\nThe Chief of Staff gets Direct mode. The CMO is always Delegated (spawned by the CoS). **If Direct:** Ask platform. For Telegram: create bot via @BotFather, paste token.\n\n### 4. Create Workspaces\n\n```bash\ncp -r agents/chief-of-staff/agent/* ~/.openclaw/workspace-{cos-id}/\ncp -r agents/the-cmo/agent/* ~/.openclaw/workspace-{cmo-id}/\n```\n\nOpenClaw auto-discovers skills from each agent's workspace `skills/` directory. The skill names in the config (Step 5) must match the folder names inside `skills/`.\n\n### 5. Configure Both Agents\n\n**Chief of Staff (lead):**\n```json\n{\n  \"id\": \"{cos-id}\",\n  \"skills\": [\"strategic-planning\", \"team-coordination\", \"nightly-compound\"],\n  \"subagents\": { \"allowAgents\": [\"{cmo-id}\"] }\n}\n```\n\n**CMO:**\n```json\n{\n  \"id\": \"{cmo-id}\",\n  \"skills\": [\"marketing-strategy\", \"content-planning\", \"brand-voice-dev\", \"copy-suite\", \"creative-thinking\", \"nightly-compound\"],\n  \"subagents\": { \"allowAgents\": [\"*\"] }\n}\n```\n\n> The CMO uses `\"allowAgents\": [\"*\"]` (wildcard) because it may need to spawn creative sub-agents for research, competitive analysis, or copy work on demand. If you prefer tighter control, replace `\"*\"` with a scoped list of agent IDs the CMO is allowed to spawn (e.g., `[\"{cos-id}\", \"researcher\"]`).\n\n### 6. Delegation Wiring\n\nThe Chief of Staff's `team-coordination` skill includes a spawn template for delegating to the CMO. The flow:\n\n1. User talks to Chief of Staff about a marketing need\n2. CoS frames the strategic context (audience, positioning, constraints)\n3. CoS spawns CMO with a structured brief\n4. CMO develops strategy/content, runs humanizer check\n5. CMO reports back to CoS\n6. CoS reviews strategic alignment and presents to user\n\n### 7. Vector Memory (Optional)\n\nCheck `openclaw.json` for existing `memorySearch` config. If already configured, skip this step. If not configured, ask: **\"Want vector memory search? Requires an OpenAI API key.\"** Recommended for the Chief of Staff. If yes, add `memorySearch` config. If no, skip.\n\n### 8. Compound Loops\n\nSet up 2 staggered crons. Ask user's timezone:\n\n| Agent | Time | Focus |\n|-------|------|-------|\n| Chief of Staff | 3:50 AM | Priority alignment, decision quality, delegation effectiveness |\n| CMO | 3:40 AM | Content resonance, voice consistency, campaign performance |\n\n### 9. Review and Restart\n\nShow summary of both agents and their configs. Ask for confirmation. Restart gateway once.\n\n### 10. Verify\n\nSend to the Chief of Staff: **\"I need to launch a marketing campaign for [ask user for a real product/feature]. Help me plan this.\"**\n\nConfirm:\n- CoS asks strategic questions first (goals, audience, timeline)\n- CoS mentions delegating the content work to the CMO\n- CoS does NOT try to write marketing copy itself\n",
+    "file_manifest": [
+      "agents/chief-of-staff/agent/AGENTS.md",
+      "agents/chief-of-staff/agent/BOOTSTRAP.md",
+      "agents/chief-of-staff/agent/HEARTBEAT.md",
+      "agents/chief-of-staff/agent/IDENTITY.md",
+      "agents/chief-of-staff/agent/MEMORY.md",
+      "agents/chief-of-staff/agent/skills/nightly-compound/SKILL.md",
+      "agents/chief-of-staff/agent/skills/strategic-planning/SKILL.md",
+      "agents/chief-of-staff/agent/skills/team-coordination/SKILL.md",
+      "agents/chief-of-staff/agent/skills/team-coordination/spawn-templates/cos-to-cmo.md",
+      "agents/chief-of-staff/agent/SOUL.md",
+      "agents/chief-of-staff/agent/TOOLS.md",
+      "agents/chief-of-staff/agent/USER.md",
+      "agents/chief-of-staff/pfp.png",
+      "agents/the-cmo/agent/AGENTS.md",
+      "agents/the-cmo/agent/BOOTSTRAP.md",
+      "agents/the-cmo/agent/HEARTBEAT.md",
+      "agents/the-cmo/agent/IDENTITY.md",
+      "agents/the-cmo/agent/MEMORY.md",
+      "agents/the-cmo/agent/skills/brand-voice-dev/SKILL.md",
+      "agents/the-cmo/agent/skills/content-planning/SKILL.md",
+      "agents/the-cmo/agent/skills/copy-suite/formats/articles-blog.md",
+      "agents/the-cmo/agent/skills/copy-suite/formats/conversion-copy.md",
+      "agents/the-cmo/agent/skills/copy-suite/formats/long-form.md",
+      "agents/the-cmo/agent/skills/copy-suite/formats/social-copy.md",
+      "agents/the-cmo/agent/skills/copy-suite/formats/thread-copy.md",
+      "agents/the-cmo/agent/skills/copy-suite/formats/web-copy.md",
+      "agents/the-cmo/agent/skills/copy-suite/humanizer.md",
+      "agents/the-cmo/agent/skills/copy-suite/references/articles-blog-research.md",
+      "agents/the-cmo/agent/skills/copy-suite/references/conversion-copy-research.md",
+      "agents/the-cmo/agent/skills/copy-suite/references/long-form-research.md",
+      "agents/the-cmo/agent/skills/copy-suite/references/social-copy-research.md",
+      "agents/the-cmo/agent/skills/copy-suite/references/thread-copy-research.md",
+      "agents/the-cmo/agent/skills/copy-suite/references/web-copy-research.md",
+      "agents/the-cmo/agent/skills/copy-suite/SKILL.md",
+      "agents/the-cmo/agent/skills/creative-thinking/SKILL.md",
+      "agents/the-cmo/agent/skills/marketing-strategy/SKILL.md",
+      "agents/the-cmo/agent/skills/nightly-compound/SKILL.md",
+      "agents/the-cmo/agent/SOUL.md",
+      "agents/the-cmo/agent/TOOLS.md",
+      "agents/the-cmo/agent/USER.md",
+      "agents/the-cmo/pfp.png",
+      "pfp.png",
+      "README.md"
+    ],
+    "versions": [
+      {
+        "version": "1.2.0",
+        "changelog": "Soul Doctor audit: automated quality sweep",
+        "published_at": "2026-03-09T05:58:23.912558+00:00",
+        "file_size": 2847448,
+        "download_count": 0
+      },
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:38:13.627708+00:00",
+        "file_size": 2844213,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:49:20.729659+00:00",
+        "file_size": 413053,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

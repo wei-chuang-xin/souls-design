@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "browse": "浏览灵魂",
+    "about": "关于",
+    "setup": "安装指南"
+  },
+  "home": {
+    "badge": "免费，无需注册。",
+    "h1_1": "给你的 Agent",
+    "h1_2": "一个灵魂。",
+    "subtitle": "最好的 OpenClaw Agent 不是更聪明，而是更像自己。免费浏览和下载经过生产验证的灵魂、技能和提示词。",
+    "cta": "浏览灵魂 →",
+    "stats_souls": "个灵魂",
+    "stats_downloads": "次下载",
+    "stats_license": "许可证",
+    "pain_title": "你的 Agent 有工具，但它有身份吗？",
+    "pain_subtitle": "大多数 Agent 都以同样的方式失败。",
+    "pain_items": [
+      "任务执行到一半就忘了在做什么",
+      "每次输出都千篇一律",
+      "遇到边缘情况就崩了",
+      "同一个提示词你已经重写了10遍",
+      "原始 Claude 比你整套配置还强",
+      "跨会话零一致性"
+    ],
+    "research_title": "科学已经证明：身份改变一切。",
+    "research_subtitle": "通用角色标签的效果为零。真正有效的是具体的身份认同。",
+    "steps_title": "三步搞定。",
+    "steps": [
+      { "num": "01", "title": "浏览", "desc": "找到适合你工作流的灵魂或技能。" },
+      { "num": "02", "title": "下载", "desc": "一键下载，zip 文件直接到本地。" },
+      { "num": "03", "title": "放进去", "desc": "复制到 OpenClaw 工作区，Agent 立即升级。" }
+    ],
+    "testimonials_title": "不只是我们说好。",
+    "testimonials": [
+      "第一个我真正在生产环境保留下来的预制灵魂。这些不是模板——它们经过了实战检验。",
+      "让我意识到，一个设计良好的灵魂比选择正确的模型更重要。",
+      "我的 Agent 不再犯同样的错误了。我没有换模型，我换了灵魂。"
+    ],
+    "bottom_cta_title": "最好的 OpenClaw Agent 已经在 souls.design 上运行了。你的也应该如此。",
+    "bottom_cta_sub": "免费下载，无需注册。"
+  },
+  "shop": {
+    "title": "浏览灵魂",
+    "subtitle": "经过生产验证，免费下载，无需注册。",
+    "filters": ["全部", "灵魂", "技能", "提示词", "团队"],
+    "downloads": "次下载"
+  },
+  "about": {
+    "title": "设计很重要，对 Agent 也是。"
+  },
+  "setup": {
+    "title": "如何安装灵魂",
+    "subtitle": "四步搞定，不到一分钟。"
+  },
+  "footer": {
+    "copyright": "© 2026 souls.design · MIT 许可证",
+    "terms": "服务条款",
+    "privacy": "隐私政策"
+  },
+  "soul_detail": {
+    "back": "← 返回商店",
+    "about": "关于",
+    "tags": "标签",
+    "readme": "说明文档",
+    "files": "包含文件",
+    "download": "↓ 免费下载",
+    "license_prefix": "许可证："
+  }
+}

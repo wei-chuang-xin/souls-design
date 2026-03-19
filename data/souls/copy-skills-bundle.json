@@ -1,0 +1,91 @@
+{
+  "item": {
+    "id": "189ffbd9-9e2c-4164-b147-df985f68860b",
+    "slug": "copy-skills-bundle",
+    "name": "Copy Skills Bundle",
+    "subtitle": "Turn any agent into a sharp copywriter. 6 format skills plus humanizer.",
+    "description": "Turn any agent into a sharp copywriter. 6 complete format skills, an anti-AI humanizer, and 8,300+ lines of deep research reference material from studying master creators.\n\n**6 format skills:**\n- **Social Copy** - 7 hook types, engagement psychology, viral patterns\n- **Thread Copy** - Thread architecture, 7 thread types, mega-thread strategy\n- **Long-Form Social** - Emotional architecture, 5 post types, Robert Greene readability\n- **Conversion Copy** - Schwartz's 5 awareness levels, sales pages, email sequences, ad copy\n- **Web Copy** - AIDA/PAS/BAB/StoryBrand frameworks, page anatomy, headline principles\n- **Articles & Blog** - 3 article architectures, headline formulas, SEO-aware writing\n\n**Also includes:**\n- Master router that automatically selects the right format\n- 24-category anti-AI humanizer with before/after examples\n- 6-point quality gate run on every piece\n- 8,300+ lines of deep craft research from analyzing master creators\n\nWorks with any agent. Add it to a marketer, brand agent, content strategist, or general assistant.",
+    "category": "writing",
+    "item_type": "skill",
+    "tags": [
+      "copywriting",
+      "content",
+      "social-media",
+      "long-form",
+      "humanizer",
+      "brand-voice"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 533,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/copy-skills-bundle",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.1.0",
+      "published_at": "2026-03-04T19:38:05.415495+00:00",
+      "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges."
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/item-avatars/258250a0-e941-48cd-b7ae-34f2f13387c7/copy-skills-bundle-oh10/avatar.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Copy Skills Bundle\n\n> **Version:** 1.1.0 | [Changelog](../CHANGELOG.md)\n\nTurn any agent into a sharp copywriter. 6 complete format skills, an anti-AI humanizer, and 8,300+ lines of deep research reference material from studying master creators.\n\n**Price:** $29\n\n## What's Inside\n\n### Master Router (`copy-suite/SKILL.md`)\nAutomatically routes copy requests to the right format skill. Includes a 6-point quality gate run on every piece.\n\n### 6 Format Skills\n\n| Format | File | What It Covers |\n|--------|------|---------------|\n| Social Copy | `formats/social-copy.md` | 7 hook types, engagement psychology, platform voice, viral patterns |\n| Thread Copy | `formats/thread-copy.md` | Thread architecture (hook/bridge/body/close), 7 thread types, mega-thread strategy |\n| Long-Form Social | `formats/long-form.md` | Emotional architecture, 5 post types, Robert Greene readability standard |\n| Conversion Copy | `formats/conversion-copy.md` | Schwartz's 5 awareness levels, sales pages, email sequences, ad copy |\n| Web Copy | `formats/web-copy.md` | AIDA/PAS/BAB/StoryBrand frameworks, page anatomy, headline principles |\n| Articles & Blog | `formats/articles-blog.md` | 3 article architectures, headline formulas, SEO-aware writing |\n\n### Anti-AI Humanizer (`humanizer.md`)\n24-category AI pattern detection with before/after examples.\n\n### Deep Reference Library (`references/`)\n8,300+ lines of research from master creator analysis.\n\n## Install\n\n### 1. Copy into your agent's workspace\n\n```bash\ncp -r copy-suite/ ~/.openclaw/workspace-{agent-id}/skills/copy-suite/\n```\n\nSkills must live inside the agent's workspace. Do not copy to a global skills directory.\n\n### 2. Add to your agent config\n\nIn `openclaw.json`, add `copy-suite` to that agent's skills list:\n\n```json\n{\n  \"id\": \"{agent-id}\",\n  \"skills\": [\n    \"copy-suite\"\n  ]\n}\n```\n\n### 3. Verify\n\nAsk your agent: \"Write a tweet about why most landing pages fail.\"\n\nIt should route to the social-copy format, apply hook selection, run the humanizer pass, and deliver with the quality gate.\n\n## Works With Any Agent\n\nAdd it to a marketing agent, brand agent, content strategist, or general assistant. The master router handles format selection automatically.\n",
+    "file_manifest": [
+      "copy-suite/formats/articles-blog.md",
+      "copy-suite/formats/conversion-copy.md",
+      "copy-suite/formats/long-form.md",
+      "copy-suite/formats/social-copy.md",
+      "copy-suite/formats/thread-copy.md",
+      "copy-suite/formats/web-copy.md",
+      "copy-suite/humanizer.md",
+      "copy-suite/references/articles-blog-research.md",
+      "copy-suite/references/conversion-copy-research.md",
+      "copy-suite/references/long-form-research.md",
+      "copy-suite/references/social-copy-research.md",
+      "copy-suite/references/thread-copy-research.md",
+      "copy-suite/references/web-copy-research.md",
+      "copy-suite/SKILL.md",
+      "pfp.png",
+      "README.md"
+    ],
+    "versions": [
+      {
+        "version": "1.1.0",
+        "changelog": "Renamed compound-engineer to nightly-compound. Added Phase 5: RESTRUCTURE. BOOTSTRAP: QMD auto-setup, opt-in nightly compound. SOUL.md: universal rules added. CHANGELOG.md and README version badges.",
+        "published_at": "2026-03-04T19:38:05.415495+00:00",
+        "file_size": 1307420,
+        "download_count": 0
+      },
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-02-27T16:48:39.103776+00:00",
+        "file_size": 294166,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

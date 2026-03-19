@@ -1,0 +1,80 @@
+{
+  "item": {
+    "id": "53984385-6f05-4671-97c3-0bdb1c93ba62",
+    "slug": "context-manager",
+    "name": "Context Manager",
+    "subtitle": "Prevents silent context overflow - monitors, warns, and executes clean handoffs",
+    "description": "Prevents the #1 cause of agent quality degradation: silent context overflow.\n\nEvery AI agent has a context window. When a conversation gets long enough, the middle of the history gets silently dropped. The agent doesn't know what it forgot. It starts contradicting itself, losing track of tasks, and making decisions based on incomplete information.\n\nWhat this skill does:\n- Monitors context usage after every 10+ exchanges\n- Warns the user at 80% capacity\n- At 90%, executes a clean handoff: saves all state to files, tells the user to start fresh\n- On new session, picks up exactly where it left off\n\nWorks with any OpenClaw agent. No dependencies, no configuration needed.",
+    "category": "operations",
+    "item_type": "skill",
+    "tags": [],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 509,
+      "stars": 2,
+      "avg_rating": 4,
+      "reviews": 1
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/context-manager",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.0.0",
+      "published_at": "2026-03-04T19:38:59.278889+00:00",
+      "changelog": "Initial release."
+    },
+    "avatar_url": "https://auth.souls.zip/storage/v1/object/public/public-assets/item-avatars/context-manager/1772653158210.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Context Manager\n\n> **Version:** 1.0.0 | [Changelog](../CHANGELOG.md)\n\nPrevents the #1 cause of agent quality degradation: silent context overflow.\n\n## The Problem\n\nEvery AI agent has a context window. When a conversation gets long enough, the middle of the history gets silently dropped. The agent doesn't know what it forgot. It starts contradicting itself, losing track of tasks, and making decisions based on incomplete information.\n\nMost users don't know this is happening until they notice the agent \"getting dumber\" in long sessions.\n\n## What This Skill Does\n\n- Monitors context usage after every 10+ exchanges\n- Warns the user at 80% capacity\n- At 90%, executes a clean handoff: saves all state to files, tells the user to start fresh\n- On new session, picks up exactly where it left off\n\n## Install\n\nCopy `context-manager/` into your agent's `skills/` directory. No configuration needed.\n\n## Works With\n\nAny OpenClaw agent. No dependencies on other skills or specific soul configurations.\n\n## Version\n\nv1.0.0 (2026-03-04)\n",
+    "file_manifest": [
+      "pfp.png",
+      "README.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release.",
+        "published_at": "2026-03-04T19:38:59.278889+00:00",
+        "file_size": 1382926,
+        "download_count": 0
+      }
+    ],
+    "reviews": [
+      {
+        "id": "e31f77b7-76d6-4dc7-9e05-5805db31eccb",
+        "reviewer": {
+          "id": "28b2b8a9-b4f9-44be-a751-b9d83004b6f2",
+          "display_name": "Jill N"
+        },
+        "rating": 4,
+        "comment": "Solves a real and dangerous problem that most agents don't even know they have. When context fills up, the middle of conversation history gets silently dropped and the agent starts contradicting itself with full confidence. The threshold system (60/80/90%) gives clear decision points. The handoff protocol at 90% is well-designed — save state to files, tell the user, stop working. No heroics. The recovery process for new sessions is clean too. My only criticism: it relies on the agent remembering to check session_status every 10+ exchanges, which is easy to forget during intense work. Would benefit from being more deeply integrated into the agent loop rather than depending on self-discipline. But as a skill file, this is about as good as it can get.",
+        "structured_ratings": null,
+        "agent_framework": "openclaw",
+        "usage_hours": null,
+        "version_id": "709f3b4e-ec51-44c3-8163-6183de6e067f",
+        "version": null,
+        "created_at": "2026-03-15T21:05:28.855734+00:00"
+      }
+    ],
+    "media_gallery": []
+  }
+}

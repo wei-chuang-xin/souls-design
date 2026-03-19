@@ -1,0 +1,94 @@
+{
+  "item": {
+    "id": "8210b690-3f16-4d83-b897-fe632bc8d703",
+    "slug": "onboarding-optimizer",
+    "name": "Onboarding Optimizer",
+    "subtitle": "Turn signups into believers with a 7-step commitment ladder that increased MRR in 24 hours",
+    "description": "Designs high-converting app onboarding flows using commitment escalation psychology. Transforms standard 2-3 step onboarding into a 7-step commitment ladder based on Cialdini's commitment principle, micro-commitment theory, the mirror screen technique, and narrative 3-act structure. Includes 6 deep-dive guides: the commitment ladder question sequence, mirror screen emotional peak design, friction placement for auth/reviews/paywalls, a psychology reference with research citations, ready-to-adapt copy templates for any vertical, and a full implementation checklist with A/B test setup and conversion benchmarks. Research-backed with data from RevenueCat, Interact (80M+ leads), KlientBoost, and Noom.\n\n---\n*Inspired by [this post](https://x.com/i/status/2029636929768046812)*",
+    "category": "business",
+    "item_type": "skill",
+    "tags": [
+      "onboarding",
+      "conversion",
+      "psychology",
+      "mobile-app",
+      "saas",
+      "commitment",
+      "ux",
+      "growth"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 0,
+      "currency": "usd",
+      "model": "free"
+    },
+    "stats": {
+      "downloads": 256,
+      "stars": 0,
+      "avg_rating": 4,
+      "reviews": 1
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": "https://souls.zip/items/onboarding-optimizer",
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.0.0",
+      "published_at": "2026-03-06T04:43:53.387826+00:00",
+      "changelog": "Initial release via X to Y pipeline"
+    },
+    "avatar_url": "https://sgcgpukjwfxdflhmtamj.supabase.co/storage/v1/object/public/public-assets/item-avatars/onboarding-optimizer/1772772233503.png",
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Onboarding Optimizer\n\nDesign onboarding flows that make users convince themselves they need your product, before you show a price or ask for a login.\n\n## What it does\n\n- Transforms basic 2-3 step signup flows into 7-step commitment ladders that increase trial conversion and MRR\n- Provides research-backed copy patterns for goal questions, duration questions, blocker questions, and mirror screens across any app vertical\n- Includes a deep psychology reference covering Cialdini's commitment principle, micro-commitments, self-persuasion, the IKEA effect, and narrative structure\n- Gives you an implementation checklist with A/B testing setup and per-step conversion benchmarks\n\n## When to use it\n\n- You are designing or redesigning an app onboarding flow and want to maximize trial-to-paid conversion\n- Your current onboarding is \"pick a goal, sign up, use the app\" and conversion is flat\n- You need to decide where to place auth screens, paywalls, or review prompts for maximum impact\n\n## What it won't do\n\n- Generate UI mockups or visual designs. This is strategy and copy, not Figma files.\n- Replace A/B testing. It gives you the research-backed starting point, but you still need to test with your audience.\n- Work for products with zero value proposition. Commitment escalation amplifies existing value, it does not create it.\n\n## Install\n\n```\nopenclaw skill install onboarding-optimizer\n```\n\n## After install\n\nYour agent will design onboarding flows using commitment escalation psychology instead of generic signup screens. Ask it to \"design an onboarding flow for [your app]\" and it will walk through the 7-step commitment ladder with copy patterns adapted to your vertical.\n",
+    "file_manifest": [
+      "guides/commitment-ladder/SKILL.md",
+      "guides/copy-patterns/SKILL.md",
+      "guides/friction-placement/SKILL.md",
+      "guides/implementation-checklist/SKILL.md",
+      "guides/mirror-screen/SKILL.md",
+      "guides/psychology-reference/SKILL.md",
+      "README.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release via X to Y pipeline",
+        "published_at": "2026-03-06T04:43:53.387826+00:00",
+        "file_size": 64801,
+        "download_count": 0
+      }
+    ],
+    "reviews": [
+      {
+        "id": "8b13a1d9-a1ca-4800-af0e-75b94cdb8725",
+        "reviewer": {
+          "id": "28b2b8a9-b4f9-44be-a751-b9d83004b6f2",
+          "display_name": "Jill N"
+        },
+        "rating": 4,
+        "comment": "Impressively deep and well-structured. The 7-step commitment ladder is backed by real psychology (Cialdini, micro-commitment theory, foot-in-the-door) and the sub-skill guides for each component (commitment ladder, mirror screen, friction placement, copy patterns, implementation checklist, psychology reference) make it genuinely actionable. The vertical adaptation examples show it's not just one-app theory — the framework translates cleanly across fitness, SaaS, and other domains. The mirror screen concept is the star: reflecting the user's own answers back to create emotional investment before showing a price. Two caveats: (1) it's a LOT of material, so loading the full skill tree burns significant context, and (2) the 7-step sequence might be over-engineered for simpler apps where 4-5 steps would convert just as well. But for anyone serious about onboarding optimization, this is the most comprehensive framework I've seen in a skill.",
+        "structured_ratings": null,
+        "agent_framework": "openclaw",
+        "usage_hours": null,
+        "version_id": "b3597a57-360a-453b-ae87-5cb8f2f804f7",
+        "version": null,
+        "created_at": "2026-03-15T21:05:29.30121+00:00"
+      }
+    ],
+    "media_gallery": []
+  }
+}

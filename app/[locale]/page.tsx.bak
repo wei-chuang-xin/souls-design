@@ -19,12 +19,12 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
   return (
     <div className="pt-14">
       {/* Hero */}
-      <section className="relative mx-auto max-w-4xl px-4 sm:px-6 pt-20 sm:pt-28 pb-14 sm:pb-20 text-center">
+      <section className="relative mx-auto max-w-4xl px-6 pt-28 pb-20 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-zinc-400 mb-8">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
           {t('badge')}
         </div>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+        <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
           {t('h1_1')}<br />
           <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">{t('h1_2')}</span>
         </h1>
@@ -37,7 +37,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         >
           {t('cta')}
         </Link>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-zinc-500">
+        <div className="mt-12 flex items-center justify-center gap-8 text-sm text-zinc-500">
           <span><strong className="text-white">{souls.length}</strong> {t('stats_souls')}</span>
           <span className="h-1 w-1 rounded-full bg-zinc-700"></span>
           <span><strong className="text-white">6,000+</strong> {t('stats_downloads')}</span>
@@ -47,7 +47,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
       </section>
 
       {/* Pain points */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
+      <section className="mx-auto max-w-6xl px-6 py-20 border-t border-white/5">
         <h2 className="text-3xl font-bold text-center mb-4">{t('pain_title')}</h2>
         <p className="text-zinc-400 text-center mb-12">{t('pain_subtitle')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -60,7 +60,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
       </section>
 
       {/* Research */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
+      <section className="mx-auto max-w-6xl px-6 py-20 border-t border-white/5">
         <h2 className="text-3xl font-bold text-center mb-4">{t('research_title')}</h2>
         <p className="text-zinc-400 text-center mb-12 max-w-xl mx-auto">{t('research_subtitle')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -79,7 +79,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
       </section>
 
       {/* How it works */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
+      <section className="mx-auto max-w-6xl px-6 py-20 border-t border-white/5">
         <h2 className="text-3xl font-bold text-center mb-12">{t('steps_title')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {(t.raw('steps') as {num: string; title: string; desc: string}[]).map((step) => (
@@ -93,7 +93,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
       </section>
 
       {/* Testimonials */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
+      <section className="mx-auto max-w-6xl px-6 py-20 border-t border-white/5">
         <h2 className="text-3xl font-bold text-center mb-12">{t('testimonials_title')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {(t.raw('testimonials') as string[]).map((quote: string, i: number) => (
@@ -105,7 +105,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
       </section>
 
       {/* Bottom CTA */}
-      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-24 text-center border-t border-white/5">
+      <section className="mx-auto max-w-3xl px-6 py-24 text-center border-t border-white/5">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t('bottom_cta_title')}</h2>
         <p className="text-zinc-500 mb-8">{t('bottom_cta_sub')}</p>
         <Link

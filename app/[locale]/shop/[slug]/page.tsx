@@ -34,7 +34,7 @@ export default async function SoulPage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className="pt-14">
-      <div className="mx-auto max-w-4xl px-6 pt-12 pb-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 pt-8 sm:pt-12 pb-16 sm:pb-24">
         <Link href={`/${locale}/shop`} className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-white transition-colors mb-10">
           {t('back')}
         </Link>

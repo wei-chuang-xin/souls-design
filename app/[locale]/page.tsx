@@ -12,81 +12,108 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
+function NoiseCanvas() {
+  return null // SSR-safe: skip canvas
+}
+
+function HeroGlow() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <div
+        className="absolute -top-32 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full opacity-20 blur-[120px]"
+        style={{ background: 'oklch(0.62 0.24 293)' }}
+      />
+      <div
+        className="absolute top-40 left-1/2 h-[340px] w-[340px] -translate-x-1/2 rounded-full opacity-10 blur-[100px]"
+        style={{ background: 'oklch(0.55 0.26 308)' }}
+      />
+    </div>
+  )
+}
+
 export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const t = useTranslations('home')
   const souls = getAllSouls()
+  const painItems = t.raw('pain_items') as string[]
+  const steps = t.raw('steps') as { num: string; title: string; desc: string }[]
+  const testimonials = t.raw('testimonials') as string[]
+
+  const painEmojis = ['😵', '🎭', '🔁', '📝', '🤖', '🔀']
 
   return (
-    <div className="pt-14">
+    <div className="pt-14 bg-zinc-950 min-h-screen">
+
       {/* Hero */}
-      <section className="relative mx-auto max-w-4xl px-4 sm:px-6 pt-20 sm:pt-28 pb-14 sm:pb-20 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-zinc-400 mb-8">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-          {t('badge')}
-        </div>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-          {t('h1_1')}<br />
-          <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">{t('h1_2')}</span>
-        </h1>
-        <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          {t('subtitle')}
-        </p>
-        <Link
-          href="shop"
-          className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-zinc-100 transition-colors"
-        >
-          {t('cta')}
-        </Link>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-zinc-500">
-          <span><strong className="text-white">{souls.length}</strong> {t('stats_souls')}</span>
-          <span className="h-1 w-1 rounded-full bg-zinc-700"></span>
-          <span><strong className="text-white">6,000+</strong> {t('stats_downloads')}</span>
-          <span className="h-1 w-1 rounded-full bg-zinc-700"></span>
-          <span><strong className="text-white">MIT</strong> {t('stats_license')}</span>
+      <section className="relative mx-auto max-w-5xl px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-24 text-center overflow-hidden">
+        <HeroGlow />
+        <div className="relative">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-zinc-400 mb-8">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            {t('badge')}
+          </div>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+            <span className="block">{t('h1_1')}</span>
+            <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">{t('h1_2')}</span>
+          </h1>
+          <p className="relative mx-auto mt-6 max-w-xl text-base text-zinc-400 leading-relaxed sm:text-lg">
+            {t('subtitle')}
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="shop"
+              className="inline-flex items-center rounded-lg bg-white px-6 py-2.5 text-sm font-semibold text-black hover:bg-zinc-100 transition-colors"
+            >
+              {t('cta')}
+            </Link>
+          </div>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-zinc-500">
+            <span><strong className="text-white">{souls.length}</strong> {t('stats_souls')}</span>
+            <span className="h-1 w-1 rounded-full bg-zinc-700"></span>
+            <span><strong className="text-white">6,000+</strong> {t('stats_downloads')}</span>
+            <span className="h-1 w-1 rounded-full bg-zinc-700"></span>
+            <span><strong className="text-white">MIT</strong> {t('stats_license')}</span>
+          </div>
         </div>
       </section>
 
       {/* Pain points */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
-        <h2 className="text-3xl font-bold text-center mb-4">{t('pain_title')}</h2>
-        <p className="text-zinc-400 text-center mb-12">{t('pain_subtitle')}</p>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{t('pain_title')}</h2>
+          <p className="text-zinc-400 text-sm sm:text-base">{t('pain_subtitle')}</p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {(t.raw('pain_items') as string[]).map((pain: string) => (
-            <div key={pain} className="rounded-xl border border-white/5 bg-white/[0.02] p-5 text-zinc-300">
-              <span className="text-red-400 mr-2">✗</span>{pain}
+          {painItems.map((item, i) => (
+            <div
+              key={i}
+              className="group relative overflow-hidden rounded-xl border border-white/5 bg-white/[0.02] p-6 transition-colors duration-300 hover:border-white/15 hover:bg-white/[0.04]"
+            >
+              <div className="mb-3 text-2xl">{painEmojis[i] || '⚠️'}</div>
+              <p className="text-sm text-zinc-300 leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Research */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
-        <h2 className="text-3xl font-bold text-center mb-4">{t('research_title')}</h2>
-        <p className="text-zinc-400 text-center mb-12 max-w-xl mx-auto">{t('research_subtitle')}</p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {[
-            { stat: '10x', label: t.raw('pain_items') ? 'Expert identity matching delivered the equivalent of a 10x model upgrade.' : '', source: 'ExpertPrompting, Xu et al. 2023' },
-            { stat: '3–5x', label: 'Structured reasoning baked into the soul produces 3–5x improvement on complex tasks.', source: 'Tree of Thought, NeurIPS 2023' },
-            { stat: '+26.9%', label: 'Agents with built-in reflection loops outperform those without.', source: 'Metacognitive Prompting, NAACL 2024' },
-          ].map((item) => (
-            <div key={item.stat} className="rounded-xl border border-violet-500/20 bg-violet-500/5 p-6">
-              <div className="text-4xl font-bold text-violet-400 mb-3">{item.stat}</div>
-              <p className="text-zinc-300 text-sm mb-3">{item.label}</p>
-              <p className="text-zinc-500 text-xs">— {item.source}</p>
-            </div>
-          ))}
-        </div>
+      {/* Research / What is a soul */}
+      <section className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5 text-center">
+        <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">{t('research_title')}</p>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-balance leading-snug">
+          {t('research_subtitle')}
+        </h2>
       </section>
 
-      {/* How it works */}
+      {/* Steps */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
-        <h2 className="text-3xl font-bold text-center mb-12">{t('steps_title')}</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white">{t('steps_title')}</h2>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {(t.raw('steps') as {num: string; title: string; desc: string}[]).map((step) => (
+          {steps.map((step) => (
             <div key={step.num} className="text-center">
               <div className="text-5xl font-bold text-white/10 mb-4">{step.num}</div>
-              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-              <p className="text-zinc-400 text-sm">{step.desc}</p>
+              <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -94,26 +121,27 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
 
       {/* Testimonials */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
-        <h2 className="text-3xl font-bold text-center mb-12">{t('testimonials_title')}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-white mb-12">{t('testimonials_title')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {(t.raw('testimonials') as string[]).map((quote: string, i: number) => (
-            <div key={i} className="rounded-xl border border-white/5 bg-white/[0.02] p-6">
-              <p className="text-zinc-300 text-sm leading-relaxed">&ldquo;{quote}&rdquo;</p>
-            </div>
+          {testimonials.map((quote, i) => (
+            <figure key={i} className="flex flex-col justify-between gap-6 rounded-xl border border-white/5 bg-white/[0.02] p-6">
+              <p className="text-sm text-zinc-400 leading-relaxed">&ldquo;{quote}&rdquo;</p>
+            </figure>
           ))}
         </div>
       </section>
 
       {/* Bottom CTA */}
       <section className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-24 text-center border-t border-white/5">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t('bottom_cta_title')}</h2>
-        <p className="text-zinc-500 mb-8">{t('bottom_cta_sub')}</p>
+        <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 text-balance">{t('bottom_cta_title')}</h2>
+        <p className="text-zinc-500 mb-8 text-sm sm:text-base">{t('bottom_cta_sub')}</p>
         <Link
           href="shop"
-          className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-zinc-100 transition-colors"
+          className="inline-flex items-center rounded-lg bg-white px-8 py-3 text-sm font-semibold text-black hover:bg-zinc-100 transition-colors"
         >
           {t('cta')}
         </Link>
+        <p className="mt-5 text-xs text-zinc-600">No account required · Free to download · MIT licensed</p>
       </section>
     </div>
   )

@@ -1,0 +1,14 @@
+// 使用前先 source /root/.secrets/tokens.env
+// source /root/.secrets/tokens.env && node gen-xxx.mjs
+
+import { v0 } from 'v0-sdk'
+import fs from 'fs'
+
+// 从环境变量读取，不要硬编码
+if (!process.env.V0_API_KEY) {
+  console.error('请先执行: source /root/.secrets/tokens.env')
+  process.exit(1)
+}
+
+process.env.V0_API_KEY = process.env.V0_API_KEY
+// ... 其余逻辑

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import { getAllSouls } from '@/lib/souls'
@@ -31,8 +31,9 @@ function HeroGlow() {
   )
 }
 
-export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+export default function HomePage() {
   const t = useTranslations('home')
+  const locale = useLocale()
   const souls = getAllSouls()
   const painItems = t.raw('pain_items') as string[]
   const steps = t.raw('steps') as { num: string; title: string; desc: string }[]

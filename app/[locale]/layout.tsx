@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import Nav from '@/components/Nav'
+import NavAuthButton from '@/components/NavAuthButton'
 import Footer from '@/components/Footer'
 
 export default async function LocaleLayout({
@@ -19,7 +20,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <Nav />
+      <Nav authSlot={<NavAuthButton locale={locale} />} />
       <main>{children}</main>
       <Footer />
     </NextIntlClientProvider>

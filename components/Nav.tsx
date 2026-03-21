@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
 import { Menu, X } from 'lucide-react'
 
-export default function Nav() {
+export default function Nav({ authSlot }: { authSlot?: React.ReactNode }) {
   const t = useTranslations('nav')
   const locale = useLocale()
   const [open, setOpen] = useState(false)
@@ -25,10 +25,12 @@ export default function Nav() {
             <Link href="/en" className={`text-xs px-2 py-1 rounded border transition-colors ${locale === 'en' ? 'border-white/30 text-white' : 'border-white/10 text-zinc-500 hover:text-zinc-300'}`}>EN</Link>
             <Link href="/zh" className={`text-xs px-2 py-1 rounded border transition-colors ${locale === 'zh' ? 'border-white/30 text-white' : 'border-white/10 text-zinc-500 hover:text-zinc-300'}`}>中文</Link>
           </div>
+          {authSlot && <div className="ml-1">{authSlot}</div>}
         </div>
 
-        {/* Mobile: lang + hamburger */}
+        {/* Mobile: auth + lang + hamburger */}
         <div className="flex sm:hidden items-center gap-2">
+          {authSlot && <div>{authSlot}</div>}
           <Link href="/en" className={`text-xs px-2 py-1 rounded border transition-colors ${locale === 'en' ? 'border-white/30 text-white' : 'border-white/10 text-zinc-500'}`}>EN</Link>
           <Link href="/zh" className={`text-xs px-2 py-1 rounded border transition-colors ${locale === 'zh' ? 'border-white/30 text-white' : 'border-white/10 text-zinc-500'}`}>中文</Link>
           <button
@@ -44,27 +46,9 @@ export default function Nav() {
       {/* Mobile dropdown */}
       {open && (
         <div className="sm:hidden border-t border-white/5 bg-zinc-950/95 px-4 py-3 flex flex-col gap-1 text-sm">
-          <Link
-            href={`/${locale}/shop`}
-            onClick={() => setOpen(false)}
-            className="px-3 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
-          >
-            {t('browse')}
-          </Link>
-          <Link
-            href={`/${locale}/about`}
-            onClick={() => setOpen(false)}
-            className="px-3 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
-          >
-            {t('about')}
-          </Link>
-          <Link
-            href={`/${locale}/setup`}
-            onClick={() => setOpen(false)}
-            className="px-3 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
-          >
-            {t('setup')}
-          </Link>
+          <Link href={`/${locale}/shop`} onClick={() => setOpen(false)} className="px-3 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors">{t('browse')}</Link>
+          <Link href={`/${locale}/about`} onClick={() => setOpen(false)} className="px-3 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors">{t('about')}</Link>
+          <Link href={`/${locale}/setup`} onClick={() => setOpen(false)} className="px-3 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors">{t('setup')}</Link>
         </div>
       )}
     </nav>

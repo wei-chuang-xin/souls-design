@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useTransition } from "react"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -18,6 +18,9 @@ export interface SoulDetailProps {
   license: string
   backHref: string
   downloadHref: string
+  slug?: string
+  isFavorited?: boolean
+  onToggleFavorite?: (slug: string) => Promise<{ favorited: boolean } | void>
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -88,8 +91,21 @@ export default function SoulDetail({
   license,
   backHref,
   downloadHref,
+  slug,
+  isFavorited = false,
+  onToggleFavorite,
 }: SoulDetailProps) {
   const [copied, setCopied] = useState(false)
+  const [favorited, setFavorited] = useState(isFavorited)
+  const [favPending, startFavTransition] = useTransition()
+
+  async function handleFavorite() {
+    if (!slug || !onToggleFavorite) return
+    startFavTransition(async () => {
+      await onToggleFavorite(slug)
+      setFavorited((v) => !v)
+    })
+  }
 
   function handleCopy() {
     if (!readme) return
@@ -232,7 +248,7 @@ export default function SoulDetail({
           </div>
 
           {/* Download CTA */}
-          <div className="mt-7">
+          <div className="mt-7 flex items-center gap-3 flex-wrap">
             <a
               href={downloadHref}
               className="inline-flex items-center gap-2 rounded-lg bg-[#fafafa] px-5 py-2.5 text-sm font-semibold text-[#09090b] transition-all duration-150 hover:bg-white hover:shadow-[0_0_20px_rgba(250,250,250,0.15)] active:scale-[0.98] select-none"
@@ -254,6 +270,27 @@ export default function SoulDetail({
               </svg>
               Download {label}
             </a>
+
+            {/* Favorite Button */}
+            {slug && onToggleFavorite && (
+              <button
+                onClick={handleFavorite}
+                disabled={favPending}
+                aria-label={favorited ? 'Remove from favorites' : 'Add to favorites'}
+                className={`inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium border transition-all duration-150 active:scale-[0.98] select-none ${
+                  favorited
+                    ? 'border-red-500/40 bg-red-950/30 text-red-400 hover:bg-red-950/50'
+                    : 'border-white/10 bg-white/5 text-zinc-400 hover:text-white hover:border-white/20'
+                } ${favPending ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                <svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'
+                  fill={favorited ? 'currentColor' : 'none'} stroke='currentColor'
+                  strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+                  <path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z' />
+                </svg>
+                {favorited ? 'Saved' : 'Save'}
+              </button>
+            )}
           </div>
         </header>
 

@@ -3,6 +3,8 @@ import { getAllSlugs, getSoulBySlug } from '@/lib/souls'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import SoulDetail from '@/components/SoulDetail'
+import { auth } from '@/auth'
+import { getUserFavorites, toggleFavorite } from '@/lib/user-actions'
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs()
@@ -29,6 +31,14 @@ export default async function SoulPage({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'soul_detail' })
   const type = soul.item_type as 'soul' | 'skill' | 'prompt' | 'team'
 
+  // Check if user has favorited this soul
+  const session = await auth()
+  let isFavorited = false
+  if (session?.user?.id) {
+    const favorites = await getUserFavorites()
+    isFavorited = favorites.includes(slug)
+  }
+
   return (
     <div className="pt-14">
       <SoulDetail
@@ -45,6 +55,9 @@ export default async function SoulPage({ params }: { params: Promise<{ locale: s
         license={soul.license}
         backHref={`/${locale}/shop`}
         downloadHref={`/downloads/${slug}.zip`}
+        slug={slug}
+        isFavorited={isFavorited}
+        onToggleFavorite={toggleFavorite}
       />
     </div>
   )

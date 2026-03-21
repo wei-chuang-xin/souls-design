@@ -34,7 +34,7 @@ export default async function SignInPage({
             Continue with Google
           </button>
         </form>
-        <p className="text-zinc-700 text-xs mt-6">build #7342</p>
+        <p className="text-zinc-700 text-xs mt-6">build #9581</p>
       </div>
     </div>
   )

@@ -6,7 +6,10 @@
     "downloads": 511,
     "rating": 0,
     "subtitle": "Copy-paste prompts for 20 real-world AI workflows, battle-tested over 50+ days of daily use",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "cloudflare-mcp",
@@ -15,7 +18,10 @@
     "downloads": 309,
     "rating": 0,
     "subtitle": "Full Cloudflare API. 2,500 endpoints. ~1K token footprint.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "context-manager",
@@ -24,7 +30,10 @@
     "downloads": 509,
     "rating": 4,
     "subtitle": "Prevents silent context overflow - monitors, warns, and executes clean handoffs",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "copy-skills-bundle",
@@ -33,7 +42,10 @@
     "downloads": 533,
     "rating": 0,
     "subtitle": "Turn any agent into a sharp copywriter. 6 format skills plus humanizer.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "bundle",
+    "amount_cents": 3900,
+    "currency": "usd"
   },
   {
     "slug": "creative-thinking-skill",
@@ -42,7 +54,10 @@
     "downloads": 564,
     "rating": 4,
     "subtitle": "Structured creative thinking protocol with semantic temperature control.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "dan-koe-mentor",
@@ -51,7 +66,10 @@
     "downloads": 726,
     "rating": 0,
     "subtitle": "A thinking partner built on Dan Koe's integration of philosophy and business.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "deep-research-pro",
@@ -60,7 +78,10 @@
     "downloads": 3,
     "rating": 0,
     "subtitle": "Multi-source deep research agent with web search and cited reports.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "dont-make-mistakes",
@@ -69,7 +90,10 @@
     "downloads": 765,
     "rating": 5,
     "subtitle": "A meta-skill that activates elevated quality mode on any agent.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "founders-growth-stack",
@@ -78,7 +102,10 @@
     "downloads": 3,
     "rating": 0,
     "subtitle": "Two-agent team for founders who build great things but need help selling them.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "gpt-5-4-openclaw-max-leverage-prompt",
@@ -87,7 +114,10 @@
     "downloads": 224,
     "rating": 0,
     "subtitle": "Force GPT-5.4 agents into plan-first, steerable, tool-efficient execution",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "human-slop-tweets",
@@ -96,7 +126,10 @@
     "downloads": 56,
     "rating": 0,
     "subtitle": "Pathetic-posting elevated to an art form",
-    "has_readme": false
+    "has_readme": false,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "max-the-bookkeeper",
@@ -105,7 +138,10 @@
     "downloads": 4,
     "rating": 0,
     "subtitle": "AI bookkeeper for solopreneurs. Ingests bank statements, produces CPA-ready books.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "onboarding-optimizer",
@@ -114,7 +150,10 @@
     "downloads": 256,
     "rating": 4,
     "subtitle": "Turn signups into believers with a 7-step commitment ladder that increased MRR in 24 hours",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "proposal-maker-skill",
@@ -123,7 +162,10 @@
     "downloads": 126,
     "rating": 0,
     "subtitle": "Turn client meetings into deployed proposal websites",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "repo-janitor",
@@ -132,7 +174,10 @@
     "downloads": 352,
     "rating": 0,
     "subtitle": "Automated repo hygiene. Stale branches, outdated deps, PR cleanup, changelog generation.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "soul-maker-shipper",
@@ -141,7 +186,10 @@
     "downloads": 2,
     "rating": 0,
     "subtitle": "Create agent souls that produce judgment, not compliance. Then ship them.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "startup-launch-playbook",
@@ -150,7 +198,10 @@
     "downloads": 1163,
     "rating": 0,
     "subtitle": "Launch across 56 platforms with platform-specific guides, timing, copy generation, and campaign management",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "team-knowledge",
@@ -159,7 +210,10 @@
     "downloads": 488,
     "rating": 3,
     "subtitle": "Structured knowledge layer for agent teams - lessons, decisions, and tasks",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   },
   {
     "slug": "watchdog",
@@ -168,6 +222,9 @@
     "downloads": 604,
     "rating": 0,
     "subtitle": "Security guard dog for your OpenClaw agent system. Patrols your infrastructure.",
-    "has_readme": true
+    "has_readme": true,
+    "pricing_model": "free",
+    "amount_cents": 0,
+    "currency": "usd"
   }
 ]

@@ -20,6 +20,7 @@ export default async function ShopPage({ params }: { params: Promise<{ locale: s
         <h1 className="text-4xl font-bold mb-2 text-white">{t('title')}</h1>
         <p className="text-zinc-400 mb-10">{t('subtitle')}</p>
         <ShopClient souls={souls} filters={filters} downloadsLabel={t('downloads')} locale={locale} />
+        <p className="mt-4 text-xs text-zinc-500">Free items download instantly. Premium and bundles require purchase.</p>
       </div>
     </div>
   )

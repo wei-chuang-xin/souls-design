@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import SoulDetail from '@/components/SoulDetail'
 import { auth } from '@/auth'
-import { getUserFavorites, toggleFavorite } from '@/lib/user-actions'
+import { getDownloadAccessState, getUserFavorites, toggleFavorite } from '@/lib/user-actions'
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs()
@@ -39,6 +39,8 @@ export default async function SoulPage({ params }: { params: Promise<{ locale: s
     isFavorited = favorites.includes(slug)
   }
 
+  const downloadAccessState = await getDownloadAccessState(slug)
+
   return (
     <div className="pt-14">
       <SoulDetail
@@ -54,10 +56,14 @@ export default async function SoulPage({ params }: { params: Promise<{ locale: s
         files={soul.file_manifest}
         license={soul.license}
         backHref={`/${locale}/shop`}
-        downloadHref={`/downloads/${slug}.zip`}
+        downloadHref={`/api/download/${slug}`}
         slug={slug}
         isFavorited={isFavorited}
         onToggleFavorite={toggleFavorite}
+        pricingModel={soul.price?.model}
+        priceAmountCents={soul.price?.amount_cents}
+        priceCurrency={soul.price?.currency}
+        downloadAccessState={downloadAccessState}
       />
     </div>
   )

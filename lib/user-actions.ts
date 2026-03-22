@@ -1,34 +1,43 @@
 'use server'
 
 import { auth } from '@/auth'
-import { supabaseAdmin } from '@/lib/supabase'
+import {
+  addFavorite,
+  hasUserPurchased,
+  insertDownload,
+  listUserDownloads,
+  listUserFavorites,
+  listUserPurchases,
+} from '@/lib/supabase'
+import { getSoulBySlug } from '@/lib/souls'
 import { revalidatePath } from 'next/cache'
+
+export type DownloadAccessState = 'free' | 'owned' | 'signin' | 'purchase_required'
 
 export async function getUserFavorites(): Promise<string[]> {
   const session = await auth()
   if (!session?.user?.id) return []
-
-  const { data } = await supabaseAdmin
-    .from('favorites')
-    .select('soul_slug')
-    .eq('user_id', session.user.id)
-    .order('created_at', { ascending: false })
-
-  return data?.map((r) => r.soul_slug) ?? []
+  return listUserFavorites(session.user.id)
 }
 
 export async function getUserDownloads(): Promise<{ soul_slug: string; downloaded_at: string }[]> {
   const session = await auth()
   if (!session?.user?.id) return []
+  return listUserDownloads(session.user.id)
+}
 
-  const { data } = await supabaseAdmin
-    .from('downloads')
-    .select('soul_slug, downloaded_at')
-    .eq('user_id', session.user.id)
-    .order('downloaded_at', { ascending: false })
-    .limit(50)
-
-  return data ?? []
+export async function getUserPurchases(): Promise<{
+  soul_slug: string
+  purchased_at: string
+  status: string
+  amount_cents?: number | null
+  currency?: string | null
+  provider?: string | null
+  order_id?: string | null
+}[]> {
+  const session = await auth()
+  if (!session?.user?.id) return []
+  return listUserPurchases(session.user.id)
 }
 
 export async function toggleFavorite(soulSlug: string): Promise<{ favorited: boolean }> {
@@ -36,36 +45,42 @@ export async function toggleFavorite(soulSlug: string): Promise<{ favorited: boo
   if (!session?.user?.id) throw new Error('Not authenticated')
 
   const userId = session.user.id
+  const favorites = await listUserFavorites(userId)
+  const exists = favorites.includes(soulSlug)
 
-  const { data: existing } = await supabaseAdmin
-    .from('favorites')
-    .select('id')
-    .eq('user_id', userId)
-    .eq('soul_slug', soulSlug)
-    .single()
-
-  if (existing) {
-    await supabaseAdmin
-      .from('favorites')
-      .delete()
-      .eq('user_id', userId)
-      .eq('soul_slug', soulSlug)
+  if (exists) {
+    const { removeFavorite } = await import('@/lib/supabase')
+    await removeFavorite(userId, soulSlug)
     revalidatePath('/[locale]/profile', 'page')
     return { favorited: false }
-  } else {
-    await supabaseAdmin
-      .from('favorites')
-      .insert({ user_id: userId, soul_slug: soulSlug })
-    revalidatePath('/[locale]/profile', 'page')
-    return { favorited: true }
   }
+
+  await addFavorite(userId, soulSlug)
+  revalidatePath('/[locale]/profile', 'page')
+  return { favorited: true }
 }
 
 export async function recordDownload(soulSlug: string): Promise<void> {
   const session = await auth()
   if (!session?.user?.id) return
+  await insertDownload(session.user.id, soulSlug)
+}
 
-  await supabaseAdmin
-    .from('downloads')
-    .insert({ user_id: session.user.id, soul_slug: soulSlug })
+export async function getDownloadAccessState(soulSlug: string): Promise<DownloadAccessState> {
+  const soul = getSoulBySlug(soulSlug)
+  if (!soul) return 'purchase_required'
+
+  const pricingModel = soul.price?.model ?? 'free'
+  if (pricingModel === 'free') return 'free'
+
+  const session = await auth()
+  if (!session?.user?.id) return 'signin'
+
+  const purchased = await hasUserPurchased(session.user.id, soulSlug)
+  return purchased ? 'owned' : 'purchase_required'
+}
+
+export async function canCurrentUserDownload(soulSlug: string): Promise<boolean> {
+  const state = await getDownloadAccessState(soulSlug)
+  return state === 'free' || state === 'owned'
 }

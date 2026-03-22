@@ -20,3 +20,12 @@ export function getSoulBySlug(slug: string): SoulDetail | null {
 export function getAllSlugs(): string[] {
   return (soulsData as SoulSummary[]).map((s) => s.slug)
 }
+
+export function formatPriceLabel(amountCents: number, currency = 'usd'): string {
+  if (!amountCents) return 'Free'
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: currency.toUpperCase(),
+    maximumFractionDigits: 0,
+  }).format(amountCents / 100)
+}

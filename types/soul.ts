@@ -1,4 +1,5 @@
 export type SoulType = 'soul' | 'skill' | 'prompt' | 'team'
+export type PricingModel = 'free' | 'paid' | 'bundle'
 
 export interface SoulSummary {
   slug: string
@@ -8,6 +9,9 @@ export interface SoulSummary {
   rating: number
   subtitle: string
   has_readme: boolean
+  pricing_model?: PricingModel
+  amount_cents?: number
+  currency?: string
 }
 
 export interface SoulDetail {
@@ -21,7 +25,7 @@ export interface SoulDetail {
   tags: string[]
   compatibility: string[]
   license: string
-  price: { amount_cents: number; currency: string; model: string }
+  price: { amount_cents: number; currency: string; model: PricingModel }
   stats: { downloads: number; stars: number; avg_rating: number; reviews: number }
   creator: { slug: string; display_name: string; verified: boolean }
   latest_version: { version: string; published_at: string; changelog: string }

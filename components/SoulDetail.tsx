@@ -21,6 +21,10 @@ export interface SoulDetailProps {
   slug?: string
   isFavorited?: boolean
   onToggleFavorite?: (slug: string) => Promise<{ favorited: boolean } | void>
+  pricingModel?: 'free' | 'paid' | 'bundle'
+  priceAmountCents?: number
+  priceCurrency?: string
+  downloadAccessState?: 'free' | 'owned' | 'signin' | 'purchase_required'
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -94,6 +98,10 @@ export default function SoulDetail({
   slug,
   isFavorited = false,
   onToggleFavorite,
+  pricingModel = 'free',
+  priceAmountCents = 0,
+  priceCurrency = 'usd',
+  downloadAccessState = 'free',
 }: SoulDetailProps) {
   const [copied, setCopied] = useState(false)
   const [favorited, setFavorited] = useState(isFavorited)
@@ -119,6 +127,13 @@ export default function SoulDetail({
   const glow  = TYPE_GLOW[type]
   const badge = TYPE_BADGE[type]
   const label = TYPE_LABEL[type]
+  const isPaid = pricingModel === 'paid' || pricingModel === 'bundle'
+  const priceLabel = !isPaid ? 'Free' : new Intl.NumberFormat('en-US', { style: 'currency', currency: priceCurrency.toUpperCase(), maximumFractionDigits: 0 }).format((priceAmountCents || 0) / 100)
+  const primaryCtaLabel = downloadAccessState === 'owned' || downloadAccessState === 'free'
+    ? `Download ${label}`
+    : downloadAccessState === 'signin'
+      ? 'Sign in to Buy'
+      : 'Buy Now'
 
   return (
     <div
@@ -194,9 +209,14 @@ export default function SoulDetail({
               </div>
 
               {/* Name */}
-              <h1 className="text-2xl font-bold tracking-tight text-[#fafafa] text-balance leading-tight sm:text-3xl">
-                {name}
-              </h1>
+              <div className="flex flex-wrap items-center gap-3">
+                <h1 className="text-2xl font-bold tracking-tight text-[#fafafa] text-balance leading-tight sm:text-3xl">
+                  {name}
+                </h1>
+                <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${isPaid ? 'border-amber-500/30 bg-amber-500/10 text-amber-300' : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300'}`}>
+                  {priceLabel}
+                </span>
+              </div>
 
               {/* Subtitle */}
               <p className="mt-1.5 text-sm text-[#71717a] leading-relaxed">
@@ -268,7 +288,7 @@ export default function SoulDetail({
                 <path d="m8 11 4 4 4-4" />
                 <path d="M3 19h18" />
               </svg>
-              Download {label}
+              {primaryCtaLabel}
             </a>
 
             {/* Favorite Button */}

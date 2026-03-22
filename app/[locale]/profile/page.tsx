@@ -1,6 +1,6 @@
 import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
-import { getUserFavorites, getUserDownloads } from '@/lib/user-actions'
+import { getUserFavorites, getUserDownloads, getUserPurchases } from '@/lib/user-actions'
 import { getSoulBySlug } from '@/lib/souls'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
@@ -13,16 +13,17 @@ export default async function ProfilePage({
   searchParams: Promise<{ tab?: string }>
 }) {
   const { locale } = await params
-  const { tab = 'favorites' } = await searchParams
+  const { tab = 'library' } = await searchParams
   const session = await auth()
 
   if (!session?.user) {
     redirect('/auth/signin')
   }
 
-  const [favorites, downloads] = await Promise.all([
+  const [favorites, downloads, purchases] = await Promise.all([
     getUserFavorites(),
     getUserDownloads(),
+    getUserPurchases(),
   ])
 
   const favoriteSouls = favorites
@@ -32,6 +33,10 @@ export default async function ProfilePage({
   const downloadSouls = downloads
     .map((d) => ({ ...d, soul: getSoulBySlug(d.soul_slug) }))
     .filter((d) => d.soul !== null)
+
+  const purchasedSouls = purchases
+    .map((p) => ({ ...p, soul: getSoulBySlug(p.soul_slug) }))
+    .filter((p) => p.soul !== null)
 
   const joinedDate = new Date().toLocaleDateString(locale === 'zh' ? 'zh-CN' : 'en-US', {
     year: 'numeric',
@@ -59,6 +64,7 @@ export default async function ProfilePage({
         {/* Tabs */}
         <div className="flex gap-1 mb-8 border-b border-white/10">
           {[
+            { key: 'library', label: locale === 'zh' ? '已购内容' : 'Library', count: purchases.length },
             { key: 'favorites', label: locale === 'zh' ? '我的收藏' : 'Favorites', count: favorites.length },
             { key: 'downloads', label: locale === 'zh' ? '下载记录' : 'Downloads', count: downloads.length },
             { key: 'settings', label: locale === 'zh' ? '设置' : 'Settings', count: null },
@@ -81,6 +87,55 @@ export default async function ProfilePage({
             </Link>
           ))}
         </div>
+
+
+        {/* Library Tab */}
+        {tab === 'library' && (
+          <div>
+            {purchasedSouls.length === 0 ? (
+              <div className="text-center py-16">
+                <p className="text-zinc-500 text-lg mb-2">{locale === 'zh' ? '还没有已购内容' : 'No purchases yet'}</p>
+                <p className="text-zinc-600 text-sm mb-6">{locale === 'zh' ? '购买 Premium 或 Bundle 后会出现在这里' : 'Premium and bundle purchases will appear here'}</p>
+                <Link
+                  href={`/${locale}/shop`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-zinc-900 text-sm font-medium hover:bg-zinc-100 transition-colors"
+                >
+                  {locale === 'zh' ? '去逛逛' : 'Browse Shop'}
+                </Link>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                {purchasedSouls.map(({ soul_slug, soul, purchased_at, amount_cents, currency }) => (
+                  <div
+                    key={`${soul_slug}-${purchased_at}`}
+                    className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5"
+                  >
+                    <div>
+                      <h3 className="font-medium text-white">{soul!.name}</h3>
+                      <p className="text-xs text-zinc-500 mt-0.5">
+                        {new Date(purchased_at).toLocaleDateString(locale === 'zh' ? 'zh-CN' : 'en-US')} · {amount_cents ? `${(amount_cents / 100).toFixed(0)} ${(currency ?? 'usd').toUpperCase()}` : 'Free'}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={`/api/download/${soul_slug}`}
+                        className="text-xs px-3 py-1.5 rounded-lg bg-white text-zinc-900 hover:bg-zinc-100 transition-colors"
+                      >
+                        {locale === 'zh' ? '下载' : 'Download'}
+                      </a>
+                      <Link
+                        href={`/${locale}/shop/${soul_slug}`}
+                        className="text-xs px-3 py-1.5 rounded-lg border border-white/20 text-zinc-300 hover:text-white hover:border-white/40 transition-colors"
+                      >
+                        {locale === 'zh' ? '查看' : 'View'}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Favorites Tab */}
         {tab === 'favorites' && (

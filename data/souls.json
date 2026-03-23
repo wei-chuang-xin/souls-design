@@ -226,5 +226,17 @@
     "pricing_model": "free",
     "amount_cents": 0,
     "currency": "usd"
+  },
+  {
+    "slug": "payment-test-skill",
+    "name": "Payment Test Skill",
+    "type": "skill",
+    "downloads": 0,
+    "rating": 0,
+    "subtitle": "A simple paid skill for testing PayPal payment flow.",
+    "has_readme": true,
+    "pricing_model": "paid",
+    "amount_cents": 990,
+    "currency": "usd"
   }
 ]

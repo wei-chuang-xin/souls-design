@@ -1,0 +1,68 @@
+{
+  "item": {
+    "id": "test-payment-skill-001",
+    "slug": "payment-test-skill",
+    "name": "Payment Test Skill",
+    "subtitle": "A simple paid skill for testing PayPal payment flow.",
+    "description": "This is a test skill created specifically for testing the PayPal payment integration on souls.design.\n\n**What you get:**\n- A simple test skill that demonstrates the payment flow\n- Confirmation that your PayPal integration is working correctly\n\n**Price:** $9.90 USD\n\nThis is a test product. Purchasing it will help verify that the entire payment flow from checkout to order completion is functioning properly.",
+    "category": "testing",
+    "item_type": "skill",
+    "tags": [
+      "test",
+      "payment",
+      "paypal",
+      "demo"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 990,
+      "currency": "usd",
+      "model": "paid"
+    },
+    "stats": {
+      "downloads": 0,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": null,
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.0.0",
+      "published_at": "2026-03-23T15:00:00.000000+00:00",
+      "changelog": "Initial release for payment testing."
+    },
+    "avatar_url": null,
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Payment Test Skill\n\n> **Version:** 1.0.0\n\nA simple paid skill for testing the PayPal payment integration on souls.design.\n\n**Price:** $9.90 USD\n**Type:** Skill (test product)\n\n## What's Included\n\n- `SKILL.md` - A basic skill template\n- `README.md` - This file\n\n## Purpose\n\nThis skill is created specifically for testing the payment flow. When you purchase it, you'll verify:\n\n1. PayPal checkout loads correctly\n2. Payment is processed successfully\n3. Order is recorded in the database\n4. Purchase appears in your Library\n5. Download access is granted\n\n## How to Test\n\n1. Go to the skill page on souls.design\n2. Click \"Buy now - $9.90\"\n3. Complete PayPal checkout (use sandbox account for testing)\n4. Verify the purchase appears in your Library\n5. Download the skill files\n\n## Support\n\nThis is a test product. For issues with the payment flow, contact support.",
+    "file_manifest": [
+      "README.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release for payment testing.",
+        "published_at": "2026-03-23T15:00:00.000000+00:00",
+        "file_size": 1024,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

@@ -78,6 +78,26 @@
         "desc": "Multi-agent setups designed for collaboration.",
         "href": "/shop/teams"
       }
+    ],
+    "secondary_cta": "Explore categories",
+    "bottom_trust_note": "No account required · Free to download · MIT licensed",
+    "hero_chips": [
+      {
+        "label": "Souls",
+        "href": "/shop/souls"
+      },
+      {
+        "label": "Skills",
+        "href": "/shop/skills"
+      },
+      {
+        "label": "Prompts",
+        "href": "/shop/prompts"
+      },
+      {
+        "label": "Teams",
+        "href": "/shop/teams"
+      }
     ]
   },
   "shop": {
@@ -135,7 +155,12 @@
         "label": "Teams",
         "href": "/shop/teams"
       }
-    ]
+    ],
+    "conversion_title": "Start with what fits your workflow",
+    "conversion_subtitle": "Browse by business model or asset type. Most users begin with free downloads, then upgrade only when a bundle earns it.",
+    "stats_total": "total assets",
+    "stats_free": "free downloads",
+    "stats_paid": "premium & bundle offers"
   },
   "about": {
     "title": "Design matters. Even for agents.",

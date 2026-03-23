@@ -78,6 +78,26 @@
         "desc": "面向协作场景设计的多 Agent 组合。",
         "href": "/shop/teams"
       }
+    ],
+    "secondary_cta": "查看分类",
+    "bottom_trust_note": "无需注册 · 免费下载 · MIT 许可证",
+    "hero_chips": [
+      {
+        "label": "灵魂",
+        "href": "/shop/souls"
+      },
+      {
+        "label": "技能",
+        "href": "/shop/skills"
+      },
+      {
+        "label": "提示词",
+        "href": "/shop/prompts"
+      },
+      {
+        "label": "团队",
+        "href": "/shop/teams"
+      }
     ]
   },
   "shop": {
@@ -135,7 +155,12 @@
         "label": "团队",
         "href": "/shop/teams"
       }
-    ]
+    ],
+    "conversion_title": "先从最适合你工作流的入口开始",
+    "conversion_subtitle": "你可以按商业模式或资产类型浏览。大多数用户会先下载免费内容，确认价值后再考虑购买合集或付费商品。",
+    "stats_total": "个资产",
+    "stats_free": "个可免费下载",
+    "stats_paid": "个付费/合集商品"
   },
   "about": {
     "title": "设计很重要，对 Agent 也是。",

@@ -1,13 +1,19 @@
 import { getTranslations } from 'next-intl/server'
 import { renderCategoryPage } from '../category-page'
+import { buildAlternates, buildOg, localePath } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'shop' })
   const label = t('type_labels.soul')
+  const title = `${label} — souls.design`
+  const description = t('category_subtitle', { type: label })
   return {
-    title: `${label} — souls.design`,
-    description: t('category_subtitle', { type: label }),
+    title,
+    description,
+    alternates: buildAlternates('/shop/souls'),
+    openGraph: buildOg(localePath(locale, '/shop/souls'), title, description),
+    twitter: { card: 'summary_large_image', title, description },
   }
 }
 

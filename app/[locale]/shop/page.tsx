@@ -1,11 +1,20 @@
 import { getTranslations } from 'next-intl/server'
 import { getAllSouls } from '@/lib/souls'
 import ShopClient from './ShopClient'
+import { buildAlternates, buildOg, localePath } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'shop' })
-  return { title: `${t('title')} — souls.design`, description: t('subtitle') }
+  const title = `${t('title')} — souls.design`
+  const description = t('subtitle')
+  return {
+    title,
+    description,
+    alternates: buildAlternates('/shop'),
+    openGraph: buildOg(localePath(locale, '/shop'), title, description),
+    twitter: { card: 'summary_large_image', title, description },
+  }
 }
 
 export default async function ShopPage({ params }: { params: Promise<{ locale: string }> }) {

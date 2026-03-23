@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing'
 import SoulDetail from '@/components/SoulDetail'
 import { auth } from '@/auth'
 import { getDownloadAccessState, getUserFavorites, toggleFavorite } from '@/lib/user-actions'
+import { buildAlternates, buildOg, localePath, siteUrl } from '@/lib/seo'
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs()
@@ -13,15 +14,23 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
-  const { slug } = await params
+  const { locale, slug } = await params
   const soul = getSoulBySlug(slug)
   if (!soul) return {}
+
+  const title = `${soul.name} — souls.design`
+  const description = soul.subtitle
+  const path = `/shop/${slug}`
+
   return {
-    title: `${soul.name} — souls.design`,
-    description: soul.subtitle,
-    openGraph: { title: soul.name, description: soul.subtitle },
+    title,
+    description,
+    alternates: buildAlternates(path),
+    openGraph: buildOg(localePath(locale, path), title, description),
+    twitter: { card: 'summary_large_image', title, description },
   }
 }
+
 
 export default async function SoulPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params
@@ -41,8 +50,24 @@ export default async function SoulPage({ params }: { params: Promise<{ locale: s
 
   const downloadAccessState = await getDownloadAccessState(slug)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareSourceCode',
+    name: soul.name,
+    description: soul.subtitle,
+    codeRepository: `${siteUrl}/${locale}/shop/${slug}`,
+    programmingLanguage: 'Markdown',
+    license: soul.license || 'MIT',
+    author: {
+      '@type': 'Person',
+      name: soul.creator.display_name,
+    },
+    keywords: soul.tags?.join(', '),
+  }
+
   return (
     <div className="pt-14">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SoulDetail
         name={soul.name}
         type={type}

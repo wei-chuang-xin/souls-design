@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useTransition } from "react"
+import { useState, useTransition, useCallback, Fragment } from "react"
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -106,6 +107,33 @@ export default function SoulDetail({
   const [copied, setCopied] = useState(false)
   const [favorited, setFavorited] = useState(isFavorited)
   const [favPending, startFavTransition] = useTransition()
+  const [buyState, setBuyState] = useState<'idle' | 'paying' | 'capturing' | 'owned' | 'error'>('idle')
+  const [accessState, setAccessState] = useState(downloadAccessState)
+
+  const handleCreateOrder = useCallback(async () => {
+    const res = await fetch('/api/paypal/create-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug }),
+    })
+    const data = await res.json()
+    if (!data.ok) throw new Error(data.error)
+    setBuyState('paying')
+    return data.orderID as string
+  }, [slug])
+
+  const handleApprove = useCallback(async (data: { orderID: string }) => {
+    setBuyState('capturing')
+    const res = await fetch('/api/paypal/capture-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderID: data.orderID, slug }),
+    })
+    const json = await res.json()
+    if (!json.ok) { setBuyState('error'); return }
+    setBuyState('owned')
+    setAccessState('owned')
+  }, [slug])
 
   async function handleFavorite() {
     if (!slug || !onToggleFavorite) return
@@ -115,6 +143,50 @@ export default function SoulDetail({
     })
   }
 
+
+  function renderCTA() {
+    if (accessState === 'free' || accessState === 'owned' || buyState === 'owned') {
+      return (
+        <a
+          href={downloadHref}
+          className="inline-flex items-center gap-2 rounded-lg bg-[#fafafa] px-5 py-2.5 text-sm font-semibold text-[#09090b] transition-all duration-150 hover:bg-white hover:shadow-[0_0_20px_rgba(250,250,250,0.15)] active:scale-[0.98] select-none"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 3v12" />
+            <path d="m8 11 4 4 4-4" />
+            <path d="M3 19h18" />
+          </svg>
+          Download {label}
+        </a>
+      )
+    }
+    if (accessState === 'signin') {
+      return (
+        <a
+          href="/auth/signin"
+          className="inline-flex items-center gap-2 rounded-lg bg-[#fafafa] px-5 py-2.5 text-sm font-semibold text-[#09090b] transition-all duration-150 hover:bg-white hover:shadow-[0_0_20px_rgba(250,250,250,0.15)] active:scale-[0.98] select-none"
+        >
+          Sign in to Buy
+        </a>
+      )
+    }
+    return (
+      <div className="flex flex-col gap-2 w-full max-w-xs">
+        {buyState === 'error' && <p className="text-xs text-red-400">Payment failed. Please try again.</p>}
+        {buyState === 'capturing' && <p className="text-xs text-zinc-400">Processing payment...</p>}
+        <PayPalScriptProvider options={{ clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ?? '', currency: priceCurrency.toUpperCase() }}>
+          <PayPalButtons
+            style={{ layout: 'horizontal', color: 'gold', shape: 'rect', label: 'buynow', height: 40, tagline: false }}
+            createOrder={handleCreateOrder}
+            onApprove={handleApprove}
+            onError={() => setBuyState('error')}
+            disabled={buyState === 'capturing'}
+          />
+        </PayPalScriptProvider>
+        <p className="text-xs text-zinc-600">{priceLabel} &middot; Secure payment via PayPal</p>
+      </div>
+    )
+  }
   function handleCopy() {
     if (!readme) return
     navigator.clipboard.writeText(readme).then(() => {
@@ -269,39 +341,17 @@ export default function SoulDetail({
 
           {/* Download CTA */}
           <div className="mt-7 flex items-center gap-3 flex-wrap">
-            <a
-              href={downloadHref}
-              className="inline-flex items-center gap-2 rounded-lg bg-[#fafafa] px-5 py-2.5 text-sm font-semibold text-[#09090b] transition-all duration-150 hover:bg-white hover:shadow-[0_0_20px_rgba(250,250,250,0.15)] active:scale-[0.98] select-none"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15" height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 3v12" />
-                <path d="m8 11 4 4 4-4" />
-                <path d="M3 19h18" />
-              </svg>
-              {primaryCtaLabel}
-            </a>
-
-            {/* Favorite Button */}
+            {renderCTA()}
             {slug && onToggleFavorite && (
               <button
                 onClick={handleFavorite}
                 disabled={favPending}
                 aria-label={favorited ? 'Remove from favorites' : 'Add to favorites'}
-                className={`inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium border transition-all duration-150 active:scale-[0.98] select-none ${
-                  favorited
-                    ? 'border-red-500/40 bg-red-950/30 text-red-400 hover:bg-red-950/50'
-                    : 'border-white/10 bg-white/5 text-zinc-400 hover:text-white hover:border-white/20'
-                } ${favPending ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={[
+                  'inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium border transition-all duration-150 active:scale-[0.98] select-none',
+                  favorited ? 'border-red-500/40 bg-red-950/30 text-red-400 hover:bg-red-950/50' : 'border-white/10 bg-white/5 text-zinc-400 hover:text-white hover:border-white/20',
+                  favPending ? 'opacity-50 cursor-not-allowed' : ''
+                ].join(' ')}
               >
                 <svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'
                   fill={favorited ? 'currentColor' : 'none'} stroke='currentColor'

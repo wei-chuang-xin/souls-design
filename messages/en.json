@@ -27,9 +27,21 @@
     "research_subtitle": "Generic role labels produce zero measurable improvement. What works is specific identity.",
     "steps_title": "Three steps. That's it.",
     "steps": [
-      { "num": "01", "title": "Browse", "desc": "Find the soul or skill that fits your workflow." },
-      { "num": "02", "title": "Download", "desc": "One click. A zip file lands in your downloads." },
-      { "num": "03", "title": "Drop it in", "desc": "Copy into your OpenClaw workspace. Your agent levels up immediately." }
+      {
+        "num": "01",
+        "title": "Browse",
+        "desc": "Find the soul or skill that fits your workflow."
+      },
+      {
+        "num": "02",
+        "title": "Download",
+        "desc": "One click. A zip file lands in your downloads."
+      },
+      {
+        "num": "03",
+        "title": "Drop it in",
+        "desc": "Copy into your OpenClaw workspace. Your agent levels up immediately."
+      }
     ],
     "testimonials_title": "Don't take our word for it.",
     "testimonials": [
@@ -43,7 +55,16 @@
   "shop": {
     "title": "Browse Souls",
     "subtitle": "Production-tested. Free to download. No account required.",
-    "filters": ["All", "Soul", "Skill", "Prompt", "Team"],
+    "filters": [
+      "All",
+      "Free",
+      "Premium",
+      "Bundle",
+      "Soul",
+      "Skill",
+      "Prompt",
+      "Team"
+    ],
     "downloads": "downloads"
   },
   "about": {

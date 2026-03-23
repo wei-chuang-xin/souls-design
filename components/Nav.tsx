@@ -1,8 +1,56 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Globe } from 'lucide-react'
+
+function LangDropdown({ locale }: { locale: string }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 transition-colors"
+        aria-label="Switch language"
+      >
+        <Globe className="w-3.5 h-3.5" />
+        <span>{locale === 'zh' ? '中文' : 'EN'}</span>
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full mt-1 w-24 rounded-lg border border-white/10 bg-zinc-900 shadow-xl z-50 overflow-hidden">
+          <Link
+            href="/en"
+            onClick={() => setOpen(false)}
+            className={`block px-3 py-2 text-xs transition-colors ${
+              locale === 'en' ? 'text-white bg-white/5' : 'text-zinc-400 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            English
+          </Link>
+          <Link
+            href="/zh"
+            onClick={() => setOpen(false)}
+            className={`block px-3 py-2 text-xs transition-colors ${
+              locale === 'zh' ? 'text-white bg-white/5' : 'text-zinc-400 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            中文
+          </Link>
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function Nav({ authSlot }: { authSlot?: React.ReactNode }) {
   const t = useTranslations('nav')
@@ -21,18 +69,14 @@ export default function Nav({ authSlot }: { authSlot?: React.ReactNode }) {
           <Link href={`/${locale}/shop`} className="hover:text-white transition-colors">{t('browse')}</Link>
           <Link href={`/${locale}/about`} className="hover:text-white transition-colors">{t('about')}</Link>
           <Link href={`/${locale}/setup`} className="hover:text-white transition-colors">{t('setup')}</Link>
-          <div className="flex gap-2 ml-2">
-            <Link href="/en" className={`text-xs px-2 py-1 rounded border transition-colors ${locale === 'en' ? 'border-white/30 text-white' : 'border-white/10 text-zinc-500 hover:text-zinc-300'}`}>EN</Link>
-            <Link href="/zh" className={`text-xs px-2 py-1 rounded border transition-colors ${locale === 'zh' ? 'border-white/30 text-white' : 'border-white/10 text-zinc-500 hover:text-zinc-300'}`}>中文</Link>
-          </div>
+          <LangDropdown locale={locale} />
           {authSlot && <div className="ml-1">{authSlot}</div>}
         </div>
 
         {/* Mobile: auth + lang + hamburger */}
         <div className="flex sm:hidden items-center gap-2">
           {authSlot && <div>{authSlot}</div>}
-          <Link href="/en" className={`text-xs px-2 py-1 rounded border transition-colors ${locale === 'en' ? 'border-white/30 text-white' : 'border-white/10 text-zinc-500'}`}>EN</Link>
-          <Link href="/zh" className={`text-xs px-2 py-1 rounded border transition-colors ${locale === 'zh' ? 'border-white/30 text-white' : 'border-white/10 text-zinc-500'}`}>中文</Link>
+          <LangDropdown locale={locale} />
           <button
             onClick={() => setOpen(!open)}
             className="p-2 text-zinc-400 hover:text-white transition-colors"

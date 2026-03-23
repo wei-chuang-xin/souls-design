@@ -5,8 +5,8 @@ import { buildAlternates, buildOg, localePath } from '@/lib/seo'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'shop' })
-  const label = t('type_labels.prompt')
-  const title = `${label} — souls.design`
+  const label = t('category_links.2.label')
+  const title = `${t('category_links.2.label')} — souls.design`
   const description = t('category_subtitle', { type: label })
   return {
     title,

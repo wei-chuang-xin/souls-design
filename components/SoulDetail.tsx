@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useTransition, useCallback } from "react"
+import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
 import ReactMarkdown from "react-markdown"
@@ -189,12 +190,12 @@ export default function SoulDetail({
 
     if (accessState === 'signin') {
       return (
-        <a
+        <Link
           href="/auth/signin"
           className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#fafafa] px-5 py-2.5 text-sm font-semibold text-[#09090b] transition-all duration-150 hover:bg-white hover:shadow-[0_0_20px_rgba(250,250,250,0.15)] active:scale-[0.98] select-none"
         >
           {t('signin_cta')}
-        </a>
+        </Link>
       )
     }
 

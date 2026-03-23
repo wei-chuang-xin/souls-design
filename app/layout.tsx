@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { getLocale } from 'next-intl/server'
+import { headers } from 'next/headers'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,7 +18,8 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const locale = await getLocale()
+  const headerStore = await headers()
+  const locale = headerStore.get('x-next-intl-locale') ?? 'en'
 
   return (
     <html lang={locale} className="dark">

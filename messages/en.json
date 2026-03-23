@@ -84,7 +84,10 @@
       "free": "Free",
       "paid": "Premium",
       "bundle": "Bundle"
-    }
+    },
+    "category_title": "{type}",
+    "category_subtitle": "Browse production-tested {type} ready to deploy in OpenClaw.",
+    "category_empty": "No {type} found yet."
   },
   "about": {
     "title": "Design matters. Even for agents.",

@@ -84,7 +84,10 @@
       "free": "免费",
       "paid": "付费",
       "bundle": "合集"
-    }
+    },
+    "category_title": "{type}",
+    "category_subtitle": "浏览已在 OpenClaw 生产验证、可直接部署的{type}。",
+    "category_empty": "暂时还没有{type}。"
   },
   "about": {
     "title": "设计很重要，对 Agent 也是。",

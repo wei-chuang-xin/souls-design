@@ -28,6 +28,7 @@ export interface ShopClientProps {
   paidCtaLabel: string
   typeLabels: Record<'soul' | 'skill' | 'prompt' | 'team', string>
   sellingLabels: Record<'free' | 'paid' | 'bundle', string>
+  hideFilters?: boolean
   onCardClick?: (locale: string, slug: string) => void
 }
 
@@ -165,7 +166,7 @@ function FilterTab({ label, active, onClick }: { label: string; active: boolean;
   )
 }
 
-export default function ShopClient({ souls, filters, downloadsLabel, locale, marketplaceTitle, marketplaceSubtitle, resultOneLabel, resultOtherLabel, emptyLabel, freeCtaLabel, paidCtaLabel, typeLabels, sellingLabels }: ShopClientProps) {
+export default function ShopClient({ souls, filters, downloadsLabel, locale, marketplaceTitle, marketplaceSubtitle, resultOneLabel, resultOtherLabel, emptyLabel, freeCtaLabel, paidCtaLabel, typeLabels, sellingLabels, hideFilters = false }: ShopClientProps) {
   const [activeFilter, setActiveFilter] = useState<string>(filters[0] ?? 'All')
 
   const filtered = useMemo(() => {
@@ -196,11 +197,13 @@ export default function ShopClient({ souls, filters, downloadsLabel, locale, mar
           </p>
         </header>
 
-        <nav aria-label="Filter by type" className="mb-8 flex flex-wrap gap-2">
-          {filters.map((f) => (
-            <FilterTab key={f} label={f} active={activeFilter === f} onClick={() => setActiveFilter(f)} />
-          ))}
-        </nav>
+        {!hideFilters && (
+          <nav aria-label="Filter by type" className="mb-8 flex flex-wrap gap-2">
+            {filters.map((f) => (
+              <FilterTab key={f} label={f} active={activeFilter === f} onClick={() => setActiveFilter(f)} />
+            ))}
+          </nav>
+        )}
 
         <p className="mb-6 text-xs" style={{ color: 'rgba(63,63,70,1)' }} aria-live="polite">
           {filtered.length} {filtered.length === 1 ? resultOneLabel : resultOtherLabel}

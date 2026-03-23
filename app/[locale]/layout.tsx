@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const path = localePath(locale)
   return {
     metadataBase: new URL('https://souls.design'),
-    alternates: buildAlternates(''),
+    alternates: buildAlternates(locale, ''),
     openGraph: buildOg(path, 'souls.design', 'Browse production-tested souls, skills, prompts, and teams for OpenClaw.'),
     twitter: {
       card: 'summary_large_image',

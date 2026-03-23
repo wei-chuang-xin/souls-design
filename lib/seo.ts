@@ -15,10 +15,13 @@ export function buildLanguageAlternates(path: string) {
   return Object.fromEntries(routing.locales.map((locale) => [locale, absoluteUrl(localePath(locale, path))]))
 }
 
-export function buildAlternates(path: string) {
+export function buildAlternates(locale: string, path: string) {
   return {
-    canonical: absoluteUrl(localePath(routing.defaultLocale, path)),
-    languages: buildLanguageAlternates(path),
+    canonical: absoluteUrl(localePath(locale, path)),
+    languages: {
+      ...buildLanguageAlternates(path),
+      'x-default': absoluteUrl(localePath(routing.defaultLocale, path)),
+    },
   }
 }
 

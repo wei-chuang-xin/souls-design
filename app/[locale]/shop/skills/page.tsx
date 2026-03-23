@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: buildAlternates('/shop/skills'),
+    alternates: buildAlternates(locale, '/shop/skills'),
     openGraph: buildOg(localePath(locale, '/shop/skills'), title, description),
     twitter: { card: 'summary_large_image', title, description },
   }

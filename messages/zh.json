@@ -2,7 +2,11 @@
   "nav": {
     "browse": "浏览灵魂",
     "about": "关于",
-    "setup": "安装指南"
+    "setup": "安装指南",
+    "souls": "灵魂",
+    "skills": "技能",
+    "prompts": "提示词",
+    "teams": "团队"
   },
   "home": {
     "badge": "免费，无需注册。",
@@ -50,7 +54,31 @@
       "我的 Agent 不再犯同样的错误了。我没有换模型，我换了灵魂。"
     ],
     "bottom_cta_title": "最好的 OpenClaw Agent 已经在 souls.design 上运行了。你的也应该如此。",
-    "bottom_cta_sub": "免费下载，无需注册。"
+    "bottom_cta_sub": "免费下载，无需注册。",
+    "categories_title": "按分类浏览",
+    "categories_subtitle": "直接进入你需要的内容类型。",
+    "categories": [
+      {
+        "title": "灵魂",
+        "desc": "让 Agent 持续稳定表现的身份系统。",
+        "href": "/shop/souls"
+      },
+      {
+        "title": "技能",
+        "desc": "面向真实 OpenClaw 工作流的可复用能力。",
+        "href": "/shop/skills"
+      },
+      {
+        "title": "提示词",
+        "desc": "可以直接接入工作流的高价值提示词资产。",
+        "href": "/shop/prompts"
+      },
+      {
+        "title": "团队",
+        "desc": "面向协作场景设计的多 Agent 组合。",
+        "href": "/shop/teams"
+      }
+    ]
   },
   "shop": {
     "title": "浏览灵魂",
@@ -87,7 +115,27 @@
     },
     "category_title": "{type}",
     "category_subtitle": "浏览已在 OpenClaw 生产验证、可直接部署的{type}。",
-    "category_empty": "暂时还没有{type}。"
+    "category_empty": "暂时还没有{type}。",
+    "browse_categories": "浏览分类",
+    "browse_categories_subtitle": "进入独立分类页，提升浏览体验与 SEO 表现。",
+    "category_links": [
+      {
+        "label": "灵魂",
+        "href": "/shop/souls"
+      },
+      {
+        "label": "技能",
+        "href": "/shop/skills"
+      },
+      {
+        "label": "提示词",
+        "href": "/shop/prompts"
+      },
+      {
+        "label": "团队",
+        "href": "/shop/teams"
+      }
+    ]
   },
   "about": {
     "title": "设计很重要，对 Agent 也是。",

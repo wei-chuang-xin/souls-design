@@ -38,6 +38,7 @@ export default function HomePage() {
   const painItems = t.raw('pain_items') as string[]
   const steps = t.raw('steps') as { num: string; title: string; desc: string }[]
   const testimonials = t.raw('testimonials') as string[]
+  const categories = t.raw('categories') as { title: string; desc: string; href: string }[]
 
   const painEmojis = ['😵', '🎭', '🔁', '📝', '🤖', '🔀']
 
@@ -74,6 +75,30 @@ export default function HomePage() {
             <span className="h-1 w-1 rounded-full bg-zinc-700"></span>
             <span><strong className="text-white">MIT</strong> {t('stats_license')}</span>
           </div>
+        </div>
+      </section>
+
+
+      {/* Categories */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20 border-t border-white/5">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{t('categories_title')}</h2>
+          <p className="text-zinc-400 text-sm sm:text-base">{t('categories_subtitle')}</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {categories.map((category) => (
+            <Link
+              key={category.href}
+              href={`/${locale}${category.href}`}
+              className="group rounded-xl border border-white/5 bg-white/[0.02] p-5 hover:border-white/15 hover:bg-white/[0.04] transition-colors"
+            >
+              <div className="flex items-center justify-between gap-3 mb-4">
+                <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+                <span className="text-zinc-500 group-hover:text-white transition-colors">→</span>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">{category.desc}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

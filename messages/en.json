@@ -2,7 +2,11 @@
   "nav": {
     "browse": "Browse Souls",
     "about": "About",
-    "setup": "Setup"
+    "setup": "Setup",
+    "souls": "Souls",
+    "skills": "Skills",
+    "prompts": "Prompts",
+    "teams": "Teams"
   },
   "home": {
     "badge": "Free. No account required.",
@@ -50,7 +54,31 @@
       "My agent stopped making the same mistakes. I didn't change the model. I changed the soul."
     ],
     "bottom_cta_title": "The best OpenClaw agents are already running on souls.design. Yours should too.",
-    "bottom_cta_sub": "Free to download. No account required."
+    "bottom_cta_sub": "Free to download. No account required.",
+    "categories_title": "Browse by category",
+    "categories_subtitle": "Jump straight to the type of asset you need.",
+    "categories": [
+      {
+        "title": "Souls",
+        "desc": "Identity systems that make agents behave with consistency.",
+        "href": "/shop/souls"
+      },
+      {
+        "title": "Skills",
+        "desc": "Reusable capabilities for real OpenClaw workflows.",
+        "href": "/shop/skills"
+      },
+      {
+        "title": "Prompts",
+        "desc": "Focused prompt assets ready to drop into your stack.",
+        "href": "/shop/prompts"
+      },
+      {
+        "title": "Teams",
+        "desc": "Multi-agent setups designed for collaboration.",
+        "href": "/shop/teams"
+      }
+    ]
   },
   "shop": {
     "title": "Browse Souls",
@@ -87,7 +115,27 @@
     },
     "category_title": "{type}",
     "category_subtitle": "Browse production-tested {type} ready to deploy in OpenClaw.",
-    "category_empty": "No {type} found yet."
+    "category_empty": "No {type} found yet.",
+    "browse_categories": "Browse categories",
+    "browse_categories_subtitle": "Explore dedicated category pages for stronger discovery and SEO.",
+    "category_links": [
+      {
+        "label": "Souls",
+        "href": "/shop/souls"
+      },
+      {
+        "label": "Skills",
+        "href": "/shop/skills"
+      },
+      {
+        "label": "Prompts",
+        "href": "/shop/prompts"
+      },
+      {
+        "label": "Teams",
+        "href": "/shop/teams"
+      }
+    ]
   },
   "about": {
     "title": "Design matters. Even for agents.",

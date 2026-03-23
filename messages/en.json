@@ -204,6 +204,35 @@
     "processing_payment": "Processing payment...",
     "payment_failed": "Payment failed. Please try again.",
     "secure_payment": "Secure payment via PayPal",
-    "download_label": "Download {type}"
+    "download_label": "Download {type}",
+    "type_labels": {
+      "soul": "Soul",
+      "skill": "Skill",
+      "prompt": "Prompt",
+      "team": "Team"
+    },
+    "price_free": "Free",
+    "price_paid": "Premium",
+    "price_bundle": "Bundle",
+    "cta_free_hint": "Instant download. No account required.",
+    "cta_owned_hint": "Already unlocked. Download again anytime.",
+    "cta_signin_hint": "Sign in to continue with purchase and save access to your library.",
+    "cta_paid_hint": "Secure checkout via PayPal. Unlock download access immediately after payment.",
+    "cta_bundle_hint": "Bundle purchase unlocks the full asset package immediately after payment.",
+    "value_title": "What you get",
+    "value_items": [
+      "Production-tested asset with a clear operational use case",
+      "README and included files ready for direct use",
+      "Immediate access after download or purchase"
+    ],
+    "price_label": "Price",
+    "access_label": "Access",
+    "access_free": "Free download",
+    "access_owned": "Owned",
+    "access_signin": "Sign in required",
+    "access_purchase_required": "Purchase required",
+    "signin_cta": "Sign in to continue",
+    "purchase_label": "Purchase access",
+    "source_coming_soon": "Source link coming soon"
   }
 }

@@ -204,6 +204,35 @@
     "processing_payment": "正在处理支付...",
     "payment_failed": "支付失败，请重试。",
     "secure_payment": "通过 PayPal 安全支付",
-    "download_label": "下载{type}"
+    "download_label": "下载{type}",
+    "type_labels": {
+      "soul": "灵魂",
+      "skill": "技能",
+      "prompt": "提示词",
+      "team": "团队"
+    },
+    "price_free": "免费",
+    "price_paid": "付费",
+    "price_bundle": "合集",
+    "cta_free_hint": "可直接下载，无需注册。",
+    "cta_owned_hint": "你已解锁，可随时再次下载。",
+    "cta_signin_hint": "登录后可继续购买，并把权限保存到你的 Library。",
+    "cta_paid_hint": "通过 PayPal 安全支付，支付完成后立即解锁下载权限。",
+    "cta_bundle_hint": "购买合集后会立即解锁完整资产包下载权限。",
+    "value_title": "你将获得",
+    "value_items": [
+      "经过生产验证、用途明确的资产",
+      "可直接使用的 README 与配套文件",
+      "下载或购买后立即可用"
+    ],
+    "price_label": "价格",
+    "access_label": "获取方式",
+    "access_free": "免费下载",
+    "access_owned": "已拥有",
+    "access_signin": "需要登录",
+    "access_purchase_required": "需要购买",
+    "signin_cta": "登录后继续",
+    "purchase_label": "购买后解锁",
+    "source_coming_soon": "来源链接即将补充"
   }
 }

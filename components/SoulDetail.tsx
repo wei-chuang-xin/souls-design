@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
 import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 
 export interface SoulDetailProps {
   name: string
@@ -397,7 +398,7 @@ export default function SoulDetail({
               </div>
 
               <div className="prose prose-invert prose-sm max-w-none text-[#a1a1aa] [&_a:hover]:text-violet-300 [&_a]:text-violet-400 [&_code]:rounded [&_code]:bg-[#18181b] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[#a1a1aa] [&_h1]:text-[#fafafa] [&_h2]:text-[#e4e4e7] [&_h3]:text-[#d4d4d8] [&_li]:text-[#a1a1aa] [&_strong]:text-[#e4e4e7]">
-                <ReactMarkdown>{readme}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{readme}</ReactMarkdown>
               </div>
             </section>
           </>

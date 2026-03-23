@@ -19,6 +19,15 @@ export interface ShopClientProps {
   filters: string[]
   downloadsLabel: string
   locale: string
+  marketplaceTitle: string
+  marketplaceSubtitle: string
+  resultOneLabel: string
+  resultOtherLabel: string
+  emptyLabel: string
+  freeCtaLabel: string
+  paidCtaLabel: string
+  typeLabels: Record<'soul' | 'skill' | 'prompt' | 'team', string>
+  sellingLabels: Record<'free' | 'paid' | 'bundle', string>
   onCardClick?: (locale: string, slug: string) => void
 }
 
@@ -27,19 +36,6 @@ const TYPE_EMOJI: Record<Soul['type'], string> = {
   skill: '⚡',
   prompt: '🪄',
   team: '👥',
-}
-
-const TYPE_LABEL: Record<Soul['type'], string> = {
-  soul: 'Soul',
-  skill: 'Skill',
-  prompt: 'Prompt',
-  team: 'Team',
-}
-
-const SELLING_LABEL: Record<'free' | 'paid' | 'bundle', string> = {
-  free: 'Free',
-  paid: 'Premium',
-  bundle: 'Bundle',
 }
 
 const SELLING_BADGE: Record<'free' | 'paid' | 'bundle', string> = {
@@ -99,7 +95,7 @@ function ArrowDownIcon({ className }: { className?: string }) {
   )
 }
 
-function ShopCard({ soul, downloadsLabel, locale }: { soul: Soul; downloadsLabel: string; locale: string }) {
+function ShopCard({ soul, downloadsLabel, locale, typeLabels, sellingLabels, freeCtaLabel, paidCtaLabel }: { soul: Soul; downloadsLabel: string; locale: string; typeLabels: ShopClientProps['typeLabels']; sellingLabels: ShopClientProps['sellingLabels']; freeCtaLabel: string; paidCtaLabel: string }) {
   const [hovered, setHovered] = useState(false)
   const badge = TYPE_BADGE[soul.type]
   const iconGlow = TYPE_ICON_GLOW[soul.type]
@@ -108,7 +104,7 @@ function ShopCard({ soul, downloadsLabel, locale }: { soul: Soul; downloadsLabel
   return (
     <Link
       href={`/${locale}/shop/${soul.slug}`}
-      aria-label={`${soul.name} — ${TYPE_LABEL[soul.type]}`}
+      aria-label={`${soul.name} — ${typeLabels[soul.type]}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
@@ -128,13 +124,13 @@ function ShopCard({ soul, downloadsLabel, locale }: { soul: Soul; downloadsLabel
       <div className="flex min-w-0 items-center gap-2">
         <h3 className="flex-1 truncate text-sm font-semibold leading-snug text-white" title={soul.name}>{soul.name}</h3>
         <span className="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide" style={{ background: badge.bg, color: badge.text }}>
-          {TYPE_LABEL[soul.type]}
+          {typeLabels[soul.type]}
         </span>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
         <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${SELLING_BADGE[pricingModel]}`}>
-          {SELLING_LABEL[pricingModel]}
+          {sellingLabels[pricingModel]}
         </span>
         <span className="text-xs font-medium text-zinc-300">{formatPrice(soul.amount_cents, soul.currency)}</span>
       </div>
@@ -149,7 +145,7 @@ function ShopCard({ soul, downloadsLabel, locale }: { soul: Soul; downloadsLabel
           <span>{formatDownloads(soul.downloads)}</span>
           <span>{downloadsLabel}</span>
         </div>
-        <span className="text-xs text-zinc-400">{pricingModel === 'free' ? 'Download Free' : 'View Offer'}</span>
+        <span className="text-xs text-zinc-400">{pricingModel === 'free' ? freeCtaLabel : paidCtaLabel}</span>
       </div>
     </Link>
   )
@@ -169,19 +165,24 @@ function FilterTab({ label, active, onClick }: { label: string; active: boolean;
   )
 }
 
-export default function ShopClient({ souls, filters, downloadsLabel, locale }: ShopClientProps) {
+export default function ShopClient({ souls, filters, downloadsLabel, locale, marketplaceTitle, marketplaceSubtitle, resultOneLabel, resultOtherLabel, emptyLabel, freeCtaLabel, paidCtaLabel, typeLabels, sellingLabels }: ShopClientProps) {
   const [activeFilter, setActiveFilter] = useState<string>(filters[0] ?? 'All')
 
   const filtered = useMemo(() => {
-    if (activeFilter === 'All' || activeFilter === filters[0]) return souls
+    if (activeFilter === filters[0]) return souls
     const normalized = activeFilter.toLowerCase()
-    if (normalized === 'free' || normalized === 'premium' || normalized === 'bundle') {
+    if (normalized === 'free' || normalized === 'premium' || normalized === 'bundle' || normalized === '免费' || normalized === '付费' || normalized === '合集') {
       return souls.filter((s) => {
         const model = s.pricing_model ?? 'free'
-        if (normalized === 'premium') return model === 'paid'
-        return model === normalized
+        if (normalized === 'premium' || normalized === '付费') return model === 'paid'
+        if (normalized === 'bundle' || normalized === '合集') return model === 'bundle'
+        return model === 'free'
       })
     }
+    if (normalized === '灵魂') return souls.filter((s) => s.type === 'soul')
+    if (normalized === '技能') return souls.filter((s) => s.type === 'skill')
+    if (normalized === '提示词') return souls.filter((s) => s.type === 'prompt')
+    if (normalized === '团队') return souls.filter((s) => s.type === 'team')
     return souls.filter((s) => s.type.toLowerCase() === normalized)
   }, [souls, activeFilter, filters])
 
@@ -189,9 +190,9 @@ export default function ShopClient({ souls, filters, downloadsLabel, locale }: S
     <div className="min-h-screen font-sans" style={{ background: '#09090b' }}>
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <header className="mb-10">
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">Marketplace</h1>
+          <h1 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">{marketplaceTitle}</h1>
           <p className="mt-2 text-sm" style={{ color: 'rgba(113,113,122,1)' }}>
-            Discover and deploy souls, skills, prompts, teams — now with free and premium products.
+            {marketplaceSubtitle}
           </p>
         </header>
 
@@ -202,20 +203,20 @@ export default function ShopClient({ souls, filters, downloadsLabel, locale }: S
         </nav>
 
         <p className="mb-6 text-xs" style={{ color: 'rgba(63,63,70,1)' }} aria-live="polite">
-          {filtered.length} {filtered.length === 1 ? 'result' : 'results'}
+          {filtered.length} {filtered.length === 1 ? resultOneLabel : resultOtherLabel}
         </p>
 
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((soul) => (
-              <ShopCard key={soul.slug} soul={soul} downloadsLabel={downloadsLabel} locale={locale} />
+              <ShopCard key={soul.slug} soul={soul} downloadsLabel={downloadsLabel} locale={locale} typeLabels={typeLabels} sellingLabels={sellingLabels} freeCtaLabel={freeCtaLabel} paidCtaLabel={paidCtaLabel} />
             ))}
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center rounded-xl py-24" style={{ border: '1px dashed rgba(255,255,255,0.08)' }}>
             <span className="text-4xl" aria-hidden="true">🔍</span>
             <p className="mt-4 text-sm" style={{ color: 'rgba(113,113,122,1)' }}>
-              No items found for this filter.
+              {emptyLabel}
             </p>
           </div>
         )}

@@ -65,10 +65,37 @@
       "Prompt",
       "Team"
     ],
-    "downloads": "次下载"
+    "downloads": "次下载",
+    "marketplace_title": "市场",
+    "marketplace_subtitle": "发现并部署 souls、skills、prompts、teams —— 现已支持免费与付费商品。",
+    "results_one": "条结果",
+    "results_other": "条结果",
+    "empty": "当前筛选条件下没有内容。",
+    "free_cta": "免费下载",
+    "paid_cta": "查看详情",
+    "footnote": "免费商品可直接下载，付费商品与合集需购买后获取。",
+    "type_labels": {
+      "soul": "灵魂",
+      "skill": "技能",
+      "prompt": "提示词",
+      "team": "团队"
+    },
+    "selling_labels": {
+      "free": "免费",
+      "paid": "付费",
+      "bundle": "合集"
+    }
   },
   "about": {
-    "title": "设计很重要，对 Agent 也是。"
+    "title": "设计很重要，对 Agent 也是。",
+    "eyebrow": "关于",
+    "lead": "大多数 AI Agent 都让人记不住。",
+    "p1": "无论任务是琐碎还是关键，它们总是同样的保守、同样的免责声明、同样的输出。它们看起来能执行指令——直到指令用完。然后它们开始猜，而且通常猜错。",
+    "quote": "我们用 OpenClaw 做了很多年的真实构建：真实工作流、真实团队、真实压力。我们吃过很多亏，才明白提示词会在边缘场景失效，细致指令会在高压下断裂。真正撑得住的是身份：它清楚自己是谁、重视什么，以及在没人明确告诉它该怎么做时，如何判断与决策。",
+    "soul_line": "这，就是灵魂。",
+    "p2": "souls.design 放的是那些真正有效的东西。这里的每一个 soul 和 skill 都经过生产环境检验——不是为了 demo 写的，也不是为了 benchmark 优化的。能放在这里，说明它扛住了。",
+    "p3": "我们宁可要 20 个真正能用的东西，也不要 200 个“技术上存在”的东西。",
+    "footer": "由 OpenClaw 实践者打造，为 OpenClaw 实践者服务。"
   },
   "setup": {
     "title": "如何安装灵魂",
@@ -86,6 +113,21 @@
     "readme": "说明文档",
     "files": "包含文件",
     "download": "↓ 免费下载",
-    "license_prefix": "许可证："
+    "license_prefix": "许可证：",
+    "downloads": "次下载",
+    "save": "收藏",
+    "saved": "已收藏",
+    "remove_favorite": "取消收藏",
+    "add_favorite": "加入收藏",
+    "copy": "复制",
+    "copied": "已复制",
+    "copy_readme": "复制 README 到剪贴板",
+    "source": "来源",
+    "by_author": "作者：{author}",
+    "signin_to_buy": "登录后购买",
+    "processing_payment": "正在处理支付...",
+    "payment_failed": "支付失败，请重试。",
+    "secure_payment": "通过 PayPal 安全支付",
+    "download_label": "下载{type}"
   }
 }

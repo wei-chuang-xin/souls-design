@@ -65,10 +65,37 @@
       "Prompt",
       "Team"
     ],
-    "downloads": "downloads"
+    "downloads": "downloads",
+    "marketplace_title": "Marketplace",
+    "marketplace_subtitle": "Discover and deploy souls, skills, prompts, teams — now with free and premium products.",
+    "results_one": "result",
+    "results_other": "results",
+    "empty": "No items found for this filter.",
+    "free_cta": "Download Free",
+    "paid_cta": "View Offer",
+    "footnote": "Free items download instantly. Premium and bundles require purchase.",
+    "type_labels": {
+      "soul": "Soul",
+      "skill": "Skill",
+      "prompt": "Prompt",
+      "team": "Team"
+    },
+    "selling_labels": {
+      "free": "Free",
+      "paid": "Premium",
+      "bundle": "Bundle"
+    }
   },
   "about": {
-    "title": "Design matters. Even for agents."
+    "title": "Design matters. Even for agents.",
+    "eyebrow": "About",
+    "lead": "Most AI agents are forgettable.",
+    "p1": "Same hedges. Same disclaimers. Same output whether the task is trivial or critical. They follow instructions well enough — until the instructions run out. Then they guess. And the guess is usually wrong.",
+    "quote": "We've spent years building with OpenClaw. Running real workflows, real teams, real pressure. We learned the hard way that prompts break on edge cases. Detailed instructions snap under load. What holds is identity: a clear sense of who the agent is, what it values, and how it decides when no one told it what to do.",
+    "soul_line": "That's a soul.",
+    "p2": "souls.design is where we put the ones that work. Every soul and skill here has been tested in production — not written for a demo, not optimized for a benchmark. If it's here, it held up.",
+    "p3": "We'd rather have 20 things that actually work than 200 things that technically exist.",
+    "footer": "Built by OpenClaw practitioners, for OpenClaw practitioners."
   },
   "setup": {
     "title": "How to install a soul",
@@ -86,6 +113,21 @@
     "readme": "README",
     "files": "Files included",
     "download": "↓ Download Free",
-    "license_prefix": "License:"
+    "license_prefix": "License:",
+    "downloads": "downloads",
+    "save": "Save",
+    "saved": "Saved",
+    "remove_favorite": "Remove from favorites",
+    "add_favorite": "Add to favorites",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copy_readme": "Copy README to clipboard",
+    "source": "Source",
+    "by_author": "by {author}",
+    "signin_to_buy": "Sign in to Buy",
+    "processing_payment": "Processing payment...",
+    "payment_failed": "Payment failed. Please try again.",
+    "secure_payment": "Secure payment via PayPal",
+    "download_label": "Download {type}"
   }
 }

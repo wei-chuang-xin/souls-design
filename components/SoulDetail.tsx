@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useTransition, useCallback, Fragment } from "react"
+import { useState, useTransition, useCallback } from "react"
+import { useTranslations } from "next-intl"
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
 import ReactMarkdown from "react-markdown"
 
@@ -157,7 +158,7 @@ export default function SoulDetail({
             <path d="m8 11 4 4 4-4" />
             <path d="M3 19h18" />
           </svg>
-          Download {label}
+          {t('download_label', { type: label })}
         </a>
       )
     }
@@ -167,14 +168,14 @@ export default function SoulDetail({
           href="/auth/signin"
           className="inline-flex items-center gap-2 rounded-lg bg-[#fafafa] px-5 py-2.5 text-sm font-semibold text-[#09090b] transition-all duration-150 hover:bg-white hover:shadow-[0_0_20px_rgba(250,250,250,0.15)] active:scale-[0.98] select-none"
         >
-          Sign in to Buy
+          {t('signin_to_buy')}
         </a>
       )
     }
     return (
       <div className="flex flex-col gap-2 w-full max-w-xs">
-        {buyState === 'error' && <p className="text-xs text-red-400">Payment failed. Please try again.</p>}
-        {buyState === 'capturing' && <p className="text-xs text-zinc-400">Processing payment...</p>}
+        {buyState === 'error' && <p className="text-xs text-red-400">{t('payment_failed')}</p>}
+        {buyState === 'capturing' && <p className="text-xs text-zinc-400">{t('processing_payment')}</p>}
         <PayPalScriptProvider options={{ clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ?? '', currency: priceCurrency.toUpperCase() }}>
           <PayPalButtons
             style={{ layout: 'horizontal', color: 'gold', shape: 'rect', label: 'buynow', height: 40, tagline: false }}
@@ -184,7 +185,7 @@ export default function SoulDetail({
             disabled={buyState === 'capturing'}
           />
         </PayPalScriptProvider>
-        <p className="text-xs text-zinc-600">{priceLabel} &middot; Secure payment via PayPal</p>
+        <p className="text-xs text-zinc-600">{priceLabel} &middot; {t('secure_payment')}</p>
       </div>
     )
   }
@@ -196,17 +197,13 @@ export default function SoulDetail({
     })
   }
 
+  const t = useTranslations('soul_detail')
   const emoji = TYPE_EMOJI[type]
   const glow  = TYPE_GLOW[type]
   const badge = TYPE_BADGE[type]
   const label = TYPE_LABEL[type]
   const isPaid = pricingModel === 'paid' || pricingModel === 'bundle'
   const priceLabel = !isPaid ? 'Free' : new Intl.NumberFormat('en-US', { style: 'currency', currency: priceCurrency.toUpperCase(), maximumFractionDigits: 0 }).format((priceAmountCents || 0) / 100)
-  const primaryCtaLabel = downloadAccessState === 'owned' || downloadAccessState === 'free'
-    ? `Download ${label}`
-    : downloadAccessState === 'signin'
-      ? 'Sign in to Buy'
-      : 'Buy Now'
 
   return (
     <div
@@ -251,7 +248,7 @@ export default function SoulDetail({
             <path d="M19 12H5" />
             <path d="m12 5-7 7 7 7" />
           </svg>
-          Back to shop
+          {t('back')}
         </a>
 
         {/* ── 2. Header area ── */}
@@ -334,7 +331,7 @@ export default function SoulDetail({
                     <path d="m8 11 4 4 4-4" />
                     <path d="M3 19h18" />
                   </svg>
-                  <span className="text-[#a1a1aa]">{formatDownloads(downloads)} downloads</span>
+                  <span className="text-[#a1a1aa]">{formatDownloads(downloads)} {t('downloads')}</span>
                 </span>
               </div>
             </div>
@@ -347,7 +344,7 @@ export default function SoulDetail({
               <button
                 onClick={handleFavorite}
                 disabled={favPending}
-                aria-label={favorited ? 'Remove from favorites' : 'Add to favorites'}
+                aria-label={favorited ? t('remove_favorite') : t('add_favorite')}
                 className={[
                   'inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium border transition-all duration-150 active:scale-[0.98] select-none',
                   favorited ? 'border-red-500/40 bg-red-950/30 text-red-400 hover:bg-red-950/50' : 'border-white/10 bg-white/5 text-zinc-400 hover:text-white hover:border-white/20',
@@ -359,7 +356,7 @@ export default function SoulDetail({
                   strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
                   <path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z' />
                 </svg>
-                {favorited ? 'Saved' : 'Save'}
+                {favorited ? t('saved') : t('save')}
               </button>
             )}
           </div>
@@ -370,7 +367,7 @@ export default function SoulDetail({
         {/* ── 3. Description ── */}
         <section className="py-8" aria-labelledby="about-heading">
           <SectionHeading>
-            <span id="about-heading">About</span>
+            <span id="about-heading">{t('about')}</span>
           </SectionHeading>
           <p className="text-sm leading-relaxed text-[#a1a1aa]">{description}</p>
         </section>
@@ -381,7 +378,7 @@ export default function SoulDetail({
             <Divider />
             <section className="py-8" aria-labelledby="tags-heading">
               <SectionHeading>
-                <span id="tags-heading">Tags</span>
+                <span id="tags-heading">{t('tags')}</span>
               </SectionHeading>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
@@ -404,12 +401,12 @@ export default function SoulDetail({
             <section className="py-8" aria-labelledby="readme-heading">
               <div className="flex items-center justify-between mb-3">
                 <SectionHeading>
-                  <span id="readme-heading">README</span>
+                  <span id="readme-heading">{t('readme')}</span>
                 </SectionHeading>
                 <button
                   type="button"
                   onClick={handleCopy}
-                  aria-label="Copy README to clipboard"
+                  aria-label={t('copy_readme')}
                   className="flex items-center gap-1.5 rounded-md border border-[#27272a] bg-[#18181b] px-2.5 py-1 text-xs text-[#71717a] hover:text-[#a1a1aa] hover:border-[#3f3f46] transition-colors duration-100 select-none"
                 >
                   {copied ? (
@@ -417,7 +414,7 @@ export default function SoulDetail({
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
-                      Copied
+                      {t('copied')}
                     </>
                   ) : (
                     <>
@@ -425,7 +422,7 @@ export default function SoulDetail({
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                       </svg>
-                      Copy
+                      {t('copy')}
                     </>
                   )}
                 </button>
@@ -445,7 +442,7 @@ export default function SoulDetail({
             <Divider />
             <section className="py-8" aria-labelledby="files-heading">
               <SectionHeading>
-                <span id="files-heading">Files included</span>
+                <span id="files-heading">{t('files')}</span>
               </SectionHeading>
               <ul className="space-y-0 rounded-xl border border-[#27272a] overflow-hidden divide-y divide-[#1f1f22]">
                 {files.map((file, i) => (
@@ -527,7 +524,7 @@ export default function SoulDetail({
               >
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
               </svg>
-              Source
+              {t('source')}
             </a>
 
             <span className="text-[#27272a]" aria-hidden="true">·</span>
@@ -548,7 +545,7 @@ export default function SoulDetail({
                 <circle cx="12" cy="8" r="4" />
                 <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
               </svg>
-              by {author}
+              {t('by_author', { author })}
             </span>
 
             {/* Branding */}

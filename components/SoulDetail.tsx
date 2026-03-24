@@ -1,11 +1,12 @@
 "use client"
 
-import { useState, useTransition, useCallback } from "react"
+import { useState, useTransition, useCallback, useEffect } from "react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import { trackEventClient } from "@/lib/track-client"
 
 export interface SoulDetailProps {
   name: string
@@ -94,6 +95,13 @@ export default function SoulDetail({
   const [buyState, setBuyState] = useState<'idle' | 'paying' | 'capturing' | 'owned' | 'error'>('idle')
   const [accessState, setAccessState] = useState(downloadAccessState)
 
+  // 埋点：商品详情页浏览
+  useEffect(() => {
+    if (slug) {
+      trackEventClient({ eventName: 'product_view', soulSlug: slug })
+    }
+  }, [slug])
+
   const label = t(`type_labels.${type}`)
   const emoji = TYPE_EMOJI[type]
   const glow = TYPE_GLOW[type]
@@ -137,6 +145,7 @@ export default function SoulDetail({
     const data = await res.json()
     if (!data.ok) throw new Error(data.error)
     setBuyState('paying')
+    trackEventClient({ eventName: 'checkout_started', soulSlug: slug ?? undefined })
     return data.orderID as string
   }, [slug])
 
@@ -154,6 +163,7 @@ export default function SoulDetail({
     }
     setBuyState('owned')
     setAccessState('owned')
+    trackEventClient({ eventName: 'payment_success', soulSlug: slug ?? undefined })
   }, [slug])
 
   async function handleFavorite() {
@@ -209,7 +219,7 @@ export default function SoulDetail({
             style={{ layout: 'horizontal', color: 'gold', shape: 'rect', label: 'buynow', height: 40, tagline: false }}
             createOrder={handleCreateOrder}
             onApprove={handleApprove}
-            onError={() => setBuyState('error')}
+            onError={() => { setBuyState('error'); trackEventClient({ eventName: 'payment_failed', soulSlug: slug ?? undefined, properties: { reason: 'paypal_error' } }) }}
             disabled={buyState === 'capturing'}
           />
         </PayPalScriptProvider>

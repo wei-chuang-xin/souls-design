@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { auth } from '@/auth'
 import { supabaseAdmin } from '@/lib/supabase'
 import { getSoulBySlug } from '@/lib/souls'
+import { trackEvent } from '@/lib/track'
 
 const PAYPAL_BASE =
   process.env.PAYPAL_MODE === 'live'
@@ -52,6 +53,7 @@ export async function POST(request: Request) {
   if (!captureRes.ok) {
     const err = await captureRes.text()
     console.error('[paypal] capture failed:', err)
+    await trackEvent({ eventName: 'payment_failed', userId: session.user.id, soulSlug: slug, properties: { reason: 'capture_failed' } })
     return NextResponse.json({ ok: false, error: 'capture_failed' }, { status: 502 })
   }
 
@@ -60,6 +62,7 @@ export async function POST(request: Request) {
   // 3. 严格验证 PayPal 返回状态，防止伪造
   if (capture.status !== 'COMPLETED') {
     console.error('[paypal] capture status not COMPLETED:', capture.status)
+    await trackEvent({ eventName: 'payment_failed', userId: session.user.id, soulSlug: slug, properties: { reason: 'not_completed', status: capture.status } })
     return NextResponse.json({ ok: false, error: 'payment_not_completed' }, { status: 402 })
   }
 
@@ -93,5 +96,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'db_error' }, { status: 500 })
   }
 
+  await trackEvent({ eventName: 'payment_success', userId: session.user.id, soulSlug: slug, properties: { amount_cents: amountCents, currency, provider: 'paypal', order_id: orderID } })
   return NextResponse.json({ ok: true })
 }

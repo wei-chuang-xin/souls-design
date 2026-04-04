@@ -74,7 +74,11 @@ export async function getDownloadAccessState(soulSlug: string): Promise<Download
   if (pricingModel === 'free') return 'free'
 
   const session = await auth()
-  if (!session?.user?.id) return 'signin'
+  console.log("[DEBUG] getDownloadAccessState:", { soulSlug, hasSession: !!session, hasUser: !!session?.user, userId: session?.user?.id, userEmail: session?.user?.email })
+  if (!session?.user?.id) {
+    console.log("[DEBUG] No user.id, returning signin")
+    return 'signin'
+  }
 
   const purchased = await hasUserPurchased(session.user.id, soulSlug)
   return purchased ? 'owned' : 'purchase_required'

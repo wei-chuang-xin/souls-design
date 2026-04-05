@@ -28,7 +28,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return true
     },
-    async jwt({ token, user }) {
+        async jwt({ token, user }) {
       if (user?.email) {
         // Fetch the Supabase user id (uuid) and store in token
         const { data } = await supabaseAdmin
@@ -36,16 +36,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           .select('id')
           .eq('email', user.email)
           .single()
+        console.log('[DEBUG] jwt callback:', { email: user.email, foundId: data?.id })
         if (data) token.id = data.id
       }
       return token
     },
     session({ session, token }) {
+      console.log('[DEBUG] session callback:', { hasUser: !!session.user, tokenId: token.id })
       if (session.user && token.id) {
         session.user.id = token.id as string
       }
+      console.log('[DEBUG] session result:', { userId: session.user?.id })
       return session
     },
+
   },
   pages: {
     signIn: '/auth/signin',

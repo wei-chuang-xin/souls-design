@@ -182,11 +182,36 @@ export default function SoulDetail({
     })
   }
 
+  async function handleDownload() {
+    try {
+      const response = await fetch(downloadHref, {
+        credentials: 'include',
+      })
+      
+      if (!response.ok) {
+        console.error('Download failed:', response.status)
+        return
+      }
+      
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `${slug}.zip`
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      window.URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Download error:', error)
+    }
+  }
+
   function renderCTA() {
     if (accessState === 'free' || accessState === 'owned' || buyState === 'owned') {
       return (
-        <a
-          href={downloadHref}
+        <button
+          onClick={handleDownload}
           className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#fafafa] px-5 py-2.5 text-sm font-semibold text-[#09090b] transition-all duration-150 hover:bg-white hover:shadow-[0_0_20px_rgba(250,250,250,0.15)] active:scale-[0.98] select-none"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -195,7 +220,7 @@ export default function SoulDetail({
             <path d="M3 19h18" />
           </svg>
           {t('download_label', { type: label })}
-        </a>
+        </button>
       )
     }
 

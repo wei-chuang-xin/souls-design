@@ -66,11 +66,11 @@ ${soul.license || 'MIT'}
     zip.file('SKILL.md', skillContent)
   }
 
-  // 生成 ZIP buffer
-  const zipBuffer = await zip.generateAsync({ type: 'nodebuffer' })
+  // 生成 ZIP arraybuffer
+  const zipArrayBuffer = await zip.generateAsync({ type: 'arraybuffer' })
 
   // 返回文件流
-  return new NextResponse(zipBuffer, {
+  return new NextResponse(zipArrayBuffer, {
     headers: {
       'Content-Type': 'application/zip',
       'Content-Disposition': `attachment; filename="${slug}.zip"`,

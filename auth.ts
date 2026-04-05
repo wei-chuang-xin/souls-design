@@ -17,7 +17,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     async signIn({ user }) {
       if (user?.email) {
         // Upsert user into Supabase on every login
-        await supabaseAdmin.from('users').upsert(
+        const { data, error } = await supabaseAdmin.from('users').upsert(
           {
             name: user.name ?? '',
             email: user.email,
@@ -26,6 +26,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           },
           { onConflict: 'email' }
         )
+        console.log('[DEBUG] signIn upsert:', { email: user.email, success: !error, error: error?.message })
+        if (error) console.error('[ERROR] signIn upsert failed:', error)
       }
       return true
     },

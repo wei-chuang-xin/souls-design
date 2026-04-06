@@ -1,0 +1,67 @@
+{
+  "item": {
+    "id": "test-skill-02",
+    "slug": "test-skill-02",
+    "name": "Test Skill 02",
+    "subtitle": "Another $0.10 test skill for production payment testing.",
+    "description": "This is a minimal test skill for verifying the production PayPal payment flow.\n\n**What you get:**\n- A simple test skill\n- Confirmation that production payment works\n\n**Price:** $0.10 USD\n\nThis is a test product with minimal price for safe production testing.",
+    "category": "testing",
+    "item_type": "skill",
+    "tags": [
+      "test",
+      "payment",
+      "production"
+    ],
+    "compatibility": [
+      "openclaw"
+    ],
+    "license": "MIT",
+    "price": {
+      "amount_cents": 10,
+      "currency": "usd",
+      "model": "paid"
+    },
+    "stats": {
+      "downloads": 0,
+      "stars": 0,
+      "avg_rating": 0,
+      "reviews": 0
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "payment_options": {
+      "stripe_url": null,
+      "x402": null
+    },
+    "latest_version": {
+      "version": "1.0.0",
+      "published_at": "2026-04-06T00:00:00.000000+00:00",
+      "changelog": "Initial release for production testing."
+    },
+    "avatar_url": null,
+    "preview_content": null,
+    "links": {},
+    "security_status": "approved",
+    "review_depth": "automated",
+    "security_warning": null,
+    "readme_content": "# Test Skill 02\n\n> **Version:** 1.0.0\n> **Price:** $0.10 USD\n\nA minimal test skill for production payment testing.\n\n## Purpose\n\nThis skill is created for testing the production PayPal payment flow with minimal cost.\n\n## What's Included\n\n- `SKILL.md` - A basic skill template\n- `README.md` - This file\n\n## How to Test\n\n1. Purchase this skill for $0.10\n2. Complete PayPal checkout\n3. Verify purchase in Library\n4. Download the skill files\n\n## Support\n\nThis is a test product.",
+    "file_manifest": [
+      "README.md",
+      "SKILL.md"
+    ],
+    "versions": [
+      {
+        "version": "1.0.0",
+        "changelog": "Initial release for production testing.",
+        "published_at": "2026-04-06T00:00:00.000000+00:00",
+        "file_size": 512,
+        "download_count": 0
+      }
+    ],
+    "reviews": [],
+    "media_gallery": []
+  }
+}

@@ -238,5 +238,67 @@
     "pricing_model": "paid",
     "amount_cents": 990,
     "currency": "usd"
+  },
+  {
+    "id": "test-skill-01",
+    "slug": "test-skill-01",
+    "name": "Test Skill 01",
+    "subtitle": "A $0.10 test skill for production payment testing.",
+    "type": "skill",
+    "category": "testing",
+    "tags": [
+      "test",
+      "payment",
+      "production"
+    ],
+    "price": {
+      "amount_cents": 10,
+      "currency": "usd",
+      "model": "paid"
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "stats": {
+      "downloads": 0,
+      "stars": 0
+    },
+    "latest_version": {
+      "version": "1.0.0",
+      "published_at": "2026-04-06T00:00:00.000000+00:00"
+    }
+  },
+  {
+    "id": "test-skill-02",
+    "slug": "test-skill-02",
+    "name": "Test Skill 02",
+    "subtitle": "Another $0.10 test skill for production payment testing.",
+    "type": "skill",
+    "category": "testing",
+    "tags": [
+      "test",
+      "payment",
+      "production"
+    ],
+    "price": {
+      "amount_cents": 10,
+      "currency": "usd",
+      "model": "paid"
+    },
+    "creator": {
+      "slug": "toli",
+      "display_name": "toli",
+      "verified": true
+    },
+    "stats": {
+      "downloads": 0,
+      "stars": 0
+    },
+    "latest_version": {
+      "version": "1.0.0",
+      "published_at": "2026-04-06T00:00:00.000000+00:00"
+    }
   }
 ]

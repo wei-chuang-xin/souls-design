@@ -109,7 +109,7 @@ export default function SoulDetail({
   const isPaid = pricingModel === 'paid' || pricingModel === 'bundle'
   const priceLabel = !isPaid
     ? t('price_free')
-    : new Intl.NumberFormat('en-US', { style: 'currency', currency: priceCurrency.toUpperCase(), maximumFractionDigits: 0 }).format((priceAmountCents || 0) / 100)
+    : new Intl.NumberFormat('en-US', { style: 'currency', currency: priceCurrency.toUpperCase(), minimumFractionDigits: 2, maximumFractionDigits: 2 }).format((priceAmountCents || 0) / 100)
 
   const accessLabelMap = {
     free: t('access_free'),
